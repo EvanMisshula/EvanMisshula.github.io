@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Evan Misshula Atom">
+
+
+
+ 
+
+<meta name="author" content="emisshula" />
+<meta name="description" content="Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. 1 ~Bobby Bragan, 1963 Encountering data Here we will describe the techniques you should use to give yourself and your readers/bosses/teachers …" />
+<meta name="keywords" content="Emacs, Rstats, ESS">
+
+
+  <meta property="og:site_name" content="Evan Misshula"/>
+  <meta property="og:title" content="Descriptives"/>
+  <meta property="og:description" content="Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. 1 ~Bobby Bragan, 1963 Encountering data Here we will describe the techniques you should use to give yourself and your readers/bosses/teachers …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./r-descriptives-ess.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2014-07-24 15:03:00-04:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="./author/emisshula.html">
+  <meta property="article:section" content="R-course"/>
+  <meta property="article:tag" content="Emacs"/>
+  <meta property="article:tag" content="Rstats"/>
+  <meta property="article:tag" content="ESS"/>
+  <meta property="og:image" content="/images/newProfile200.jpg">
+
+  <title>Evan Misshula &ndash; Descriptives</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="./">
+      <img src="/images/newProfile200.jpg" alt="Measure of Justice" title="Measure of Justice">
+    </a>
+
+    <h1>
+      <a href="./">Measure of Justice</a>
+    </h1>
+
+    <p>Probability, Learning and Justice</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="./pages/academic.html#academic">
+                Academic
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/ambition.html#ambition">
+                Ambition
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/bio.html#bio">
+                Bio
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-GitHub"
+           href="https://github.com/yourname"
+           target="_blank">
+          <i class="fa-brands fa-GitHub"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="./">Home</a>
+
+
+  <a href="/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="r-descriptives-ess">Descriptives</h1>
+    <p>
+      Posted on Thu 24 July 2014 in <a href="./category/r-course.html">R-course</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"></p>
+
+<blockquote>
+<p>Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> ~Bobby Bragan, 1963</p>
+</blockquote>
+<h1>Encountering data</h1>
+<p>Here we will describe the techniques you should use to give yourself and
+your readers/bosses/teachers a good feel of the data. This is often called
+<em>descriptive statistics</em>.  In this context a <em>statistic</em> is a single number
+that summarizes your data. It is important to know what type of data you have
+and the <em>level of measurement</em> but we will put off that discussion for a 
+a few paragraphs.  I am also putting off a discussion of why statistics is 
+important and I am just assuming that this is something you have to do in
+order to do your research.</p>
+<p>Here is the daunting part, your data is usually a long list of numbers.  How 
+do you describe <em>that</em>?  Usually the first technique you want to use is to 
+graph all of the numbers together.  In fact all of the data has a special name. </p>
+<p>Your data is called the sample distribution.  How do we get that data
+into R?  Again, we will defer that question. One nice feature of R is
+that it has some data built in.  For example, it has the average amount of 
+precipitation for 70 cities in the United States.  We can use this data to 
+illustrate a few techniqeus that you can use on your own data.</p>
+<div class="highlight"><pre><span></span><code>str(precip)
+precip[1:4]
+
+Named num [1:70] 67 54.7 7 48.5 14 17.2 20.7 13 43.4 40.2 ...
+<span class="k">-</span> attr(*, &quot;names&quot;)= chr [1:70] &quot;Mobile&quot; &quot;Juneau&quot; &quot;Phoenix&quot; &quot;Little Rock&quot; ...
+    Mobile      Juneau     Phoenix Little Rock 
+      67.0        54.7         7.0        48.5
+</code></pre></div>
+
+<p>The <code>str</code> command gets the structure of the data.  There are a few commands 
+for this <code>summary</code> is the other one I sometimes use. And <code>precip[1:4]</code> gave 
+us the first four elements.  Here are some other built in datasets</p>
+<div class="highlight"><pre><span></span><code>str(rivers)
+str(discoveries)
+
+num [1:141] 735 320 325 392 524 ...
+Time-Series [1:100] from 1860 to 1959: 5 3 0 2 0 3 2 3 6 1 ...
+</code></pre></div>
+
+<p>The first thing we want to get a sense of is how the numbers are
+distributed.  The best way to this is to use a <em>histogram</em>.  A
+histogram is a bar chart where we bin the count the number of
+observations that fall in a defined range.  I allows us to quickly
+notice important properties. <code>R</code> has a function for computing this
+built in.</p>
+<div class="highlight"><pre><span></span><code>hist(precip)
+</code></pre></div>
+
+<p><img alt="img" src="../../images/hist_precip.jpg"></p>
+<p>We can imporove this by passing two parameters.  The first is designating 
+a color (<code>col</code>) and the second is not computing the frequency counts but
+instead dividing by the total observations in our sample.</p>
+<div class="highlight"><pre><span></span><code>hist(precip,col=&quot;steel blue&quot;,freq=FALSE)
+</code></pre></div>
+
+<p><img alt="img" src="../../images/hist_precip_imp.jpg"></p>
+<p>Two important and frustrating things to note about histograms.  They
+are highly dependant on the number of bins we choose.  We will show an
+example below of manually setting the bins.  Second there is no
+general algorithm for setting the number of bins.  We can only repeat
+it for an increasing number of bins and stop when the shape is stable.
+Now we are also supressing the printing of a title.  For more
+parameters of <code>hist</code> type <code>?hist</code> at the console prompt.  Histograms
+were first introduced by Karl Pearson.  </p>
+<div class="highlight"><pre><span></span><code>hist(precip,breaks=10,col=&quot;steel blue&quot;,freq=FALSE)
+</code></pre></div>
+
+<p><img alt="img" src="../../images/hist_precip_10.jpg"></p>
+<div class="highlight"><pre><span></span><code>hist(precip,breaks=200,col=&quot;steel blue&quot;,freq=FALSE)
+</code></pre></div>
+
+<p><img alt="img" src="../../images/hist_precip_200.jpg"></p>
+<h1>The ugly history of statistics</h1>
+<p>Karl Pearson was a British mathematician. He is considered the founder
+of mathematical statistics.  Dr. Pearson established the first
+department of statistics in the world at University College, in
+London. However, he was also the founding editor of the <em>Annals of
+Eugenics</em>.  Dr. Pearson advocated for the restriction of immigration
+by Jewish people to Britain on the basis that ``this alien Jewish
+population is somewhat inferior physically and mentally to the native
+population.'' <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>  He also thought that war between the races was
+inevitable.</p>
+<p>A number of prominent founders of statistics and biostatistics shared
+Dr. Pearson's views.  I find that these embarassing facts are often
+left out fo the history of statistics.  I think it is important to
+remember these ugly warts so that we can separate these important
+contributions from the ugly politics of their inventors allowing us to
+use our research to make rather than inhibit social progress.</p>
+<h1>Stem and leaf plots</h1>
+<p>Another older technique for exploring data is to draw a stem and leaf
+plot.  These were popularized by John Tukey in his book <em>Exploratory Data
+Analysis</em> <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.  The leading digits of the data are the <em>stems</em> while
+the final digits are the <em>leaves</em>.  The graph is drawn left to right with 
+a vertical line separating the stem and leaves.</p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara">Robert Randall Bragan an American shortstop, catcher, manager, and coach in Major League Baseball.</div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara">Pearson, Karl, & Moul, Margaret (1925). "The Problem of Alien Immigration into Great Britain, Illustrated by an Examination of Russian and Polish Jewish Children", Part II, Annals of Eugenics, Vol. I, No. 2, pp. 125-126.</div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara">ukey, John W. (1977). Exploratory Data Analysis (1 ed.). Pearson. ISBN 0-201-07616-0.</div></div>
+
+
+</div>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/emacs.html">Emacs</a>
+      <a href="./tag/rstats.html">Rstats</a>
+      <a href="./tag/ess.html">ESS</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Evan Misshula ",
+  "url" : ".",
+  "image": "/images/newProfile200.jpg",
+  "description": "Evan's encounters with ignorance and injustice"
+}
+</script>
+</body>
+</html>

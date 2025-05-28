@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Evan Misshula Atom">
+
+
+
+ 
+
+<meta name="author" content="emisshula" />
+<meta name="description" content="When someone says: &#39;I want a programming language in which I need only say what I wish done&#39;, give him a lollipop. ~Alan J. Perlis The problem Javascript can be notoriusly difficult to debug if you are coming from a language with tight degugger integration like C/C++ or Java …" />
+<meta name="keywords" content="Emacs, skewer-mode, javascript, d3.js, debugging">
+
+
+  <meta property="og:site_name" content="Evan Misshula"/>
+  <meta property="og:title" content="bugs-javascript"/>
+  <meta property="og:description" content="When someone says: &#39;I want a programming language in which I need only say what I wish done&#39;, give him a lollipop. ~Alan J. Perlis The problem Javascript can be notoriusly difficult to debug if you are coming from a language with tight degugger integration like C/C++ or Java …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./skewer-tutorial.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2015-03-07 00:00:00-05:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="./author/emisshula.html">
+  <meta property="article:section" content="Tutorials"/>
+  <meta property="article:tag" content="Emacs"/>
+  <meta property="article:tag" content="skewer-mode"/>
+  <meta property="article:tag" content="javascript"/>
+  <meta property="article:tag" content="d3.js"/>
+  <meta property="article:tag" content="debugging"/>
+  <meta property="og:image" content="/images/newProfile200.jpg">
+
+  <title>Evan Misshula &ndash; bugs-javascript</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="./">
+      <img src="/images/newProfile200.jpg" alt="Measure of Justice" title="Measure of Justice">
+    </a>
+
+    <h1>
+      <a href="./">Measure of Justice</a>
+    </h1>
+
+    <p>Probability, Learning and Justice</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="./pages/academic.html#academic">
+                Academic
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/ambition.html#ambition">
+                Ambition
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/bio.html#bio">
+                Bio
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-GitHub"
+           href="https://github.com/yourname"
+           target="_blank">
+          <i class="fa-brands fa-GitHub"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="./">Home</a>
+
+
+  <a href="/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="skewer-tutorial">bugs-javascript</h1>
+    <p>
+      Posted on Sat 07 March 2015 in <a href="./category/tutorials.html">Tutorials</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><img src="../../images/perlis.jpg" width="300px" alt="box" title="box"></p>
+
+<blockquote>
+<p>When someone says: 'I want a programming language in which I need only
+say what I wish done', give him a lollipop. ~Alan J. Perlis</p>
+</blockquote>
+<h1>The problem</h1>
+<p>Javascript can be notoriusly difficult to debug if you are coming from a language with tight 
+degugger integration like C/C++ or Java.  Even if you are coming from other scripting languages
+like R or Python. Peering into code running in the browser can be a real pain.  Now, I understand
+that Firefox has firebug and Chrome has its own developer tools but I have never really felt 
+comfortable in them.  I think it is becuase there graphical tools cover the entire screen and I
+mostly develope on a laptop. (Think grad school, not Google.)</p>
+<h1>Skewer Mode</h1>
+<p>Skewer mode is an amazing lightweight way to get debugging tools for Javascript into the editor
+where you actually write the code.  Here is a link to the <a href="https://www.youtube.com/watch?v=4tyTgyzUJqM&amp;feature=youtu.be">youtube screencast</a>.  The screencast has
+no audio and while it shows the amazing things it can do, I had a very hard time reproducing it.</p>
+<p>At the time of this writing it, (three years after its development) it has garnered 10 thousand 
+views but few tutorials or stack overflow answers.  There are instructions in the <a href="https://github.com/skeeto/skewer-mode">github repo</a>. There
+is also this <a href="http://emacs.stackexchange.com/questions/2376/how-to-use-skewer-mode">answer</a> on emacs.stackexchange.com. </p>
+<h1>The setup</h1>
+<p>In order to set up skewer-mode, you technically only need httpd-simple server and js2 mode.  However,
+when you are a beginner you really need auto-commplete and the snippets from YAS (yet another snippet 
+library).  This marginally adds to the burden of set-up.  However, the major focus of this is set-up 
+so I think it is worth it.  I am also including, R and ESS mode (Emacs-Speaks-Statistics).  I came to
+javascript visualizations from static graphs in R.  I could have configured IPython as well and there is 
+some benefit to showing the analogue but I have not done it for the time being.</p>
+<p>The configuration file (known in the emacs world as .emacs, pronounced <em>dot emacs</em>) is available as a 
+<a href="https://gist.github.com/EvanMisshula/e137e3dda382b8b1486d">gist</a>. To install packages, I am going to refer you to the excellent tutorial by Xah Lee available <a href="http://ergoemacs.org/emacs/emacs_package_system.html">here</a>.</p>
+<h1>Modes</h1>
+<p>Skewer mode has two ways to operate.  Confusingly, these are also
+called modes.  They are distinct from which functions are made
+available in Emacs.  This is the primary definition of modes in
+Emacs. The first of these is called automatic mode.  In the README
+file of the <a href="https://github.com/skeeto/skewer-mode">skewer mode repo</a> on github, automatic mode is outlined in
+<strong>Quick Start</strong>.  If everything is properly configured you can find a
+javascript file (using <code>C-x C-f</code>) and issue the command <code>M-x
+run-skewer</code>.  Here the keystroke <strong>Control-x</strong> is abbreviated <code>C-x</code> and
+the keystroke <strong>Alt-x</strong> si abbrevieated <code>M-x</code>. Let's review the
+instructions in the README.</p>
+<ol>
+<li>Put this repository directory in your load-path</li>
+<li>Load skewer-mode.el</li>
+<li><code>M-x run-skewer</code> to attach a browser to Emacs</li>
+<li>From a js2-mode buffer with skewer-mode minor mode enabled, send
+    forms to the browser to evaluate</li>
+</ol>
+<h2>Details on step 1</h2>
+<p>You want to have all of the requisite packages installed and
+configured correctly.  If you get any error on start up, you have to
+correct it before attempting to start skewer mode.  This is what an
+error might look like.</p>
+<p><img src="../../images/startErr.png" width="550px" alt="err" title="startErr"></p>
+
+<h2>Details on step 2</h2>
+<p>Loading skewer-mode.el should occur in the .emacs file.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">list</span><span class="w"> </span><span class="s1">&#39;load-path </span>
+<span class="s2">&quot;/Users/emisshula/.emacs.d/elpa/skewer-mode-20141215.1525&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">require</span><span class="w"> </span><span class="s1">&#39;skewer-mode)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span><span class="w"> </span><span class="s1">&#39;js2-mode-hook &#39;</span><span class="n">skewer</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span><span class="w"> </span><span class="s1">&#39;css-mode-hook &#39;</span><span class="n">skewer</span><span class="o">-</span><span class="n">css</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+<span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span><span class="w"> </span><span class="s1">&#39;html-mode-hook &#39;</span><span class="n">skewer</span><span class="o">-</span><span class="n">html</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+</code></pre></div>
+
+<h2>Details on step 3</h2>
+<p>For this step you can just follow the instruction:</p>
+<ol>
+<li><code>M-x run-skewer</code> to attach a browser to Emacs</li>
+</ol>
+<p>This won't show anything in the browser but you can interact with the browser
+through Emacs. What should happen is that your computer will switch focus to
+the browser and it will open a blank tab with address 127.0.0.1:8080/skewer/demo
+See the picture of my Safari browser below:</p>
+<p><img src="../../images/emptyTab.png" width="550px" alt="emptyTab" title="emptyTab"></p>
+
+<p>It is not very informative but at least when you see it, you won't be surprised.</p>
+<h2>Details on step 4</h2>
+<ol>
+<li>From a js2-mode buffer with skewer-mode minor mode enabled, send
+    forms to the browser to evaluate</li>
+</ol>
+<p>This is what is done in the first 2 minutes of the demo.  In order to
+see if this is working you must pay attention to the bottom of the
+screen. The second to last line is called the mode-line. It displays
+information about the file.  At a minimum, the file name and what line
+the cursor. To the right in parentheses are the modes of the file.
+These modes dictate what functions are available for editing.  It will
+be easier to edit a Python file in python-mode, a C file in c-mode, an
+elisp file in lisp mode.  Well for skewer mode to work, you have to be
+in js2 major mode and skewer minor mode.</p>
+<p><img src="../../images/checkModes.png" width="550px" alt="checkModes" title="checkModes"></p>
+
+<p>In the picture above in parentheses it says both Javascript-IDE and
+skewer, this means that we are in the right modes.  Unfortunately, js2
+is both not the only javascript mode and not the default mode for
+javascript in Emacs.  Regular javascript mode was written before
+Google made the V8 javascript API available so if your mode line does
+not have IDE in it you are probably in Javascript mode and skewer mode
+won't work.  When you try to execute a statement, you will get an
+error that <strong>no javascript AST is available</strong>.  AST stands for Abstract
+Syntax Tree and the communication to the V8 api is performed only by
+js2-mode, not the javascript mode.</p>
+<p>Well assuming now that you have checked your mode line you can execute the 
+simple javascript statements.  Just put the cursor after the semi-colon and 
+press <code>C-x C-e</code> (Control x Control e).</p>
+<div class="highlight"><pre><span></span><code><span class="n">Math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mf">14.1</span><span class="p">);</span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">foo</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello, World&quot;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">foo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;!&#39;</span><span class="p">;</span>
+
+<span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="w"> </span><span class="n">Math</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">6000</span><span class="p">);</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">foo</span><span class="p">;</span>
+</code></pre></div>
+
+<p>The first one will print the answer in the last line of Emacs. This is
+called the mini-buffer. The definition of x as a key-value pair will
+return undefined, but that is OK.  The third statement appends an
+exclamation point to the value of <code>x.foo</code>.  The fourth statement uses
+the javascript Math library. The final statement prints the value of the foo
+property of x in the mini-buffer.</p>
+<p>If you made this much work. Swagger over to the bar and:</p>
+<p><strong>Buy yourself a drink!</strong></p>
+<h1>More in quick mode</h1>
+<p>The second demo file in the shows that in skewer-mode you can define a function and apply it </p>
+<div class="highlight"><pre><span></span><code>function square(n) {
+    return n * n;
+}
+
+square(14.4);
+
+[1,3,5,7,21].map(square);
+</code></pre></div>
+
+<p>In the above code snippet, I follow the video but add the function being applied to an array via
+the map method.  The results are all printed in the mini-buffer. Now in demo3.js, skeeto shows 
+the invocation of the skewer-repl. A repl is <em>Read-Evaluation-Print-Loop</em> also called a shell or 
+console. In R, the repl is called the R console and it is an essential part of buiding programs and 
+performing analysis. In Python, the repl of choice is the extremely popular IPython.  Here is an 
+example of a complicated graph drawn using the repl.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># data </span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">4566</span><span class="p">)</span>
+<span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+
+<span class="c1"># layout where the boxplot is at top  </span>
+<span class="n">nf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">layout</span><span class="p">(</span><span class="n">mat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">),</span><span class="w">  </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3.1</span><span class="p">,</span><span class="w"> </span><span class="m">3.1</span><span class="p">,</span><span class="w"> </span><span class="m">1.1</span><span class="p">,</span><span class="w"> </span><span class="m">2.1</span><span class="p">))</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">horizontal</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w">  </span><span class="n">outline</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-4</span><span class="p">,</span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="n">frame</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;green1&quot;</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-4</span><span class="p">,</span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pink&quot;</span><span class="p">)</span>
+
+<span class="c1"># layout boxplot is at the bottom </span>
+<span class="n">nf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">layout</span><span class="p">(</span><span class="n">mat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">),</span><span class="w">  </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3.1</span><span class="p">,</span><span class="w"> </span><span class="m">3.1</span><span class="p">,</span><span class="w"> </span><span class="m">1.1</span><span class="p">,</span><span class="w"> </span><span class="m">2.1</span><span class="p">))</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-4</span><span class="p">,</span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pink&quot;</span><span class="p">)</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">horizontal</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w">  </span><span class="n">outline</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-4</span><span class="p">,</span><span class="m">4</span><span class="p">),</span><span class="w"> </span><span class="n">frame</span><span class="o">=</span><span class="bp">F</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;green1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+</code></pre></div>
+
+<p><img src="../../images/histBox.jpeg" width="450px" alt="histBox" title="histBox"></p>
+
+<p>If we want to examine the first 5 rows of data we can send it to the console as seen here:</p>
+<p><img src="../../images/RconsoleData.png" width="550px" alt="RconsoleData" title="RconsoleData"></p>
+
+<h1>Demo3</h1>
+<p>It is also possible to send data to the javascript repl.  Although we have to wrap
+it in the <code>skewer.log()</code> function.  The first step is to open the skewer-repl with the command
+<code>M-x skewer-repl</code>. (This is also bound to the keys <code>C-c C-z</code>.) From a file a
+javascript file which we have named demo3.js to match the movie, we place the 
+cursor immediately after the semi-colon in either statement:</p>
+<div class="highlight"><pre><span></span><code>skewer.log(&quot; 5 + 6 =&quot; + (5+6));
+skewer.log(&quot;Hello, World&quot;);
+</code></pre></div>
+
+<p>Now instead of writing to the mini-buffer it is writing to the repl,
+just like we can do in R or Python. Here is a picture.</p>
+<p><img src="../../images/demo3Res.png" width="550px" alt="demo3Res" title="demo3Res"></p>
+
+<h1>Manual</h1>
+<p>We can also insert live changes in the browser for a page we are developing.  However, the set
+up changes as now use manual mode.  Again, here are the directions and we will add some detail.</p>
+<ol>
+<li>Load the dependencies</li>
+<li>Load skewer-mode.el</li>
+<li>Start the HTTP server (httpd-start)</li>
+<li>Include "<a href="http://localhost:8080/skewer">http://localhost:8080/skewer</a>" as a script (see example.html and check your httpd-port)</li>
+<li>Visit the document from your browser</li>
+</ol>
+<p>We will break these down step by step.</p>
+<h2>Details on step 1 and 2</h2>
+<ol>
+<li>Load the dependencies</li>
+<li>Load skewer-mode.el</li>
+</ol>
+<p>This should happen when start up Emacs if you made the first part work.</p>
+<h2>Details on step 3</h2>
+<ol>
+<li>Start the HTTP server (httpd-start)</li>
+</ol>
+<p>It is important to note that you do not use <code>skewer-run</code>.  You start
+the server in the directory that you want to serve.  Many books on
+d3.js recommend this and have you use the python simple server. We are
+going to have Emacs the page. The next code snippet is not something
+you should use here, it is just an example of another simple web
+server that serves a directory to localhost.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">python</span><span class="w"> </span><span class="o">-</span><span class="nx">m</span><span class="w"> </span><span class="nx">SimpleHTTPServer</span><span class="w"> </span><span class="mi">8000</span>
+</code></pre></div>
+
+<p>Although, if you have configured the direcory you want to run in your
+.emacs file you can run <code>httpd-start</code>, I prefer not to rely on the
+configuration.  An example of the configuration appears below:</p>
+<div class="highlight"><pre><span></span><code>(setq httpd-root &quot;/Users/emisshula/Documents/skewerDemo/boid-js&quot;)
+</code></pre></div>
+
+<p>Instead I prefer to use the command: <code>M-x httpd-serve-directory</code> so I am 
+sure that I know what directory is being served and on what port. </p>
+<p>This bleeds a little into step 4 but I really like understanding what
+my server is doing on my machine.  In fact, for debugging one other
+command line tool that I find useful is <code>nmap</code> which can tell you what
+ports are open.  If you are on unix variant machine (sometimes denote
+*nix), you can just take the version from your package manager.</p>
+<p>For Mac, use <a href="http://brew.sh">brew</a>:</p>
+<div class="highlight"><pre><span></span><code>brew install nmap
+</code></pre></div>
+
+<p>For Debian, Ubuntu:</p>
+<div class="highlight"><pre><span></span><code>sudo apt-get install nmap
+</code></pre></div>
+
+<p>For Windows, download all of <a href="https://www.cygwin.com">CygWin</a> (so you can forget you are even on a Windows box). To 
+check the server has started:</p>
+<div class="highlight"><pre><span></span><code>nmap -p 8080 localhost
+</code></pre></div>
+
+<p>The results of which will look like:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Starting</span><span class="w"> </span><span class="nx">Nmap</span><span class="w"> </span><span class="m m-Double">6.47</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nx">http</span><span class="p">:</span><span class="c1">//nmap.org ) at 2015-03-08 09:30 EDT</span>
+<span class="nx">Nmap</span><span class="w"> </span><span class="nx">scan</span><span class="w"> </span><span class="nx">report</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">localhost</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">127.0.0.1</span><span class="p">)</span>
+<span class="nx">Host</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="nx">up</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">0.00015</span><span class="nx">s</span><span class="w"> </span><span class="nx">latency</span><span class="p">).</span>
+<span class="nx">PORT</span><span class="w">     </span><span class="nx">STATE</span><span class="w"> </span><span class="nx">SERVICE</span>
+<span class="mi">8080</span><span class="o">/</span><span class="nx">tcp</span><span class="w"> </span><span class="nx">open</span><span class="w">  </span><span class="nx">http</span><span class="o">-</span><span class="nx">proxy</span>
+
+<span class="nx">Nmap</span><span class="w"> </span><span class="nx">done</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="nx">up</span><span class="p">)</span><span class="w"> </span><span class="nx">scanned</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m m-Double">0.05</span><span class="w"> </span><span class="nx">seconds</span>
+</code></pre></div>
+
+<p>Now stop that server, using <code>httpd-stop</code>. Then you can clone Chris Wellon's <a href="https://github.com/skeeto/boids-js">boids-js</a> repo. Try
+restarting the server by pointing it at that directory. </p>
+<h2>Details on step 4</h2>
+<ol>
+<li>Include "<a href="http://localhost:8080/skewer">http://localhost:8080/skewer</a>" as a script (see
+    example.html and check your httpd-port)</li>
+</ol>
+<p>Now examine the head of <code>example.html</code>.</p>
+<div class="highlight"><pre><span></span><code>#+BEGIN_SRC md :exports code 
+    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">meta</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Boids<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://localhost:8080/skewer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;boids.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">body</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;background: darkgray; text-align: center;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;640&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;640&quot;</span>
+                <span class="na">style</span><span class="o">=</span><span class="s">&quot;position: absolute; left: 0; top: 0;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+#+END_SRC
+</code></pre></div>
+
+<p>I have added a meta tag so that you won't get any inconsequential errors complaining that we have
+not specified the charset.  The first script tag calls <code>jquerey</code>, a very popular cross browser
+library.  Skewer-mode used to depend on jquerey but that dependency has been removed.  However,
+code that we are running in this example does have the dependency so it can't be removed. The 
+script's source is on a website <code>ajax.googleapis.com</code> so we have to be connected to the internet
+to run this demo.  The prior ones would work on our subway commute.  They only relied on our local 
+files and server.  Web pages can load javascript from a variety of different sources.  These include
+different sites and local files. </p>
+<p>The second script is a local script.  It is running on our localhost at port 8080.  This is why
+you can't start this with some other local webserver. Emacs knows about both files in the local 
+directory and what to do with skewer. In fact, we are serving both example.html and skewer on the 
+same port.  This is very different than if you have ever served a <a href="http://leafletjs.com/examples.html">leaflet.js</a> map embeded in an
+html page.  In that case, you serve the page on one port and the map tiles on another.</p>
+<p>The third script, is the script that defines the ``boids'' and their motion.</p>
+<h2>Details on the fifth step</h2>
+<ol>
+<li>Visit the document from your browser</li>
+</ol>
+<p>In the address bar put <code>http://localhost:8080/example.html</code>. Split
+your screen between your browser and emacs so that you can see both
+and little else. To change the size of the birds, go to line 9 of
+<code>boids.js</code> and replace 6 with 2.  Now put the cursor after the
+semi-colon and press <code>C M x</code> which is bound to the command
+<code>skewer-html-eval-tag</code>.  The size of the ``boids'' should change
+instantly.</p>
+<h1>Evaluating a new file</h1>
+<p>In demo4.js Chris Wellon's adds a new javascript file which was not loaded when the browser visited
+<code>example.html</code>.  He does this to experiment with assigning random colors to the boids. Here he
+needs to change the boids.js script to load a random color.  He changes line 16 from </p>
+<div class="highlight"><pre><span></span><code>ctx.fillStyle = &#39;blue&#39;;
+</code></pre></div>
+
+<p>to:</p>
+<div class="highlight"><pre><span></span><code>ctx.fillStyle = this.color;
+</code></pre></div>
+
+<p>After, you make the change put the cursor after the semi-colon next to <code>this.color;</code> and evaluate the 
+tag (<code>C M x</code>). Don't worry if the page goes blank remember you have not yet defined <code>this.color</code>.
+We define those random colors in demo4.js:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">swarm</span><span class="p">.</span><span class="n">boids</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">swarm</span><span class="p">.</span><span class="n">boids</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;#&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mh">0xfff</span><span class="p">);</span>
+<span class="err">}</span>
+</code></pre></div>
+
+<p>Now demo4.js needs to be loaded into the example.html page.  This is
+done with <code>C-c C-k</code> (control-c, control-k).</p>
+<p>The boids change colors.  Everything else is a variation on this
+theme.  I may add later more later but this should get you debugging
+javascript.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/emacs.html">Emacs</a>
+      <a href="./tag/skewer-mode.html">skewer-mode</a>
+      <a href="./tag/javascript.html">javascript</a>
+      <a href="./tag/d3js.html">d3.js</a>
+      <a href="./tag/debugging.html">debugging</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Evan Misshula ",
+  "url" : ".",
+  "image": "/images/newProfile200.jpg",
+  "description": "Evan's encounters with ignorance and injustice"
+}
+</script>
+</body>
+</html>

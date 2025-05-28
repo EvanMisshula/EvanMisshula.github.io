@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Evan Misshula Atom">
+
+
+
+ 
+
+<meta name="author" content="emisshula" />
+<meta name="description" content="Making your editor do statistics All models are wrong, but some are useful.1 ~George E. P. Box Why is ESS useful? ESS makes your command history searchable and modifiable. When you start doing statistics you think you will always remember what you did and instantly recall why you did …" />
+<meta name="keywords" content="Emacs, Rstats, ESS">
+
+
+  <meta property="og:site_name" content="Evan Misshula"/>
+  <meta property="og:title" content="Emacs Speaks Statistics (ESS) Tutorial"/>
+  <meta property="og:description" content="Making your editor do statistics All models are wrong, but some are useful.1 ~George E. P. Box Why is ESS useful? ESS makes your command history searchable and modifiable. When you start doing statistics you think you will always remember what you did and instantly recall why you did …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./r-tutorial-ess.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2014-07-02 15:03:00-04:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="./author/emisshula.html">
+  <meta property="article:section" content="R-course"/>
+  <meta property="article:tag" content="Emacs"/>
+  <meta property="article:tag" content="Rstats"/>
+  <meta property="article:tag" content="ESS"/>
+  <meta property="og:image" content="/images/newProfile200.jpg">
+
+  <title>Evan Misshula &ndash; Emacs Speaks Statistics (ESS) Tutorial</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="./">
+      <img src="/images/newProfile200.jpg" alt="Measure of Justice" title="Measure of Justice">
+    </a>
+
+    <h1>
+      <a href="./">Measure of Justice</a>
+    </h1>
+
+    <p>Probability, Learning and Justice</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="./pages/academic.html#academic">
+                Academic
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/ambition.html#ambition">
+                Ambition
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/bio.html#bio">
+                Bio
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-GitHub"
+           href="https://github.com/yourname"
+           target="_blank">
+          <i class="fa-brands fa-GitHub"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="./">Home</a>
+
+
+  <a href="/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="r-tutorial-ess">Emacs Speaks Statistics (ESS) Tutorial</h1>
+    <p>
+      Posted on Wed 02 July 2014 in <a href="./category/r-course.html">R-course</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>Making your editor do statistics</h1>
+<p><img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"></p>
+
+<blockquote>
+<p>All models are wrong, but some are useful.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> ~George E. P. Box</p>
+</blockquote>
+<h2>Why is ESS useful?</h2>
+<p>ESS makes your command history searchable and modifiable. When you
+start doing statistics you think you will always remember what you did
+and instantly recall why you did it with that particular data. As you
+work on more projects you realize that is a hopeless task. But you
+will get questions on what you have done, especially if it was novel
+or well thought out.  These questions may not start until months after
+your work is done.  Having a command history is the bare minimum of
+what you will need to support your work.  We will talk about creating
+<em>replicable research</em> later in these tutorials. Unbelievably, this is
+a topic almost never addressed in introductory courses.</p>
+<p>ESS does other tasks for you as well that make interacting with your
+data easier.  ESS gives you command line completion of both object
+(data) and file names which saves on both typing and mistakes. It
+creates so-called <em>Hot Keys</em> for quick performance of wrote tasks.  It
+records a complete transcript of your R session.  It provides an
+interface to the R help system. It allows you to edit your data.  It
+provides highlighting and proper indentation which makes your code
+easier to read for you and others.  It allows you to run either parts 
+of files (called regions) or entire files.</p>
+<h2>ESS history</h2>
+<p>The project has been going since before the invention of R.  It was
+around in 1989, when it was used to interact with R's proprietary
+antecedent Bell Lab's S-language built by Richard Chambers. I am a a
+geek about the history of scientific and mathematical ideas. If you
+are interested in the history, the <a href="http://en.wikipedia.org/wiki/S_%2528programming_language%2529">wikipedia</a> article is a good start.
+You can also check out the <a href="http://stat.bell-labs.com/S/">S-page</a> at Bell Labs.  For any academic work
+I strongly suggest citing the published paper on ESS which is available
+at this <a href="http://biostats.bepress.com/uwbiostat/paper173/">link</a>.</p>
+<h2>Installing ESS</h2>
+<p>There are a number of ways to install ESS.  I will create a separate 
+series of posts on this.  For many, this will be your first foray
+into FREE software and installing for the first time is not easy,
+particularly on a Mac.  Here is a much to brief set of instructions:</p>
+<h3>Linux</h3>
+<h4>Beginner</h4>
+<p>Install from the ELPA package manager.  You should search for ESS
+(C-s, where C-s means press the Control and "s" keys at the same
+time).  Refer to Xah Lee's <a href="http://ergoemacs.org/emacs/emacs_package_system.html">tutorial</a> on loading from the packackage 
+manager.</p>
+<h4>Advanced</h4>
+<p>Download the <a href="http://ess.r-project.org/index.php?Section%3Ddownload">package</a>. If you do not have a hidden file called
+<em>home/username</em>.emacs create one and add the line:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">load</span><span class="w"> </span><span class="s2">&quot;~/langs/emacs/elisp-ds/ess/lisp/ess-site&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h4>Trap</h4>
+<p>Do not install Emacs and ESS from the Ubuntu or Debian repositories.  They
+are usually hoplelessly out of date.</p>
+<h3>Windows</h3>
+<p>Download the emacs distribution for <a href="http://vgoulet.act.ulaval.ca/en/emacs/windows/">Windows</a> from Vincent Goulet.
+Remember this is an executable file and you will have to allow it to
+work.</p>
+<h3>Mac OS X</h3>
+<p>Download the emacs distribution for <a href="http://vgoulet.act.ulaval.ca/en/emacs/mac/">Mac OS X</a>  Vincent Goulet.
+Remember this is an executable file and you will have to allow it to
+work. Also you have to drag the downloaded file to your apps file. I
+have never understood the point of this and I forget to how to do it 
+every time.  Here is a <a href="http://apple.stackexchange.com/questions/15306/why-do-i-have-to-drag-my-new-apps-into-the-application-folder">reference and explanation</a>.  It always makes me 
+think of how Richard Stallman who founded the Free Software movement
+hated Steve Jobs:</p>
+<blockquote>
+<p>Steve Jobs, the pioneer of the computer as a jail made cool, designed
+to sever fools from their freedom, has died.</p>
+<p>As Chicago Mayor Harold Washington said of the corrupt former Mayor
+Daley, "I'm not glad he's dead, but I'm glad he's gone." Nobody
+deserves to have to die &#x2013; not Jobs, not Mr. Bill, not even people
+guilty of bigger evils than theirs. But we all deserve the end of
+Jobs' malign influence on people's computing.</p>
+<p>Unfortunately, that influence continues despite his absence. We can
+only hope his successors, as they attempt to carry on his legacy, will
+be less effective. ~Richard M Stallman</p>
+</blockquote>
+<p><img src="../../images/rms.jpeg" width="300px" alt="box" title="box"></p>
+
+<h2>Testing your installation</h2>
+<p>You have to have installed R.  The instructions are <a href="http://cran.r-project.org/doc/manuals/r-release/R-admin.html">here</a>. You have to
+have installed Emacs and ESS.  For Windows and Mac Users, you get both
+Emacs and ESS when you download from Vincent Goulet. Now type <code>M-x R</code>.
+This will start an R process within a new buffer.  These buffers are
+called <em>inferior</em> as they run a process under Emacs.  The ESS manual
+calls them <em>iESS</em> buffers.</p>
+<p>If something went wrong, note the error and search.  If nothing happened
+try searching "Emacs can't find my R installation."</p>
+<h2>Editing R code</h2>
+<p>Indentation is automatic.  If you want to do something special use the
+command <code>M-x indent region</code>. If you don't understand what that means
+please refer to my earlier tutorial on <a href="http://EvanMisshula.github.io/r-tutorial-emacs-basics.html">basic emacs</a>. It also resets the
+underscore "_" to the assignment arrow "&lt;-" which saves a keystroke
+many times. If not you can use the underscore by typing <code>M-q _</code> or just
+"_" twice.  You can tab complete objects (data) with <code>C-c TAB</code> in buffers
+that end with .R extension.  It is by the file extension that Emacs 
+knows what mode to use.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></p>
+<p>Here are the key-bindings for moving around functions:</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Keybinding</th>
+<th scope="col" class="org-left">Function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">C-M-a</td>
+<td class="org-left">ess-beginning-of-function</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-M-e</td>
+<td class="org-left">ess-end-of-function</td>
+</tr>
+
+
+<tr>
+<td class="org-left">C-M-h</td>
+<td class="org-left">ess-mark-function</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Viewing help files</h2>
+<p>You can view a help file two ways.  If you are in the R console:</p>
+<blockquote>
+<p>?pbinorm</p>
+</blockquote>
+<p>If you are not:</p>
+<p><code>C-c C-v RET pbinom RET</code></p>
+<h1>The R session</h1>
+<p>In the <code>*R*</code> buffer you can run any R command.  R and statistics will be 
+the next tutorial.  You can recall your command history.</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">keybinding</th>
+<th scope="col" class="org-left">function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">M-p</td>
+<td class="org-left">comint-previous-input</td>
+</tr>
+
+
+<tr>
+<td class="org-left">M-n</td>
+<td class="org-left">comint-next-input</td>
+</tr>
+
+
+<tr>
+<td class="org-left">M-r</td>
+<td class="org-left">comint-previous-matching-input</td>
+</tr>
+</tbody>
+</table>
+
+<h1>Transcripts</h1>
+<p>You can save an R buffer to create a transcript. You can clean up the
+transcript with <code>M-x ess-transcript-clean-buffer</code>.  You can run
+multiple sessions of R.=M-x R= multiple times will generate multiple
+processes, e.g. <code>*R*</code>, <code>*R:2*</code>, &#x2026;</p>
+<h1>Sending code from an R buffer to an R session</h1>
+<p>If you only have one R session (typical), it will automatically be
+associated with the R buffer.  Otherwise you can associate the buffer
+with <code>C-c C-s</code>.  Here are the bindings for sending code:</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Keybinding</th>
+<th scope="col" class="org-left">Function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">`C-c C-j`</td>
+<td class="org-left">`ess-eval-line`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c M-j`</td>
+<td class="org-left">`ess-eval-line-and-go`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c C-f`</td>
+<td class="org-left">`ess-eval-function`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c M-f`</td>
+<td class="org-left">`ess-eval-function-and-go`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c C-r`</td>
+<td class="org-left">`ess-eval-region`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c M-r`</td>
+<td class="org-left">`ess-eval-region-and-go`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c C-b`</td>
+<td class="org-left">`ess-eval-buffer`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c M-b`</td>
+<td class="org-left">`ess-eval-buffer-and-go`</td>
+</tr>
+
+
+<tr>
+<td class="org-left">`C-c C-n`</td>
+<td class="org-left">`ess-eval-line-and-step`</td>
+</tr>
+</tbody>
+</table>
+
+<p>About 90% of the time I only use:</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Keybinding</th>
+<th scope="col" class="org-left">Function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">`C-c C-r`</td>
+<td class="org-left">`ess-eval-region`</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Next we are on to statistics!!</h2>
+
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara">Box & Draper (1987), Empirical model-building and response surfaces, Wiley, p. 424.</div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara">Windows 8 hides the file extension by default. You can change
+this evil behavior by seting the environment variable.</div></div>
+
+
+</div>
+</div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/emacs.html">Emacs</a>
+      <a href="./tag/rstats.html">Rstats</a>
+      <a href="./tag/ess.html">ESS</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Evan Misshula ",
+  "url" : ".",
+  "image": "/images/newProfile200.jpg",
+  "description": "Evan's encounters with ignorance and injustice"
+}
+</script>
+</body>
+</html>

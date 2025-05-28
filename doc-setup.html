@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Evan Misshula Atom">
+
+
+
+ 
+
+<meta name="author" content="emisshula" />
+<meta name="description" content="dweck&#34; title=&#34;box&#34;&gt; The problem We all have to complete tutorials to learn new languages. One constant pain is that the tutorials are usually trapped in pdf&#39;s when we need to type code. Emacs makes this problem go away through its doc-view mode which allows you to render pdf&#39;s in Emacs. The problem …" />
+<meta name="keywords" content="Emacs, pdf, meta-cognition">
+
+
+  <meta property="og:site_name" content="Evan Misshula"/>
+  <meta property="og:title" content="docview-setup"/>
+  <meta property="og:description" content="dweck&#34; title=&#34;box&#34;&gt; The problem We all have to complete tutorials to learn new languages. One constant pain is that the tutorials are usually trapped in pdf&#39;s when we need to type code. Emacs makes this problem go away through its doc-view mode which allows you to render pdf&#39;s in Emacs. The problem …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./doc-setup.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2015-04-01 00:00:00-04:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="./author/emisshula.html">
+  <meta property="article:section" content="Tutorials"/>
+  <meta property="article:tag" content="Emacs"/>
+  <meta property="article:tag" content="pdf"/>
+  <meta property="article:tag" content="meta-cognition"/>
+  <meta property="og:image" content="/images/newProfile200.jpg">
+
+  <title>Evan Misshula &ndash; docview-setup</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="./">
+      <img src="/images/newProfile200.jpg" alt="Measure of Justice" title="Measure of Justice">
+    </a>
+
+    <h1>
+      <a href="./">Measure of Justice</a>
+    </h1>
+
+    <p>Probability, Learning and Justice</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="./pages/academic.html#academic">
+                Academic
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/ambition.html#ambition">
+                Ambition
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/bio.html#bio">
+                Bio
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-GitHub"
+           href="https://github.com/yourname"
+           target="_blank">
+          <i class="fa-brands fa-GitHub"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="./">Home</a>
+
+
+  <a href="/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="doc-setup">docview-setup</h1>
+    <p>
+      Posted on Wed 01 April 2015 in <a href="./category/tutorials.html">Tutorials</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><img src="../../images/carolDweck.jpg" width="600px" alt="carol<sub>dweck</sub>" title="box"></p>
+
+<h1>The problem</h1>
+<p>We all have to complete tutorials to learn new languages.  One
+constant pain is that the tutorials are usually trapped in pdf's when
+we need to type code.  Emacs makes this problem go away through its 
+<em>doc-view</em> mode which allows you to render pdf's in Emacs. The problem is 
+that it only works out of the box in Linux.</p>
+<p><img src="../../images/mindset.jpg" width="600px" alt="mindset" title="box"></p>
+
+<h1>The Mac OS X solution</h1>
+<p>For mac, you need to install emacs via <a href="http://brew.sh">homebrew</a>.  Open a terminal by going to Finder, see the picture
+below.</p>
+<p><img src="../../images/utilities.png" width="550px" alt="utl" title="utlities"></p>
+
+<div class="highlight"><pre><span></span><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre></div>
+
+<p>Copy the installation command from homebrew into the terminal.  Type brew doctor.  The complication
+is that you may have to modify your path.  If so, see this <a href="http://stackoverflow.com/questions/10343834/homebrew-wants-me-to-amend-my-path-no-clue-how">answer</a> from stack overflow.</p>
+<div class="highlight"><pre><span></span><code>brew install ghostscript
+brew install emacs --with-cocoa
+brew linkapps emacs
+</code></pre></div>
+
+<h1>Windows</h1>
+<p>For windows, the situation is considerablely more complicated.  You must install the incredibly
+useful <a href="https://cygwin.com">cygwin</a> which provides the libraries for <em>ghostscript</em> and <em>xpdf</em>.  Watch this <a href="https://www.youtube.com/watch?v=TjxEH_tr7e0">video</a> by Paul
+Royer on installing cygwin and downloading the libraries.  You then need to modify the windows
+path environmental variable using these <a href="https://www.java.com/en/download/help/path.xml">instructions</a> to include thos libraries which are found in 
+your new home directory.  I will add to this later as these instructions are vague.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/emacs.html">Emacs</a>
+      <a href="./tag/pdf.html">pdf</a>
+      <a href="./tag/meta-cognition.html">meta-cognition</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Evan Misshula ",
+  "url" : ".",
+  "image": "/images/newProfile200.jpg",
+  "description": "Evan's encounters with ignorance and injustice"
+}
+</script>
+</body>
+</html>

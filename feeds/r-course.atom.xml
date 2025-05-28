@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - R-course</title><link href="/" rel="alternate"></link><link href="feeds/r-course.atom.xml" rel="self"></link><id>/</id><updated>2014-07-30T15:03:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Mac OS X Installation</title><link href="mac-dev-env.html" rel="alternate"></link><published>2014-07-30T15:03:00-04:00</published><updated>2014-07-30T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-30:mac-dev-env.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;I have developed a Zen-like approach to the operating systems that
+people use: 'When you're ready, the right operating system will appear
+in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
+online graphic design tool. Formerly, he was an advisor to the
+Motorola business unit of Google …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;I have developed a Zen-like approach to the operating systems that
+people use: 'When you're ready, the right operating system will appear
+in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
+online graphic design tool. Formerly, he was an advisor to the
+Motorola business unit of Google and chief evangelist of Apple.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../../images/guy.jpeg" width="350px" alt="guy" title="guy"&gt;&lt;/p&gt;
+
+&lt;h1&gt;Dev Environment&lt;/h1&gt;
+&lt;p&gt;A development environment is one where you can make the software you
+need to run.  You need this to run the latest free software which is
+often only implemented in source code.  Particularly to take advantage
+of common mathematical libraries you need a Fortran, C and C++
+compiler even if you never use those languages directly.  Apple does
+not include it in their default configuration because it does not want
+you to create your own software, it want you to buy their software
+products (rant over).&lt;/p&gt;
+&lt;h1&gt;Obtain the compilers&lt;/h1&gt;
+&lt;p&gt;First you need to make sure that you have the latest operating system.
+To do that, you need to left click on the Apple icon and read the release.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/osRelease.png" width="350px" alt="os" title="os"&gt;&lt;/p&gt;
+
+&lt;p&gt;Then we have to obtain an &lt;a href="https://appleid.apple.com/"&gt;appleID&lt;/a&gt; including submitting a credit card.
+The good news is that they won't charge you.  We just need to obtain
+the xcode which has Apple's development tools.  The only ones I have
+ever used are the compilers which are FREE software.  Bottom line is,
+legally they can't charge for them (&lt;a href="https://www.gnu.org/philosophy/apsl.html"&gt;copyleft&lt;/a&gt;). Search in Google for 
+"xCode download".  It will automatically detect your OS and if you have
+Mac OS X installed, it will include the free button you need to press
+to download it.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/xCode.png" width="350px" alt="xCode" title="xCode"&gt;&lt;/p&gt;
+
+&lt;p&gt;When it finishes downloading it will automatically install and and you 
+will see the picture below. The only difference is a small button which 
+now says installed. (Yay!)&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/xCodeInstalled.png" width="350px" alt="xCodeInstalled" title="xCodeInstalled"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you have any trouble sounding condescending, find a Unix user to
+show you how it's done. ~Scott Adams&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Obtain an alternate windowing library&lt;/h1&gt;
+&lt;p&gt;The next step is to download the xQuartz project which let's the free
+software on your machine open new windows.  Software needs to open new
+windows if it needs to warn you about something so this is an
+essential function.  You can find it at this &lt;a href="http://xquartz.macosforge.org/landing/"&gt;xQuartz link&lt;/a&gt;.  The file
+is a dmg.  Since this is not an official Apple product it will be
+saved in downloads.  &lt;a href="http://www.ofzenandcomputing.com/how-to-install-dmg-files-mac/"&gt;Here&lt;/a&gt; is a link that explains in detail how to
+install a dmg file.  A dmg is disc image file.  You need to left click
+on it. That will open an empty box.  See picture below.  Double click
+on the box and that will start an installer.  You will need to put in
+your password. Also see picture further below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/xQuartzPkg.png" width="350px" alt="xQuartzPkg" title="xQuartzPkg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/xQuartzInstaller.png" width="350px" alt="xQuartzInstalled" title="xQuartzInstalled"&gt;&lt;/p&gt;
+
+&lt;p&gt;You have to log back in and out for xQuartz to take effect.&lt;/p&gt;
+&lt;h1&gt;Obtain a package manager&lt;/h1&gt;
+&lt;p&gt;Most distributions of Linux come with a package manager to sort out which
+software depends on which other libraries.  These were a huge innovation
+in the Linux world.  And there is a package manager for Mac OS X. It is 
+called &lt;a href="http://brew.sh/"&gt;Homebrew&lt;/a&gt;. To install it we are going to need the terminal which
+is hard to find on a Mac.  You need to left click the launcher icon.  See
+picture below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/launcher.png" width="350px" alt="launcher" title="launcher"&gt;&lt;/p&gt;
+
+&lt;p&gt;Then you need to find the terminal.  It is hiding in the other icon. See
+the picture below and left click the similar image on your Mac.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/otherIcon.png" width="350px" alt="otherIcon" title="otherIcon"&gt;&lt;/p&gt;
+
+&lt;p&gt;Then left click the terminal icon, pictured below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/terminalIcon.png" width="350px" alt="terminalIcon" title="terminalIcon"&gt;&lt;/p&gt;
+
+&lt;p&gt;Now copy the Homebrew installation script (using command-C to copy and 
+command V to paste) and paste it inside the terminal as pictured below:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/homebrew.png" width="350px" alt="homebrew" title="homebrew"&gt;&lt;/p&gt;
+
+&lt;p&gt;Now press the [enter key].  You will be prompted for your password.  When
+Homebrew finishes type &lt;code&gt;brew doctor&lt;/code&gt; at the prompt. If all goes well
+you will get a positive message.  As &lt;a href="http://zmjones.com/mac-setup/"&gt;Zed Jones&lt;/a&gt; points out, we still need
+to manually set the path. In the terminal type:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo emacs /etc/paths&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You will have to change the file to look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/usr/local/bin
+/usr/bin
+/bin
+/usr/sbin
+/sbin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Type Ctrl-x Ctrl-s to save it and Ctrl-x Ctrl-c to quit.&lt;/p&gt;
+&lt;h1&gt;Obtain git&lt;/h1&gt;
+&lt;p&gt;The first thing we need is git. Git is the source control and
+collaboration software that is most popular in the FREE software
+world. Type&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Obtain emacs&lt;/h1&gt;
+&lt;p&gt;In order to be able to manipulate the files that contain our data and 
+present our output, we need to obtain our editor, Emacs.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install emacs --cocoa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here again there are some quirks.  On Linux, we would simply use the
+Emacs package manager but on Mac we have used the package manager
+Homebrew so the Emacs package manager gui install button won't install
+because of permission problems.  So we have to use the command interactive 
+commands from Emacs.  No big deal, once you figure it out but it took a 
+while to find it. I found this &lt;a href="http://howardabrams.com/projects/dot-files/emacs.html"&gt;post&lt;/a&gt; helpful.  So we need to set up the 
+Emacs repositories by creating a &lt;em&gt;.emacs&lt;/em&gt; file. Any file with a '.' in front
+is a hidden configuration file.  It will not appear when you type &lt;code&gt;ls&lt;/code&gt; for 
+list files at the command prompt.  You can edit them in Emacs &lt;code&gt;C-x C-f .emacs&lt;/code&gt;.
+Now we have to add the code below.  (Used &lt;code&gt;Command-C&lt;/code&gt; to copy it and &lt;code&gt;Ctrl-Y&lt;/code&gt;
+in Emacs to paste/yank it.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;archives&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;org&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://orgmode.org/elpa/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;gnu&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://elpa.gnu.org/packages/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;melpa&amp;quot;&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://melpa.milkbox.net/packages/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;                         &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;marmalade&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://marmalade-repo.org/packages/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;initialize&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now just after this we can specify a programmatic way to check which
+packages are installed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;filter&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;condp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Emacs Lisp doesn’t come with a ‘filter’ function to keep elements that satisfy&lt;/span&gt;
+&lt;span class="s"&gt;a conditional and excise the elements that do not satisfy it. One can use ‘mapcar’&lt;/span&gt;
+&lt;span class="s"&gt;to iterate over a list with a conditional, and then use ‘delq’ to remove the ‘nil’&lt;/span&gt;
+&lt;span class="s"&gt;values.&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;delq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;nil&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;mapcar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;condp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;inverse-filter&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;condp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;A filter function, but returns a list of the entries that don&amp;#39;t match the predicate.&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;delq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;nil&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;mapcar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;funcall&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;condp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;lst&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;packages-install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Given a list of packages, this will install them from the standard locations.&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;to-install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;inverse-filter&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;package-installed-p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to-install&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;package-refresh-contents&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;dolist&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;it&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;to-install&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;package-install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;it&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;delete-other-windows&lt;/span&gt;&lt;span class="p"&gt;)))))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Emacs package to get the right environment&lt;/h1&gt;
+&lt;p&gt;Now the first thing we should do is correct for another Mac induced 
+problem. An Emacs instance started from the graphical user interface
+will have a different environment than a sell in a terminal window.
+This happens because OS X does not run a shell during login.  If the
+environment is different you will get weird behavior when Emacs calls
+external utilities like make.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;package&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;RET&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;exec&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;path&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;from&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;initialize&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then in the &lt;code&gt;.emacs&lt;/code&gt; file add the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;exec-path-from-shell)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;memq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;system&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;(mac ns))&lt;/span&gt;
+&lt;span class="err"&gt;    (exec-path-from-shell-initialize))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;At this point quit emacs &lt;code&gt;C-x C-c&lt;/code&gt; and restart. &lt;/p&gt;
+&lt;h1&gt;Emacs package to get the communicate with R (ESS)&lt;/h1&gt;
+&lt;p&gt;Here again type &lt;code&gt;M-x package-install RET ess RET&lt;/code&gt;.  This will 
+install ESS. Find the &lt;em&gt;.emacs&lt;/em&gt; file by typin &lt;code&gt;C-x C-f .emacs&lt;/code&gt;
+and add the following code.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;;;ess-mode configuration&lt;/span&gt;
+&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;ask&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;directory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;inferior&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;R&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;program&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/usr/local/bin/R&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;setq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ess&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;process&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;R&amp;quot;&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;require&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ess-site)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Install R&lt;/h1&gt;
+&lt;p&gt;Another weird quirk is that xCode has removed gcc which is the most
+common set of compilers in the world.  They are what R expects to
+encounter.  There are two alternatives.  You can build a late version
+of the compilers via the instructions found at this &lt;a href="http://apple.stackexchange.com/questions/38222/how-do-i-install-gcc-via-homebrew"&gt;link&lt;/a&gt; &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;brew&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;raw&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Homebrew&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;homebrew&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;versions&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;gcc48&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rb&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Where [flags] should include all the required languages,
+e.g. (&amp;#x2013;enable-cxx &amp;#x2013;enable-fortran).  Also see this &lt;a href="https://coderwall.com/p/lqpp8w"&gt;link&lt;/a&gt; for an
+example of how to create a symlink to make a newer version the
+default.  However I got away with just installing version 4.2 (a seven
+year old version of the gcc compilers by installing XCode Command Line
+Tools. These are separate from XCode which I found confusing.  You can
+install them with xcode-select &amp;#x2013;install).  Then you can just type&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew install gcc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that &lt;code&gt;gcc&lt;/code&gt; is installed you can install R.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew tap homebrew/science #the R formula has been moved here
+brew install r
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can test the installation by typing &lt;code&gt;M-x R&lt;/code&gt; in Emacs and 
+you should have R inside of Emacs.  Next post will get Python 
+set up.  I am betting our 4.2 version of gcc is not going to 
+be good enough.&lt;/p&gt;
+&lt;h1&gt;Dedication&lt;/h1&gt;
+&lt;p&gt;This post is dedicated to Matt Gold and the &lt;a href="http://digitalfellows.commons.gc.cuny.edu/"&gt;GC Digital Fellows&lt;/a&gt; project
+who were able to obtain for me not only access to a Mac but insured
+that I would have admin rights to install software and create this 
+tutorial. They bare no responsibility for any mistakes or omissions 
+which are solely the responsiblity of the author.&lt;/p&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category><category term="OS X"></category></entry><entry><title>Descriptives</title><link href="r-descriptives-ess.html" rel="alternate"></link><published>2014-07-24T15:03:00-04:00</published><updated>2014-07-24T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-24:r-descriptives-ess.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. &lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~Bobby Bragan, 1963&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Encountering data&lt;/h1&gt;
+&lt;p&gt;Here we will describe the techniques you should use to give yourself and
+your readers/bosses/teachers …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. &lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~Bobby Bragan, 1963&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Encountering data&lt;/h1&gt;
+&lt;p&gt;Here we will describe the techniques you should use to give yourself and
+your readers/bosses/teachers a good feel of the data. This is often called
+&lt;em&gt;descriptive statistics&lt;/em&gt;.  In this context a &lt;em&gt;statistic&lt;/em&gt; is a single number
+that summarizes your data. It is important to know what type of data you have
+and the &lt;em&gt;level of measurement&lt;/em&gt; but we will put off that discussion for a 
+a few paragraphs.  I am also putting off a discussion of why statistics is 
+important and I am just assuming that this is something you have to do in
+order to do your research.&lt;/p&gt;
+&lt;p&gt;Here is the daunting part, your data is usually a long list of numbers.  How 
+do you describe &lt;em&gt;that&lt;/em&gt;?  Usually the first technique you want to use is to 
+graph all of the numbers together.  In fact all of the data has a special name. &lt;/p&gt;
+&lt;p&gt;Your data is called the sample distribution.  How do we get that data
+into R?  Again, we will defer that question. One nice feature of R is
+that it has some data built in.  For example, it has the average amount of 
+precipitation for 70 cities in the United States.  We can use this data to 
+illustrate a few techniqeus that you can use on your own data.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;str(precip)
+precip[1:4]
+
+Named num [1:70] 67 54.7 7 48.5 14 17.2 20.7 13 43.4 40.2 ...
+&lt;span class="k"&gt;-&lt;/span&gt; attr(*, &amp;quot;names&amp;quot;)= chr [1:70] &amp;quot;Mobile&amp;quot; &amp;quot;Juneau&amp;quot; &amp;quot;Phoenix&amp;quot; &amp;quot;Little Rock&amp;quot; ...
+    Mobile      Juneau     Phoenix Little Rock 
+      67.0        54.7         7.0        48.5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;str&lt;/code&gt; command gets the structure of the data.  There are a few commands 
+for this &lt;code&gt;summary&lt;/code&gt; is the other one I sometimes use. And &lt;code&gt;precip[1:4]&lt;/code&gt; gave 
+us the first four elements.  Here are some other built in datasets&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;str(rivers)
+str(discoveries)
+
+num [1:141] 735 320 325 392 524 ...
+Time-Series [1:100] from 1860 to 1959: 5 3 0 2 0 3 2 3 6 1 ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The first thing we want to get a sense of is how the numbers are
+distributed.  The best way to this is to use a &lt;em&gt;histogram&lt;/em&gt;.  A
+histogram is a bar chart where we bin the count the number of
+observations that fall in a defined range.  I allows us to quickly
+notice important properties. &lt;code&gt;R&lt;/code&gt; has a function for computing this
+built in.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;hist(precip)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;We can imporove this by passing two parameters.  The first is designating 
+a color (&lt;code&gt;col&lt;/code&gt;) and the second is not computing the frequency counts but
+instead dividing by the total observations in our sample.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;hist(precip,col=&amp;quot;steel blue&amp;quot;,freq=FALSE)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_imp.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Two important and frustrating things to note about histograms.  They
+are highly dependant on the number of bins we choose.  We will show an
+example below of manually setting the bins.  Second there is no
+general algorithm for setting the number of bins.  We can only repeat
+it for an increasing number of bins and stop when the shape is stable.
+Now we are also supressing the printing of a title.  For more
+parameters of &lt;code&gt;hist&lt;/code&gt; type &lt;code&gt;?hist&lt;/code&gt; at the console prompt.  Histograms
+were first introduced by Karl Pearson.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;hist(precip,breaks=10,col=&amp;quot;steel blue&amp;quot;,freq=FALSE)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_10.jpg"&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;hist(precip,breaks=200,col=&amp;quot;steel blue&amp;quot;,freq=FALSE)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt="img" src="../../images/hist_precip_200.jpg"&gt;&lt;/p&gt;
+&lt;h1&gt;The ugly history of statistics&lt;/h1&gt;
+&lt;p&gt;Karl Pearson was a British mathematician. He is considered the founder
+of mathematical statistics.  Dr. Pearson established the first
+department of statistics in the world at University College, in
+London. However, he was also the founding editor of the &lt;em&gt;Annals of
+Eugenics&lt;/em&gt;.  Dr. Pearson advocated for the restriction of immigration
+by Jewish people to Britain on the basis that ``this alien Jewish
+population is somewhat inferior physically and mentally to the native
+population.'' &lt;sup&gt;&lt;a id="fnr.2" class="footref" href="#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;  He also thought that war between the races was
+inevitable.&lt;/p&gt;
+&lt;p&gt;A number of prominent founders of statistics and biostatistics shared
+Dr. Pearson's views.  I find that these embarassing facts are often
+left out fo the history of statistics.  I think it is important to
+remember these ugly warts so that we can separate these important
+contributions from the ugly politics of their inventors allowing us to
+use our research to make rather than inhibit social progress.&lt;/p&gt;
+&lt;h1&gt;Stem and leaf plots&lt;/h1&gt;
+&lt;p&gt;Another older technique for exploring data is to draw a stem and leaf
+plot.  These were popularized by John Tukey in his book &lt;em&gt;Exploratory Data
+Analysis&lt;/em&gt; &lt;sup&gt;&lt;a id="fnr.3" class="footref" href="#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt;.  The leading digits of the data are the &lt;em&gt;stems&lt;/em&gt; while
+the final digits are the &lt;em&gt;leaves&lt;/em&gt;.  The graph is drawn left to right with 
+a vertical line separating the stem and leaves.&lt;/p&gt;
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara"&gt;Robert Randall Bragan an American shortstop, catcher, manager, and coach in Major League Baseball.&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" class="footnum" href="#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara"&gt;Pearson, Karl, &amp; Moul, Margaret (1925). "The Problem of Alien Immigration into Great Britain, Illustrated by an Examination of Russian and Polish Jewish Children", Part II, Annals of Eugenics, Vol. I, No. 2, pp. 125-126.&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.3" class="footnum" href="#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara"&gt;ukey, John W. (1977). Exploratory Data Analysis (1 ed.). Pearson. ISBN 0-201-07616-0.&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>R foundations with ESS</title><link href="r-foundation-ess.html" rel="alternate"></link><published>2014-07-04T15:03:00-04:00</published><updated>2014-07-04T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-04:r-foundation-ess.html</id><content type="html">&lt;h1&gt;R foundations&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In God we trust. All others must bring data. ~ W. Edwards Demming&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;R console&lt;/h2&gt;
+&lt;p&gt;Start an &lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; buffer through &lt;em&gt;ess&lt;/em&gt; by typing &lt;code&gt;M-x R&lt;/code&gt;.  See the earlier
+tutorial &lt;a href="ess.md"&gt;here&lt;/a&gt; or &lt;a href="Emacs-basics-for-stats.md"&gt;here&lt;/a&gt; if that is mystery. At the console type:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;20&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Emacs Speaks Statistics (ESS) Tutorial</title><link href="r-tutorial-ess.html" rel="alternate"></link><published>2014-07-02T15:03:00-04:00</published><updated>2014-07-02T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-02:r-tutorial-ess.html</id><summary type="html">&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All models are wrong, but some are useful.&lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~George E. P. Box&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why is ESS useful?&lt;/h2&gt;
+&lt;p&gt;ESS makes your command history searchable and modifiable. When you
+start doing statistics you think you will always remember what you did
+and instantly recall why you did …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All models are wrong, but some are useful.&lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~George E. P. Box&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why is ESS useful?&lt;/h2&gt;
+&lt;p&gt;ESS makes your command history searchable and modifiable. When you
+start doing statistics you think you will always remember what you did
+and instantly recall why you did it with that particular data. As you
+work on more projects you realize that is a hopeless task. But you
+will get questions on what you have done, especially if it was novel
+or well thought out.  These questions may not start until months after
+your work is done.  Having a command history is the bare minimum of
+what you will need to support your work.  We will talk about creating
+&lt;em&gt;replicable research&lt;/em&gt; later in these tutorials. Unbelievably, this is
+a topic almost never addressed in introductory courses.&lt;/p&gt;
+&lt;p&gt;ESS does other tasks for you as well that make interacting with your
+data easier.  ESS gives you command line completion of both object
+(data) and file names which saves on both typing and mistakes. It
+creates so-called &lt;em&gt;Hot Keys&lt;/em&gt; for quick performance of wrote tasks.  It
+records a complete transcript of your R session.  It provides an
+interface to the R help system. It allows you to edit your data.  It
+provides highlighting and proper indentation which makes your code
+easier to read for you and others.  It allows you to run either parts 
+of files (called regions) or entire files.&lt;/p&gt;
+&lt;h2&gt;ESS history&lt;/h2&gt;
+&lt;p&gt;The project has been going since before the invention of R.  It was
+around in 1989, when it was used to interact with R's proprietary
+antecedent Bell Lab's S-language built by Richard Chambers. I am a a
+geek about the history of scientific and mathematical ideas. If you
+are interested in the history, the &lt;a href="http://en.wikipedia.org/wiki/S_%2528programming_language%2529"&gt;wikipedia&lt;/a&gt; article is a good start.
+You can also check out the &lt;a href="http://stat.bell-labs.com/S/"&gt;S-page&lt;/a&gt; at Bell Labs.  For any academic work
+I strongly suggest citing the published paper on ESS which is available
+at this &lt;a href="http://biostats.bepress.com/uwbiostat/paper173/"&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Installing ESS&lt;/h2&gt;
+&lt;p&gt;There are a number of ways to install ESS.  I will create a separate 
+series of posts on this.  For many, this will be your first foray
+into FREE software and installing for the first time is not easy,
+particularly on a Mac.  Here is a much to brief set of instructions:&lt;/p&gt;
+&lt;h3&gt;Linux&lt;/h3&gt;
+&lt;h4&gt;Beginner&lt;/h4&gt;
+&lt;p&gt;Install from the ELPA package manager.  You should search for ESS
+(C-s, where C-s means press the Control and "s" keys at the same
+time).  Refer to Xah Lee's &lt;a href="http://ergoemacs.org/emacs/emacs_package_system.html"&gt;tutorial&lt;/a&gt; on loading from the packackage 
+manager.&lt;/p&gt;
+&lt;h4&gt;Advanced&lt;/h4&gt;
+&lt;p&gt;Download the &lt;a href="http://ess.r-project.org/index.php?Section%3Ddownload"&gt;package&lt;/a&gt;. If you do not have a hidden file called
+&lt;em&gt;home/username&lt;/em&gt;.emacs create one and add the line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;load&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;~/langs/emacs/elisp-ds/ess/lisp/ess-site&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;Trap&lt;/h4&gt;
+&lt;p&gt;Do not install Emacs and ESS from the Ubuntu or Debian repositories.  They
+are usually hoplelessly out of date.&lt;/p&gt;
+&lt;h3&gt;Windows&lt;/h3&gt;
+&lt;p&gt;Download the emacs distribution for &lt;a href="http://vgoulet.act.ulaval.ca/en/emacs/windows/"&gt;Windows&lt;/a&gt; from Vincent Goulet.
+Remember this is an executable file and you will have to allow it to
+work.&lt;/p&gt;
+&lt;h3&gt;Mac OS X&lt;/h3&gt;
+&lt;p&gt;Download the emacs distribution for &lt;a href="http://vgoulet.act.ulaval.ca/en/emacs/mac/"&gt;Mac OS X&lt;/a&gt;  Vincent Goulet.
+Remember this is an executable file and you will have to allow it to
+work. Also you have to drag the downloaded file to your apps file. I
+have never understood the point of this and I forget to how to do it 
+every time.  Here is a &lt;a href="http://apple.stackexchange.com/questions/15306/why-do-i-have-to-drag-my-new-apps-into-the-application-folder"&gt;reference and explanation&lt;/a&gt;.  It always makes me 
+think of how Richard Stallman who founded the Free Software movement
+hated Steve Jobs:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Steve Jobs, the pioneer of the computer as a jail made cool, designed
+to sever fools from their freedom, has died.&lt;/p&gt;
+&lt;p&gt;As Chicago Mayor Harold Washington said of the corrupt former Mayor
+Daley, "I'm not glad he's dead, but I'm glad he's gone." Nobody
+deserves to have to die &amp;#x2013; not Jobs, not Mr. Bill, not even people
+guilty of bigger evils than theirs. But we all deserve the end of
+Jobs' malign influence on people's computing.&lt;/p&gt;
+&lt;p&gt;Unfortunately, that influence continues despite his absence. We can
+only hope his successors, as they attempt to carry on his legacy, will
+be less effective. ~Richard M Stallman&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../../images/rms.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;h2&gt;Testing your installation&lt;/h2&gt;
+&lt;p&gt;You have to have installed R.  The instructions are &lt;a href="http://cran.r-project.org/doc/manuals/r-release/R-admin.html"&gt;here&lt;/a&gt;. You have to
+have installed Emacs and ESS.  For Windows and Mac Users, you get both
+Emacs and ESS when you download from Vincent Goulet. Now type &lt;code&gt;M-x R&lt;/code&gt;.
+This will start an R process within a new buffer.  These buffers are
+called &lt;em&gt;inferior&lt;/em&gt; as they run a process under Emacs.  The ESS manual
+calls them &lt;em&gt;iESS&lt;/em&gt; buffers.&lt;/p&gt;
+&lt;p&gt;If something went wrong, note the error and search.  If nothing happened
+try searching "Emacs can't find my R installation."&lt;/p&gt;
+&lt;h2&gt;Editing R code&lt;/h2&gt;
+&lt;p&gt;Indentation is automatic.  If you want to do something special use the
+command &lt;code&gt;M-x indent region&lt;/code&gt;. If you don't understand what that means
+please refer to my earlier tutorial on &lt;a href="http://EvanMisshula.github.io/r-tutorial-emacs-basics.html"&gt;basic emacs&lt;/a&gt;. It also resets the
+underscore "_" to the assignment arrow "&amp;lt;-" which saves a keystroke
+many times. If not you can use the underscore by typing &lt;code&gt;M-q _&lt;/code&gt; or just
+"_" twice.  You can tab complete objects (data) with &lt;code&gt;C-c TAB&lt;/code&gt; in buffers
+that end with .R extension.  It is by the file extension that Emacs 
+knows what mode to use.&lt;sup&gt;&lt;a id="fnr.2" class="footref" href="#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Here are the key-bindings for moving around functions:&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class="org-left" /&gt;
+
+&lt;col  class="org-left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;Keybinding&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;C-M-a&lt;/td&gt;
+&lt;td class="org-left"&gt;ess-beginning-of-function&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;C-M-e&lt;/td&gt;
+&lt;td class="org-left"&gt;ess-end-of-function&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;C-M-h&lt;/td&gt;
+&lt;td class="org-left"&gt;ess-mark-function&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;Viewing help files&lt;/h2&gt;
+&lt;p&gt;You can view a help file two ways.  If you are in the R console:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;?pbinorm&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you are not:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C-c C-v RET pbinom RET&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;The R session&lt;/h1&gt;
+&lt;p&gt;In the &lt;code&gt;*R*&lt;/code&gt; buffer you can run any R command.  R and statistics will be 
+the next tutorial.  You can recall your command history.&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class="org-left" /&gt;
+
+&lt;col  class="org-left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;keybinding&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;M-p&lt;/td&gt;
+&lt;td class="org-left"&gt;comint-previous-input&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;M-n&lt;/td&gt;
+&lt;td class="org-left"&gt;comint-next-input&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;M-r&lt;/td&gt;
+&lt;td class="org-left"&gt;comint-previous-matching-input&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1&gt;Transcripts&lt;/h1&gt;
+&lt;p&gt;You can save an R buffer to create a transcript. You can clean up the
+transcript with &lt;code&gt;M-x ess-transcript-clean-buffer&lt;/code&gt;.  You can run
+multiple sessions of R.=M-x R= multiple times will generate multiple
+processes, e.g. &lt;code&gt;*R*&lt;/code&gt;, &lt;code&gt;*R:2*&lt;/code&gt;, &amp;#x2026;&lt;/p&gt;
+&lt;h1&gt;Sending code from an R buffer to an R session&lt;/h1&gt;
+&lt;p&gt;If you only have one R session (typical), it will automatically be
+associated with the R buffer.  Otherwise you can associate the buffer
+with &lt;code&gt;C-c C-s&lt;/code&gt;.  Here are the bindings for sending code:&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class="org-left" /&gt;
+
+&lt;col  class="org-left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;Keybinding&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c C-j`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-line`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c M-j`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-line-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c C-f`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-function`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c M-f`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-function-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c C-r`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-region`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c M-r`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-region-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c C-b`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-buffer`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c M-b`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-buffer-and-go`&lt;/td&gt;
+&lt;/tr&gt;
+
+
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c C-n`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-line-and-step`&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;About 90% of the time I only use:&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col  class="org-left" /&gt;
+
+&lt;col  class="org-left" /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th scope="col" class="org-left"&gt;Keybinding&lt;/th&gt;
+&lt;th scope="col" class="org-left"&gt;Function&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;`C-c C-r`&lt;/td&gt;
+&lt;td class="org-left"&gt;`ess-eval-region`&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;Next we are on to statistics!!&lt;/h2&gt;
+
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.1" class="footnum" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara"&gt;Box &amp; Draper (1987), Empirical model-building and response surfaces, Wiley, p. 424.&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class="footdef"&gt;&lt;sup&gt;&lt;a id="fn.2" class="footnum" href="#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;div class="footpara"&gt;Windows 8 hides the file extension by default. You can change
+this evil behavior by seting the environment variable.&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to basic Emacs for statistics</title><link href="r-tutorial-emacs-basics.html" rel="alternate"></link><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-01:r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why Emacs?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This section is borrows heavily from &lt;a href="http://www.damtp.cam.ac.uk/user/sje30/ess11/"&gt;Stephen Elgen&lt;/a&gt; and &lt;a href="http://web.psung.name/emacs/2009/part1.html"&gt;Phil Sung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The long answer (though still far from complete)&lt;/h3&gt;
+&lt;p&gt;Emacs provides the same editing commands available for each language
+you are using.  This is a big advantage …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why Emacs?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This section is borrows heavily from &lt;a href="http://www.damtp.cam.ac.uk/user/sje30/ess11/"&gt;Stephen Elgen&lt;/a&gt; and &lt;a href="http://web.psung.name/emacs/2009/part1.html"&gt;Phil Sung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The long answer (though still far from complete)&lt;/h3&gt;
+&lt;p&gt;Emacs provides the same editing commands available for each language
+you are using.  This is a big advantage if you are using a variety of
+tools to solve a given problem. Right now you care about using R.
+Soon you will realize that you may need a database.  Databases don't
+naturally speak R.  They speak Structured Querey Language (SQL).
+Emacs can speak SQL.  You may need to create a web program.  You will
+need to speak Python or Ruby.  Emacs can speak python or ruby.&lt;/p&gt;
+&lt;p&gt;Instead of a graph, you may want to create an interactive
+vizualization using d3.js.  Again Emacs can edit javascript.  You may
+need to turn your report into a LaTex report, again Emacs speaks Latex
+or HTML.  &lt;/p&gt;
+&lt;p&gt;Otherwise you might use R-studio for R, Eclipse for python,
+Gedit or Notepad++ for LaTex, Webstorm for Javascript, Netbeans for
+Java, phpMyAdmin for SQL.  You don't want to learn a new editor every
+time you use a new tool.&lt;/p&gt;
+&lt;p&gt;Also, as we will see, there are a large set of tools available at all
+times. Emacs lets us move text between tasks easily.  Because Emacs
+exposes its source code, it easy to extend.  There is also a facillity
+for creating macros to accomplish one off tasks.  The language Emacs
+is written in, Elisp, allows us to add new features. These new
+features don't require you to restart Emacs, it is a fully dynamic
+environment.&lt;/p&gt;
+&lt;h3&gt;The short answer&lt;/h3&gt;
+&lt;p&gt;Emacs is an editor for code. Emacs is an Integrated Development
+Environment (IDE) for any language you will ever need (including R).
+Emacs is a terminal emulator. Emacs is a file manager.  And Emacs can
+show the differences between files and integrate with all version control
+systems.  If you want to build something, then Emacs is the right environment&lt;/p&gt;
+&lt;h2&gt;History of Emacs&lt;/h2&gt;
+&lt;h3&gt;Brief outline&lt;/h3&gt;
+&lt;p&gt;The chief architect of Emacs is Richard Stallman (&lt;a href="https://www.fsf.org/about/staff-and-board"&gt;RMS&lt;/a&gt;).  He is the
+founder of the Free Software foundation. Richard developed a number of
+widely used software components of GNU, including the original Emacs,
+the GNU Compiler Collection, the GNU symbolic debugger (gdb), GNU
+Emacs, and various other programs for the GNU operating system. He
+invented the idea of copyleft and licenses that allow for copying.
+When he invented it, he and the other principal inventor &lt;a href="https://labs.oracle.com/pls/apex/f?p%3Dlabs:bio:0:120"&gt;Guy Steele&lt;/a&gt;
+were in researchers at the artificial intelligence lab at MIT, &lt;a href="http://www.csail.mit.edu/"&gt;CSAIL&lt;/a&gt;.
+They were both graduate students of Gerald J Sussman (&lt;a href="http://groups.csail.mit.edu/mac/users/gjs/biography.html"&gt;GJS&lt;/a&gt;) who was
+working with lisp variant languages to solve decision problems.&lt;/p&gt;
+&lt;p&gt;Emacs has evolved from a terminal only editor to one with a rich
+graphical support.  Emacs is capable through (tramp mode) of editing
+files on remote machines.  This means that you can edit files that
+need to run on a machine that you share such as an Amazon cluster
+(AWS) or a super computer. Don't worry we will start much smaller!&lt;/p&gt;
+&lt;p&gt;Emacs development has been undergoing a renissaince since the
+development of org-mode.  Prior development cycles had been slow.  As
+of this writing, the latest Emacs version is 24.3 and org-mode is
+8.2.5.  Prior development cycles had been slow.  Also in the 1990's
+Emacs split with more graphic support being available &lt;a href="http://www.xemacs.org/"&gt;XEmacs&lt;/a&gt;.  At
+least two other variants are still maintained &lt;a href="http://aquamacs.org/"&gt;Aquamacs&lt;/a&gt; for Mac OS X and
+&lt;a href="http://ergoemacs.org/"&gt;Ergo-Emacs&lt;/a&gt; which claims to be easier on your fingers.  The inventor of
+Ergo-Emacs, &lt;a href="http://xahlee.org/"&gt;Xah Lee&lt;/a&gt;, is a prolific contributor of tutorials and other
+resources to the Emacs community.&lt;/p&gt;
+&lt;h2&gt;Where do your documents live?&lt;/h2&gt;
+&lt;p&gt;Your documents live on Disk.  However if you use a modern graphical 
+user interface it is not always easy to find out where the document 
+you care about is.  Your docuents folder is a subdirectory.  My 
+user name is 'evan'. In linux, my documents are in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/home/evan/Documents
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In Mac OS X and Windows 8, my documents are in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/Users/evan/Documents
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You create a document by asking Emacs to find a document that does not
+exist yet.  Before we can do this you have to understand the instructions
+this tutorial is going to give.  So we need to define certain keystrokes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TAB&lt;/code&gt; is the TAB (indent) key.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;RET&lt;/code&gt; is the Return (carriage return, enter) key.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C-h&lt;/code&gt; means press control key AND ``h'' together&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ESC-h&lt;/code&gt; means press ESC key THEN ``h''&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;M-h&lt;/code&gt; means press ALT or Meta key AND ``h'' together.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;M-C-h&lt;/code&gt; means press Meta or Alt while pressing  h and control key.  OR
+    (if no meta/alt): ESC THEN (control and h keys together).&lt;/li&gt;
+&lt;li&gt;Older keyboards (and sometimes older Macs) without ALT or Meta
+    lead to confusion between ESC and Meta, but ideally they should
+    be different.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To do this start Emacs and find the file ``practice.org''.  So if you are 
+on Linux:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C-x C-f /home/evan/Documents/practice.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you are on Windows or Mac:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C-x C-f /Users/evan/Documents/practice.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you see a blank screen, you have done it right.&lt;/p&gt;
+&lt;h2&gt;Every time you press a key&amp;#x2026;you call a function&lt;/h2&gt;
+&lt;p&gt;This is going to seem pedantic but I am betting you will refer back to
+this.  It is easy to get lost with keypresses, keystrokes and
+keybindings. When you type the letter "a", that is called a &lt;em&gt;keystroke&lt;/em&gt;.
+A &lt;em&gt;keybinding&lt;/em&gt; is the function that is bound to a combiantion of
+&lt;em&gt;keystrokes&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;One of the most important keybindings is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;M-x&lt;/code&gt; is bound to execute-extended-command, which allows you to run a
+    command by name (there are many commands that are not bound to
+    keys).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(Rember that the &lt;code&gt;M-x&lt;/code&gt; is probably &lt;code&gt;Alt-x&lt;/code&gt; on your machine.) Another
+important keystroke combination is &lt;code&gt;C-g&lt;/code&gt; is bound to Quit which will
+end the command.  If you have typed &lt;code&gt;M-x&lt;/code&gt; now, then type &lt;code&gt;C-g&lt;/code&gt; to
+Quit.  Mapping between keybindings and commands is flexible; can
+change on fly.&lt;/p&gt;
+&lt;h2&gt;Moving around&lt;/h2&gt;
+&lt;p&gt;I find this picture from Phil Sung helps me remember how to move:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/EvAtWork.png" width="300px" alt="img" title="arrows.png"&gt;&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;forward&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;screenful&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;backward&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;one&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;screenful&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Clear&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;redraw&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;screen&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Meta&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moves&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;forward&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;-&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;Meta&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;moves&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;back&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;Meta&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;up&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;up&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;paragraph&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;Meta&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;down&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;down&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;paragraph&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;Meta&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;less&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;than&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="n"&gt;Meta&lt;/span&gt;&lt;span class="o"&gt;-&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;greater&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;than&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;move&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Instead of the squiggly brace &lt;code&gt;{&lt;/code&gt; or &lt;code&gt;}&lt;/code&gt; the up or down arrow will work
+as well.&lt;/p&gt;
+&lt;h2&gt;Cut and paste&lt;/h2&gt;
+&lt;p&gt;Instead of &lt;code&gt;C-c&lt;/code&gt; to copy and &lt;code&gt;C-v&lt;/code&gt; to paste, Emacs has older
+keybindings. This seems strange&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;Delete&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;Kill&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;cursor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;position&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Recover&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Paste&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Yank&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;killed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;text&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;repeat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;M&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;recover&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;former&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;killed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;text&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;after&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;
+&lt;span class="w"&gt;       &lt;/span&gt;&lt;span class="n"&gt;Repeat&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;go&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;back&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;through&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;stack&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;_U_ndo&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;multiple&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;undo&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;redo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Here is the payoff:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;point&lt;/em&gt; is current location of cursor&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;mark&lt;/em&gt; &lt;code&gt;C-SPC&lt;/code&gt; to define another point&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;region&lt;/em&gt; is text between mark and point&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-w&lt;/code&gt; kills from point to mark.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-y&lt;/code&gt; yanks that text back.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Loading/saving files&lt;/h2&gt;
+&lt;p&gt;Now we can look at the commands to find files and see the buffers
+we have loaded into Emacs.  Emacs actually does not save all of your
+changes to the file.  Emacs makes a copy of your file on disk to a
+copy, called a &lt;em&gt;buffer&lt;/em&gt;. You make all of your changes to the buffer and 
+when you write the file to disk, it replaces the file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C-x C-f  _F_ind a file
+C-x C-s  _S_ave the file
+C-s C-w  _W_rite the file to a new name
+If you find a second file with C-x C-f,
+the first file remains inside Emacs.
+You can switch back to it by finding it
+again with C-x C-b.  This way you can get
+quite a number of files inside Emacs.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Windows&lt;/h2&gt;
+&lt;p&gt;Here is how you work with the buffers that you have loaded into Emacs:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C-x 0      Move between windows
+           (Oh, not Zero!)
+C-x 1      One window
+           (i.e., kill all other windows).
+C-x 2      Split horizontally
+C-x 3      Split vertically
+C-x b      Switch to new _b_uffer
+C-x C-b    List _b_uffers
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Search and replace&lt;/h2&gt;
+&lt;p&gt;Here are the commands for searching and replacing:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;M-x (then) replace-string
+           Replace string
+M-x (then) query-replace-string
+           Will ask you, for each match,
+           if you really want to replace
+           the old string with the new one.
+C-s        _S_earch forward (repeat to
+           reuse past search strings)
+C-r        Search _R_everse (repeat to
+           reuse past search strings)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Quitting and getting help&lt;/h2&gt;
+&lt;p&gt;Here are the commands for quitting and getting help:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C-h or C-h ?    _H_elp
+C-h c (command) _H_elp on this _c_ommand
+
+C-u 8 (character or command)
+             Repeat character/command 8 times
+
+C-g          Stop, unhang.
+C-x C-c      Stop and exit (_c_lose) Emacs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Macros&lt;/h2&gt;
+&lt;h3&gt;Repeating yourself&lt;/h3&gt;
+&lt;p&gt;Repeat C-n ten times:&lt;/p&gt;
+&lt;p&gt;C-u 10 C-n&lt;/p&gt;
+&lt;p&gt;C-u 70 #&lt;/p&gt;
+&lt;h3&gt;Keyboard macros&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;C-x (&lt;/code&gt; lots of stuff  &lt;code&gt;C-x )&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Can include counters.  e.g.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C-x ( TAB step C-x C-k C-i RET C-x )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;will make:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;step 0
+step 1
+step 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&amp;#x2026;&lt;/p&gt;
+&lt;p&gt;(info "(emacs)Keyboard Macros")&lt;/p&gt;
+&lt;p&gt;I use this all the time to automate boring editing functions all
+the time!!&lt;/p&gt;
+&lt;h2&gt;Modes&lt;/h2&gt;
+&lt;p&gt;Modes contain specialisations (commands/variables) for different
+languages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Major modes are defined for different languages (C, latex, R,
+    python, &amp;#x2026;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Consistency across modes where possible (e.g. commands for
+    commenting, indentation).  Keybindings consistent.  &lt;em&gt;Font lock&lt;/em&gt;
+    also consistent, e.g. comments in red.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Major mode decided typically based on buffer name.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C-h m&lt;/code&gt; describes features available in current buffer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Completion&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;TAB completion where possible, e.g &lt;code&gt;M-x describe- TAB&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Getting help&lt;/h2&gt;
+&lt;p&gt;Here is how to get help:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C-h m       describe mode 
+C-h k       describe key  
+C-h i       info          
+C-h t       tutorial
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out &lt;a href="http://emacswiki.org"&gt;http://emacswiki.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It also lists cool packages (or libraries) you can add to Emacs 
+to make it do more.&lt;/p&gt;
+&lt;h2&gt;libraries&lt;/h2&gt;
+&lt;p&gt;Emacs' &lt;code&gt;load-path&lt;/code&gt; controls which directories are searched.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;init_ess&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot;initialize ess&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;locate-library&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;ess&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-to-list&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;load-path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;~/langs/emacs/org-mode/lisp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Or to look up the definition of a function, try:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;M-x find-function ess-dirs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Hooks&lt;/h2&gt;
+&lt;p&gt;Hooks are usually the way you set up Emacs to act on a file you
+want to behave in a certain way.&lt;/p&gt;
+&lt;p&gt;Hooks are run e.g. after major-mode has been created.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;defun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;init_eldoc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;add-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;emacs-lisp-mode-hook&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;&amp;#39;turn-on-eldoc-mode&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Compare the following two versions:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;;; version 1
+(defun my-ess-hook ()
+  &amp;quot;Add my keybindings to ESS mode.&amp;quot;
+  (local-set-key (kbd &amp;quot;C-j&amp;quot;) &amp;#39;ess-eval-line-and-step))
+
+(add-hook &amp;#39;R-mode-hook &amp;#39;my-ess-hook)
+
+;; version 2
+(add-hook &amp;#39;R-mode-hook
+          &amp;#39;(lambda ()  (local-set-key (kbd &amp;quot;M-RET&amp;quot;)
+                                      &amp;#39;ess-R-use-this-dir)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to Emacs Speaks Statistics</title><link href="r-tutorial-intro-ess.html" rel="alternate"></link><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-01:r-tutorial-intro-ess.html</id><summary type="html">&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
+&lt;p&gt;ESS is a library (package) for Emacs which allows it to interact with
+a number of statistical packages including S+, R, SaS, SPSS and Stata.
+For the purpose of these notes.  We will only deal with R.  It allows
+the command history to be searchable and …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
+&lt;p&gt;ESS is a library (package) for Emacs which allows it to interact with
+a number of statistical packages including S+, R, SaS, SPSS and Stata.
+For the purpose of these notes.  We will only deal with R.  It allows
+the command history to be searchable and modifiable.  It allows for the 
+command line completion of both filenames and objects.  It creates Hot-
+keys for commonly used commands in R.  It records a complete transcript 
+of our R session.  It provides a interface to the help system.  It allows
+us to edit R objects/data structures.  When we edit code in ESS, it provides
+indentation and highlighting which makes code easier to read and understand.
+Ess allows us to evaluate arbitrary regions of a file.  Finally it allows
+us to load files into R for evaluation.&lt;/p&gt;
+&lt;h1&gt;History outline&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;3 branches: S-mode, SAS-mode, Stata-mode&lt;/li&gt;
+&lt;li&gt;S-mode: 1989, 2 groups managing the project before (Bates/F
+    Ritter/E Kademan, M Meyer, DM Smith).
+    R added in 1995 (Rossini/Maechler)&lt;/li&gt;
+&lt;li&gt;SAS: '94, Tom Cook ('92, John Sall, SAS).  Integrated '95-6, Rossini&lt;/li&gt;
+&lt;li&gt;Stata-mode: 1997, Thomas Lumley. Added 1997 (Rossini).&lt;/li&gt;
+&lt;li&gt;1997: last major restructuring (``grand unification'')&lt;/li&gt;
+&lt;li&gt;2004: switch leaders: Maechler takes over&lt;/li&gt;
+&lt;/ul&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to R with Emacs-Speaks-Statistics</title><link href="r-tutorial.html" rel="alternate"></link><published>2014-06-29T00:00:00-04:00</published><updated>2014-06-29T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-06-29:r-tutorial.html</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;A number of my colleagues need to analyze data and are learning a
+programming language for the first time.  It does not need to be said,
+this is a very heavy lift and occurs in the presence of a wide diversity
+of well intentioned opinion.  It also occurs in …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;A number of my colleagues need to analyze data and are learning a
+programming language for the first time.  It does not need to be said,
+this is a very heavy lift and occurs in the presence of a wide diversity
+of well intentioned opinion.  It also occurs in the presence of academic
+bullshit.  This is not well intentioned.  It is designed to sell books and 
+software licenses.  It is my opinion that the appropriate first scripting 
+language to learn for the aspiring social scientist is &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt;. Arguements could 
+be made for perl, python or lisp.  I think these great languages can be learned
+later.  For describing relationships with data and graphing results, &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt; has a great
+set of libraries.&lt;/p&gt;
+&lt;h1&gt;R Front ends&lt;/h1&gt;
+&lt;p&gt;There are a number of front-ends for &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt;.  The most popular of which is
+R-studio. I think it leaves much to be desired.  It is also produced
+by a company that sells enhancements to &lt;a href="http://www.r-project.org/"&gt;R&lt;/a&gt; that most users will never
+need.  I find the better and more cost effective solution to be
+&lt;a href="http://ess.r-project.org/"&gt;Emacs-Speaks-Statistics (ESS)&lt;/a&gt;. Much of the power of the language comes
+from being able to read from files and streams.  Combining this with 
+the uber editor &lt;a href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; only makes sense.  For many data manipulation 
+problems the student can solve it either with either tool.&lt;/p&gt;
+&lt;p&gt;The intellectual history of this tutorial is taken from Charles
+DiMaggio's excellent &lt;a href="http://www.columbia.edu/~cjd11/charles_dimaggio/DIRE/styled-4/styled-6/"&gt;introduction to R&lt;/a&gt; and two brilliant tutorials
+from Stephen Elgen &lt;a href="http://web.warwick.ac.uk/statsdept/user2011/tutorials/Eglen.html"&gt;An introduction to ESS from 2011&lt;/a&gt; and &lt;a href="http://sje30.github.io/2014-01-07-cam/"&gt;Caimbridge R
+bootcamp&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is our introduction:&lt;/p&gt;
+&lt;h3&gt;Emacs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Why Emacs&lt;/li&gt;
+&lt;li&gt;History of Emacs&lt;/li&gt;
+&lt;li&gt;Moving around&lt;/li&gt;
+&lt;li&gt;Cut and paste&lt;/li&gt;
+&lt;li&gt;Loading/saving files&lt;/li&gt;
+&lt;li&gt;Windows&lt;/li&gt;
+&lt;li&gt;Search and replace&lt;/li&gt;
+&lt;li&gt;Macros&lt;/li&gt;
+&lt;li&gt;Modes&lt;/li&gt;
+&lt;li&gt;Completion&lt;/li&gt;
+&lt;li&gt;Getting help&lt;/li&gt;
+&lt;li&gt;libraries&lt;/li&gt;
+&lt;li&gt;Hooks&lt;/li&gt;
+&lt;li&gt;Philosophy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;ESS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Why ESS?&lt;/li&gt;
+&lt;li&gt;History of ESS&lt;/li&gt;
+&lt;li&gt;ESS Installation&lt;/li&gt;
+&lt;li&gt;Editing and viewing R code&lt;/li&gt;
+&lt;li&gt;Making comments&lt;/li&gt;
+&lt;li&gt;Indenting your code.&lt;/li&gt;
+&lt;li&gt;Viewing help files&lt;/li&gt;
+&lt;li&gt;Making help files (.Rd)&lt;/li&gt;
+&lt;li&gt;Inferior ESS Processes (&lt;code&gt;*R*&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Which version of R will it find?&lt;/li&gt;
+&lt;li&gt;What can I do in &lt;code&gt;*R*&lt;/code&gt;?&lt;/li&gt;
+&lt;li&gt;What is emacsclient?&lt;/li&gt;
+&lt;li&gt;Transcripts&lt;/li&gt;
+&lt;li&gt;How many versions of R can I run?&lt;/li&gt;
+&lt;li&gt;Sending code from an R buffer to &lt;code&gt;*R*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Customizing ESS&lt;/li&gt;
+&lt;li&gt;When things go wrong with ESS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Org Mode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;intro&lt;/li&gt;
+&lt;li&gt;exporting to LaTeX or html&lt;/li&gt;
+&lt;li&gt;R examples&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;R language&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;introduction&lt;/li&gt;
+&lt;li&gt;foundations&lt;/li&gt;
+&lt;li&gt;functions&lt;/li&gt;
+&lt;li&gt;packages&lt;/li&gt;
+&lt;li&gt;graphics&lt;/li&gt;
+&lt;li&gt;data&lt;/li&gt;
+&lt;li&gt;variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Advanced stats&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;power&lt;/li&gt;
+&lt;li&gt;web/online&lt;/li&gt;
+&lt;li&gt;bayes (multilevel, hierarchical)&lt;/li&gt;
+&lt;li&gt;spatial&lt;/li&gt;
+&lt;li&gt;meta-analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;More to come&amp;#x2026;&lt;/p&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>intro to r and ess</title><link href="r-intro.html" rel="alternate"></link><published>2014-05-19T00:00:00-04:00</published><updated>2014-05-19T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-19:r-intro.html</id><summary type="html">&lt;h1&gt;credit&lt;/h1&gt;
+&lt;p&gt;I am trying to explain the ethos and social convention of
+FREE software.  People have created software and they let you 
+use it and modify it for free.  Is only polite to extend them&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/the-good-artist-banksy.jpg" width="300px" alt="steal" style="float:left" title="banksy.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;academic courtesy and cite them for their contribution.  Also it 
+makes sense because you point …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;credit&lt;/h1&gt;
+&lt;p&gt;I am trying to explain the ethos and social convention of
+FREE software.  People have created software and they let you 
+use it and modify it for free.  Is only polite to extend them&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/the-good-artist-banksy.jpg" width="300px" alt="steal" style="float:left" title="banksy.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;academic courtesy and cite them for their contribution.  Also it 
+makes sense because you point your audience to original sources for 
+reference.  With links instead of or in addition to bibliographic 
+citations you actually make it easy to learn and dive deeper.&lt;/p&gt;
+&lt;h1&gt;Our intellectual heritage&lt;/h1&gt;
+&lt;h1&gt;what is r?&lt;/h1&gt;
+&lt;p&gt;a flexible, free tool for the description, exploration and analysis of
+data.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a calculator&lt;/li&gt;
+&lt;li&gt;statistical libraries&lt;/li&gt;
+&lt;li&gt;graphing program&lt;/li&gt;
+&lt;li&gt;a domain specific programming language&lt;/li&gt;
+&lt;li&gt;a means of simulating phenomena of interest&lt;/li&gt;
+&lt;li&gt;a means of creating reproducible results&lt;/li&gt;
+&lt;/ul&gt;</content><category term="R-course"></category><category term="emacs"></category><category term="rstats"></category><category term="ess"></category></entry></feed>

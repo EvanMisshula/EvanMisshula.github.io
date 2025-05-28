@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Evan Misshula Atom">
+
+
+
+ 
+
+<meta name="author" content="emisshula" />
+<meta name="description" content="Intro A number of my colleagues need to analyze data and are learning a programming language for the first time. It does not need to be said, this is a very heavy lift and occurs in the presence of a wide diversity of well intentioned opinion. It also occurs in …" />
+<meta name="keywords" content="Emacs, Rstats, ESS">
+
+
+  <meta property="og:site_name" content="Evan Misshula"/>
+  <meta property="og:title" content="Intro to R with Emacs-Speaks-Statistics"/>
+  <meta property="og:description" content="Intro A number of my colleagues need to analyze data and are learning a programming language for the first time. It does not need to be said, this is a very heavy lift and occurs in the presence of a wide diversity of well intentioned opinion. It also occurs in …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./r-tutorial.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2014-06-29 00:00:00-04:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="./author/emisshula.html">
+  <meta property="article:section" content="R-course"/>
+  <meta property="article:tag" content="Emacs"/>
+  <meta property="article:tag" content="Rstats"/>
+  <meta property="article:tag" content="ESS"/>
+  <meta property="og:image" content="/images/newProfile200.jpg">
+
+  <title>Evan Misshula &ndash; Intro to R with Emacs-Speaks-Statistics</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="./">
+      <img src="/images/newProfile200.jpg" alt="Measure of Justice" title="Measure of Justice">
+    </a>
+
+    <h1>
+      <a href="./">Measure of Justice</a>
+    </h1>
+
+    <p>Probability, Learning and Justice</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="./pages/academic.html#academic">
+                Academic
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/ambition.html#ambition">
+                Ambition
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/bio.html#bio">
+                Bio
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-GitHub"
+           href="https://github.com/yourname"
+           target="_blank">
+          <i class="fa-brands fa-GitHub"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="./">Home</a>
+
+
+  <a href="/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="r-tutorial">Intro to R with Emacs-Speaks-Statistics</h1>
+    <p>
+      Posted on Sun 29 June 2014 in <a href="./category/r-course.html">R-course</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>Intro</h1>
+<p>A number of my colleagues need to analyze data and are learning a
+programming language for the first time.  It does not need to be said,
+this is a very heavy lift and occurs in the presence of a wide diversity
+of well intentioned opinion.  It also occurs in the presence of academic
+bullshit.  This is not well intentioned.  It is designed to sell books and 
+software licenses.  It is my opinion that the appropriate first scripting 
+language to learn for the aspiring social scientist is <a href="http://www.r-project.org/">R</a>. Arguements could 
+be made for perl, python or lisp.  I think these great languages can be learned
+later.  For describing relationships with data and graphing results, <a href="http://www.r-project.org/">R</a> has a great
+set of libraries.</p>
+<h1>R Front ends</h1>
+<p>There are a number of front-ends for <a href="http://www.r-project.org/">R</a>.  The most popular of which is
+R-studio. I think it leaves much to be desired.  It is also produced
+by a company that sells enhancements to <a href="http://www.r-project.org/">R</a> that most users will never
+need.  I find the better and more cost effective solution to be
+<a href="http://ess.r-project.org/">Emacs-Speaks-Statistics (ESS)</a>. Much of the power of the language comes
+from being able to read from files and streams.  Combining this with 
+the uber editor <a href="http://www.gnu.org/software/emacs/">Emacs</a> only makes sense.  For many data manipulation 
+problems the student can solve it either with either tool.</p>
+<p>The intellectual history of this tutorial is taken from Charles
+DiMaggio's excellent <a href="http://www.columbia.edu/~cjd11/charles_dimaggio/DIRE/styled-4/styled-6/">introduction to R</a> and two brilliant tutorials
+from Stephen Elgen <a href="http://web.warwick.ac.uk/statsdept/user2011/tutorials/Eglen.html">An introduction to ESS from 2011</a> and <a href="http://sje30.github.io/2014-01-07-cam/">Caimbridge R
+bootcamp</a>.</p>
+<p>Here is our introduction:</p>
+<h3>Emacs</h3>
+<ul>
+<li>Why Emacs</li>
+<li>History of Emacs</li>
+<li>Moving around</li>
+<li>Cut and paste</li>
+<li>Loading/saving files</li>
+<li>Windows</li>
+<li>Search and replace</li>
+<li>Macros</li>
+<li>Modes</li>
+<li>Completion</li>
+<li>Getting help</li>
+<li>libraries</li>
+<li>Hooks</li>
+<li>Philosophy</li>
+</ul>
+<h3>ESS</h3>
+<ul>
+<li>Why ESS?</li>
+<li>History of ESS</li>
+<li>ESS Installation</li>
+<li>Editing and viewing R code</li>
+<li>Making comments</li>
+<li>Indenting your code.</li>
+<li>Viewing help files</li>
+<li>Making help files (.Rd)</li>
+<li>Inferior ESS Processes (<code>*R*</code>)</li>
+<li>Which version of R will it find?</li>
+<li>What can I do in <code>*R*</code>?</li>
+<li>What is emacsclient?</li>
+<li>Transcripts</li>
+<li>How many versions of R can I run?</li>
+<li>Sending code from an R buffer to <code>*R*</code></li>
+<li>Customizing ESS</li>
+<li>When things go wrong with ESS</li>
+</ul>
+<h3>Org Mode</h3>
+<ul>
+<li>intro</li>
+<li>exporting to LaTeX or html</li>
+<li>R examples</li>
+</ul>
+<h3>R language</h3>
+<ul>
+<li>introduction</li>
+<li>foundations</li>
+<li>functions</li>
+<li>packages</li>
+<li>graphics</li>
+<li>data</li>
+<li>variables</li>
+</ul>
+<h3>Advanced stats</h3>
+<ul>
+<li>power</li>
+<li>web/online</li>
+<li>bayes (multilevel, hierarchical)</li>
+<li>spatial</li>
+<li>meta-analysis</li>
+</ul>
+<p>More to come&#x2026;</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/emacs.html">Emacs</a>
+      <a href="./tag/rstats.html">Rstats</a>
+      <a href="./tag/ess.html">ESS</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Evan Misshula ",
+  "url" : ".",
+  "image": "/images/newProfile200.jpg",
+  "description": "Evan's encounters with ignorance and injustice"
+}
+</script>
+</body>
+</html>

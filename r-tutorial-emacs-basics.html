@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Evan Misshula Atom">
+
+
+
+ 
+
+<meta name="author" content="emisshula" />
+<meta name="description" content="Emacs What I cannot build, I do not understand. — Richard Feynman Why Emacs? This section is borrows heavily from Stephen Elgen and Phil Sung The long answer (though still far from complete) Emacs provides the same editing commands available for each language you are using. This is a big advantage …" />
+<meta name="keywords" content="Emacs, Rstats, ESS">
+
+
+  <meta property="og:site_name" content="Evan Misshula"/>
+  <meta property="og:title" content="Intro to basic Emacs for statistics"/>
+  <meta property="og:description" content="Emacs What I cannot build, I do not understand. — Richard Feynman Why Emacs? This section is borrows heavily from Stephen Elgen and Phil Sung The long answer (though still far from complete) Emacs provides the same editing commands available for each language you are using. This is a big advantage …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./r-tutorial-emacs-basics.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2014-07-01 00:00:00-04:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="./author/emisshula.html">
+  <meta property="article:section" content="R-course"/>
+  <meta property="article:tag" content="Emacs"/>
+  <meta property="article:tag" content="Rstats"/>
+  <meta property="article:tag" content="ESS"/>
+  <meta property="og:image" content="/images/newProfile200.jpg">
+
+  <title>Evan Misshula &ndash; Intro to basic Emacs for statistics</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="./">
+      <img src="/images/newProfile200.jpg" alt="Measure of Justice" title="Measure of Justice">
+    </a>
+
+    <h1>
+      <a href="./">Measure of Justice</a>
+    </h1>
+
+    <p>Probability, Learning and Justice</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="./pages/academic.html#academic">
+                Academic
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/ambition.html#ambition">
+                Ambition
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/bio.html#bio">
+                Bio
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-GitHub"
+           href="https://github.com/yourname"
+           target="_blank">
+          <i class="fa-brands fa-GitHub"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="./">Home</a>
+
+
+  <a href="/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="r-tutorial-emacs-basics">Intro to basic Emacs for statistics</h1>
+    <p>
+      Posted on Tue 01 July 2014 in <a href="./category/r-course.html">R-course</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1>Emacs</h1>
+<blockquote>
+<p>What I cannot build, I do not understand. — Richard Feynman</p>
+</blockquote>
+<h2>Why Emacs?</h2>
+<ul>
+<li>This section is borrows heavily from <a href="http://www.damtp.cam.ac.uk/user/sje30/ess11/">Stephen Elgen</a> and <a href="http://web.psung.name/emacs/2009/part1.html">Phil Sung</a></li>
+</ul>
+<h3>The long answer (though still far from complete)</h3>
+<p>Emacs provides the same editing commands available for each language
+you are using.  This is a big advantage if you are using a variety of
+tools to solve a given problem. Right now you care about using R.
+Soon you will realize that you may need a database.  Databases don't
+naturally speak R.  They speak Structured Querey Language (SQL).
+Emacs can speak SQL.  You may need to create a web program.  You will
+need to speak Python or Ruby.  Emacs can speak python or ruby.</p>
+<p>Instead of a graph, you may want to create an interactive
+vizualization using d3.js.  Again Emacs can edit javascript.  You may
+need to turn your report into a LaTex report, again Emacs speaks Latex
+or HTML.  </p>
+<p>Otherwise you might use R-studio for R, Eclipse for python,
+Gedit or Notepad++ for LaTex, Webstorm for Javascript, Netbeans for
+Java, phpMyAdmin for SQL.  You don't want to learn a new editor every
+time you use a new tool.</p>
+<p>Also, as we will see, there are a large set of tools available at all
+times. Emacs lets us move text between tasks easily.  Because Emacs
+exposes its source code, it easy to extend.  There is also a facillity
+for creating macros to accomplish one off tasks.  The language Emacs
+is written in, Elisp, allows us to add new features. These new
+features don't require you to restart Emacs, it is a fully dynamic
+environment.</p>
+<h3>The short answer</h3>
+<p>Emacs is an editor for code. Emacs is an Integrated Development
+Environment (IDE) for any language you will ever need (including R).
+Emacs is a terminal emulator. Emacs is a file manager.  And Emacs can
+show the differences between files and integrate with all version control
+systems.  If you want to build something, then Emacs is the right environment</p>
+<h2>History of Emacs</h2>
+<h3>Brief outline</h3>
+<p>The chief architect of Emacs is Richard Stallman (<a href="https://www.fsf.org/about/staff-and-board">RMS</a>).  He is the
+founder of the Free Software foundation. Richard developed a number of
+widely used software components of GNU, including the original Emacs,
+the GNU Compiler Collection, the GNU symbolic debugger (gdb), GNU
+Emacs, and various other programs for the GNU operating system. He
+invented the idea of copyleft and licenses that allow for copying.
+When he invented it, he and the other principal inventor <a href="https://labs.oracle.com/pls/apex/f?p%3Dlabs:bio:0:120">Guy Steele</a>
+were in researchers at the artificial intelligence lab at MIT, <a href="http://www.csail.mit.edu/">CSAIL</a>.
+They were both graduate students of Gerald J Sussman (<a href="http://groups.csail.mit.edu/mac/users/gjs/biography.html">GJS</a>) who was
+working with lisp variant languages to solve decision problems.</p>
+<p>Emacs has evolved from a terminal only editor to one with a rich
+graphical support.  Emacs is capable through (tramp mode) of editing
+files on remote machines.  This means that you can edit files that
+need to run on a machine that you share such as an Amazon cluster
+(AWS) or a super computer. Don't worry we will start much smaller!</p>
+<p>Emacs development has been undergoing a renissaince since the
+development of org-mode.  Prior development cycles had been slow.  As
+of this writing, the latest Emacs version is 24.3 and org-mode is
+8.2.5.  Prior development cycles had been slow.  Also in the 1990's
+Emacs split with more graphic support being available <a href="http://www.xemacs.org/">XEmacs</a>.  At
+least two other variants are still maintained <a href="http://aquamacs.org/">Aquamacs</a> for Mac OS X and
+<a href="http://ergoemacs.org/">Ergo-Emacs</a> which claims to be easier on your fingers.  The inventor of
+Ergo-Emacs, <a href="http://xahlee.org/">Xah Lee</a>, is a prolific contributor of tutorials and other
+resources to the Emacs community.</p>
+<h2>Where do your documents live?</h2>
+<p>Your documents live on Disk.  However if you use a modern graphical 
+user interface it is not always easy to find out where the document 
+you care about is.  Your docuents folder is a subdirectory.  My 
+user name is 'evan'. In linux, my documents are in:</p>
+<div class="highlight"><pre><span></span><code>/home/evan/Documents
+</code></pre></div>
+
+<p>In Mac OS X and Windows 8, my documents are in:</p>
+<div class="highlight"><pre><span></span><code>/Users/evan/Documents
+</code></pre></div>
+
+<p>You create a document by asking Emacs to find a document that does not
+exist yet.  Before we can do this you have to understand the instructions
+this tutorial is going to give.  So we need to define certain keystrokes:</p>
+<ul>
+<li><code>TAB</code> is the TAB (indent) key.</li>
+<li><code>RET</code> is the Return (carriage return, enter) key.</li>
+<li><code>C-h</code> means press control key AND ``h'' together</li>
+<li><code>ESC-h</code> means press ESC key THEN ``h''</li>
+<li><code>M-h</code> means press ALT or Meta key AND ``h'' together.</li>
+<li><code>M-C-h</code> means press Meta or Alt while pressing  h and control key.  OR
+    (if no meta/alt): ESC THEN (control and h keys together).</li>
+<li>Older keyboards (and sometimes older Macs) without ALT or Meta
+    lead to confusion between ESC and Meta, but ideally they should
+    be different.</li>
+</ul>
+<p>To do this start Emacs and find the file ``practice.org''.  So if you are 
+on Linux:</p>
+<div class="highlight"><pre><span></span><code>C-x C-f /home/evan/Documents/practice.org
+</code></pre></div>
+
+<p>If you are on Windows or Mac:</p>
+<div class="highlight"><pre><span></span><code>C-x C-f /Users/evan/Documents/practice.org
+</code></pre></div>
+
+<p>If you see a blank screen, you have done it right.</p>
+<h2>Every time you press a key&#x2026;you call a function</h2>
+<p>This is going to seem pedantic but I am betting you will refer back to
+this.  It is easy to get lost with keypresses, keystrokes and
+keybindings. When you type the letter "a", that is called a <em>keystroke</em>.
+A <em>keybinding</em> is the function that is bound to a combiantion of
+<em>keystrokes</em>.</p>
+<p>One of the most important keybindings is:</p>
+<ul>
+<li><code>M-x</code> is bound to execute-extended-command, which allows you to run a
+    command by name (there are many commands that are not bound to
+    keys).</li>
+</ul>
+<p>(Rember that the <code>M-x</code> is probably <code>Alt-x</code> on your machine.) Another
+important keystroke combination is <code>C-g</code> is bound to Quit which will
+end the command.  If you have typed <code>M-x</code> now, then type <code>C-g</code> to
+Quit.  Mapping between keybindings and commands is flexible; can
+change on fly.</p>
+<h2>Moving around</h2>
+<p>I find this picture from Phil Sung helps me remember how to move:</p>
+<p><img src="../images/EvAtWork.png" width="300px" alt="img" title="arrows.png"></p>
+
+<div class="highlight"><pre><span></span><code><span class="n">C</span><span class="o">-</span><span class="n">v</span><span class="w">    </span><span class="n">Move</span><span class="w"> </span><span class="n">forward</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">screenful</span>
+<span class="n">M</span><span class="o">-</span><span class="n">v</span><span class="w">    </span><span class="n">Move</span><span class="w"> </span><span class="n">backward</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">screenful</span>
+<span class="n">C</span><span class="o">-</span><span class="n">l</span><span class="w">    </span><span class="n">Clear</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">redraw</span><span class="w"> </span><span class="n">screen</span>
+<span class="n">M</span><span class="o">-</span><span class="w"> </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">Meta</span><span class="o">-&lt;</span><span class="n">right</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">moves</span><span class="w"> </span><span class="n">forward</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">word</span>
+<span class="n">M</span><span class="o">-</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="n">Meta</span><span class="o">-&lt;</span><span class="n">left</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">moves</span><span class="w"> </span><span class="n">back</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">word</span>
+<span class="n">M</span><span class="o">-</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="n">Meta</span><span class="o">-&lt;</span><span class="n">up</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">move</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">paragraph</span>
+<span class="n">M</span><span class="o">-</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="n">Meta</span><span class="o">-&lt;</span><span class="n">down</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">move</span><span class="w"> </span><span class="n">down</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">paragraph</span>
+<span class="n">M</span><span class="o">-</span><span class="w"> </span><span class="o">&lt;</span><span class="w">   </span><span class="n">Meta</span><span class="o">-&lt;</span><span class="n">less</span><span class="w"> </span><span class="n">than</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">move</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">start</span>
+<span class="n">M</span><span class="o">-</span><span class="w"> </span><span class="o">&gt;</span><span class="w">   </span><span class="n">Meta</span><span class="o">-&lt;</span><span class="n">greater</span><span class="w"> </span><span class="n">than</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">move</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">end</span>
+</code></pre></div>
+
+<p>Instead of the squiggly brace <code>{</code> or <code>}</code> the up or down arrow will work
+as well.</p>
+<h2>Cut and paste</h2>
+<p>Instead of <code>C-c</code> to copy and <code>C-v</code> to paste, Emacs has older
+keybindings. This seems strange</p>
+<div class="highlight"><pre><span></span><code><span class="n">C</span><span class="o">-</span><span class="n">d</span><span class="w">    </span><span class="k">Delete</span>
+<span class="n">C</span><span class="o">-</span><span class="n">k</span><span class="w">    </span><span class="k">Kill</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nc">cursor</span><span class="w"> </span><span class="k">position</span><span class="w"> </span><span class="k">to</span>
+<span class="w">       </span><span class="k">end</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">line</span>
+<span class="n">C</span><span class="o">-</span><span class="n">y</span><span class="w">    </span><span class="n">Recover</span><span class="o">/</span><span class="n">Paste</span><span class="w"> </span><span class="p">(</span><span class="n">Yank</span><span class="p">)</span><span class="w"> </span><span class="n">killed</span><span class="w"> </span><span class="nc">text</span>
+<span class="w">       </span><span class="p">(</span><span class="n">repeat</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">copy</span><span class="p">)</span>
+<span class="n">M</span><span class="o">-</span><span class="n">y</span><span class="w">    </span><span class="n">recover</span><span class="w"> </span><span class="n">former</span><span class="w"> </span><span class="n">killed</span><span class="w"> </span><span class="nc">text</span><span class="w"> </span><span class="p">(</span><span class="k">after</span><span class="w"> </span><span class="n">C</span><span class="o">-</span><span class="n">y</span><span class="p">).</span>
+<span class="w">       </span><span class="n">Repeat</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">go</span><span class="w"> </span><span class="n">back</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">stack</span><span class="p">).</span>
+<span class="n">C</span><span class="o">-</span><span class="n">x</span><span class="w"> </span><span class="n">u</span><span class="w">  </span><span class="n">_U_ndo</span><span class="w">  </span><span class="p">(</span><span class="n">multiple</span><span class="w"> </span><span class="n">undo</span><span class="o">/</span><span class="n">redo</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Here is the payoff:</p>
+<ul>
+<li>
+<p><em>point</em> is current location of cursor</p>
+</li>
+<li>
+<p><em>mark</em> <code>C-SPC</code> to define another point</p>
+</li>
+<li>
+<p><em>region</em> is text between mark and point</p>
+</li>
+<li>
+<p><code>C-w</code> kills from point to mark.</p>
+</li>
+<li>
+<p><code>C-y</code> yanks that text back.</p>
+</li>
+</ul>
+<h2>Loading/saving files</h2>
+<p>Now we can look at the commands to find files and see the buffers
+we have loaded into Emacs.  Emacs actually does not save all of your
+changes to the file.  Emacs makes a copy of your file on disk to a
+copy, called a <em>buffer</em>. You make all of your changes to the buffer and 
+when you write the file to disk, it replaces the file.</p>
+<div class="highlight"><pre><span></span><code>C-x C-f  _F_ind a file
+C-x C-s  _S_ave the file
+C-s C-w  _W_rite the file to a new name
+If you find a second file with C-x C-f,
+the first file remains inside Emacs.
+You can switch back to it by finding it
+again with C-x C-b.  This way you can get
+quite a number of files inside Emacs.
+</code></pre></div>
+
+<h2>Windows</h2>
+<p>Here is how you work with the buffers that you have loaded into Emacs:</p>
+<div class="highlight"><pre><span></span><code>C-x 0      Move between windows
+           (Oh, not Zero!)
+C-x 1      One window
+           (i.e., kill all other windows).
+C-x 2      Split horizontally
+C-x 3      Split vertically
+C-x b      Switch to new _b_uffer
+C-x C-b    List _b_uffers
+</code></pre></div>
+
+<h2>Search and replace</h2>
+<p>Here are the commands for searching and replacing:</p>
+<div class="highlight"><pre><span></span><code>M-x (then) replace-string
+           Replace string
+M-x (then) query-replace-string
+           Will ask you, for each match,
+           if you really want to replace
+           the old string with the new one.
+C-s        _S_earch forward (repeat to
+           reuse past search strings)
+C-r        Search _R_everse (repeat to
+           reuse past search strings)
+</code></pre></div>
+
+<h2>Quitting and getting help</h2>
+<p>Here are the commands for quitting and getting help:</p>
+<div class="highlight"><pre><span></span><code>C-h or C-h ?    _H_elp
+C-h c (command) _H_elp on this _c_ommand
+
+C-u 8 (character or command)
+             Repeat character/command 8 times
+
+C-g          Stop, unhang.
+C-x C-c      Stop and exit (_c_lose) Emacs
+</code></pre></div>
+
+<h2>Macros</h2>
+<h3>Repeating yourself</h3>
+<p>Repeat C-n ten times:</p>
+<p>C-u 10 C-n</p>
+<p>C-u 70 #</p>
+<h3>Keyboard macros</h3>
+<p><code>C-x (</code> lots of stuff  <code>C-x )</code></p>
+<p>Can include counters.  e.g.</p>
+<div class="highlight"><pre><span></span><code>C-x ( TAB step C-x C-k C-i RET C-x )
+</code></pre></div>
+
+<p>will make:</p>
+<div class="highlight"><pre><span></span><code>step 0
+step 1
+step 2
+</code></pre></div>
+
+<p>&#x2026;</p>
+<p>(info "(emacs)Keyboard Macros")</p>
+<p>I use this all the time to automate boring editing functions all
+the time!!</p>
+<h2>Modes</h2>
+<p>Modes contain specialisations (commands/variables) for different
+languages.</p>
+<ul>
+<li>
+<p>Major modes are defined for different languages (C, latex, R,
+    python, &#x2026;).</p>
+</li>
+<li>
+<p>Consistency across modes where possible (e.g. commands for
+    commenting, indentation).  Keybindings consistent.  <em>Font lock</em>
+    also consistent, e.g. comments in red.</p>
+</li>
+<li>
+<p>Major mode decided typically based on buffer name.</p>
+</li>
+<li>
+<p><code>C-h m</code> describes features available in current buffer.</p>
+</li>
+</ul>
+<h2>Completion</h2>
+<ul>
+<li>TAB completion where possible, e.g <code>M-x describe- TAB</code></li>
+</ul>
+<h2>Getting help</h2>
+<p>Here is how to get help:</p>
+<div class="highlight"><pre><span></span><code>C-h m       describe mode 
+C-h k       describe key  
+C-h i       info          
+C-h t       tutorial
+</code></pre></div>
+
+<p>Check out <a href="http://emacswiki.org">http://emacswiki.org</a></p>
+<p>It also lists cool packages (or libraries) you can add to Emacs 
+to make it do more.</p>
+<h2>libraries</h2>
+<p>Emacs' <code>load-path</code> controls which directories are searched.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">init_ess</span><span class="w"> </span><span class="p">()</span>
+<span class="s">&quot;initialize ess&quot;</span>
+<span class="p">(</span><span class="nv">locate-library</span><span class="w"> </span><span class="s">&quot;ess&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span><span class="w"> </span><span class="ss">&#39;load-path</span><span class="w"> </span><span class="s">&quot;~/langs/emacs/org-mode/lisp&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Or to look up the definition of a function, try:</p>
+<div class="highlight"><pre><span></span><code>M-x find-function ess-dirs
+</code></pre></div>
+
+<h2>Hooks</h2>
+<p>Hooks are usually the way you set up Emacs to act on a file you
+want to behave in a certain way.</p>
+<p>Hooks are run e.g. after major-mode has been created.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">init_eldoc</span><span class="p">()</span>
+<span class="p">(</span><span class="nv">add-hook</span><span class="w"> </span><span class="ss">&#39;emacs-lisp-mode-hook</span><span class="w"> </span><span class="ss">&#39;turn-on-eldoc-mode</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Compare the following two versions:</p>
+<div class="highlight"><pre><span></span><code>;; version 1
+(defun my-ess-hook ()
+  &quot;Add my keybindings to ESS mode.&quot;
+  (local-set-key (kbd &quot;C-j&quot;) &#39;ess-eval-line-and-step))
+
+(add-hook &#39;R-mode-hook &#39;my-ess-hook)
+
+;; version 2
+(add-hook &#39;R-mode-hook
+          &#39;(lambda ()  (local-set-key (kbd &quot;M-RET&quot;)
+                                      &#39;ess-R-use-this-dir)))
+</code></pre></div>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/emacs.html">Emacs</a>
+      <a href="./tag/rstats.html">Rstats</a>
+      <a href="./tag/ess.html">ESS</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Evan Misshula ",
+  "url" : ".",
+  "image": "/images/newProfile200.jpg",
+  "description": "Evan's encounters with ignorance and injustice"
+}
+</script>
+</body>
+</html>

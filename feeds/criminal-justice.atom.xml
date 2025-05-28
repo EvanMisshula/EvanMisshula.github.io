@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - Criminal Justice</title><link href="/" rel="alternate"></link><link href="feeds/criminal-justice.atom.xml" rel="self"></link><id>/</id><updated>2016-12-11T00:00:00-05:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Python at Rikers</title><link href="Rikers%20Python.html" rel="alternate"></link><published>2016-12-11T00:00:00-05:00</published><updated>2016-12-11T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2016-12-11:Rikers Python.html</id><summary type="html">&lt;p&gt;o&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/rikers.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Treat people as if they were what they ought to be, and you help them to become what they are capable of becoming.
+~ Victor Frankl paraphrasing Johann Wolfangang von Goethe&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Teaching Python to Rikers Detainees&lt;/h1&gt;
+&lt;p&gt;On Saturday, December 10th, I had the privilege of joining students from
+the Columbia …&lt;/p&gt;</summary><content type="html">&lt;p&gt;o&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/rikers.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Treat people as if they were what they ought to be, and you help them to become what they are capable of becoming.
+~ Victor Frankl paraphrasing Johann Wolfangang von Goethe&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Teaching Python to Rikers Detainees&lt;/h1&gt;
+&lt;p&gt;On Saturday, December 10th, I had the privilege of joining students from
+the Columbia School of Social Work to teach the Python computer language to 
+a class of 20 young detainees at Rikers python.  The course is part of digital 
+storytelling class concieved of and pioneered by the brilliant and compasionate
+&lt;a href="http://xpmethod.plaintext.in"&gt;Dennis Tennen&lt;/a&gt;.  The project seeks as a promary goal to teach detainees the 
+power and techniques of digital storytelling by engaging them with familiar 
+elements such as social media and unfamiliar technology such as Python and 
+computational thinking.  &lt;/p&gt;
+&lt;p&gt;As a secondary goal, the program seeks to inform young men trapped in
+the some of the darkest and most disfunctional aspects of our Criminal
+Justice system (money bail, indeterminate pre-trial detention,
+poverty, violence, inadequate food and constant uncomfortable
+accomodations) that mastery of digital storytelling or Python
+programming may be a viable path out of poverty either with or without
+a college degree.&lt;/p&gt;
+&lt;p&gt;The picture above was taken on Rikers Island in the last place we were
+allowed to keep our phones.  It is the parking lot outside the
+&lt;a href="http://www.villagevoice.com/news/teen-murder-at-rikers-jail-6394103"&gt;infamous&lt;/a&gt; Robert N.  Davoren complex where prisoners as young as
+sixteen are detained. For those interested in learning more about these 
+fascinating young men and their struggle to survive inside and make sense
+of their brutal surroundings, please follow &lt;a href="https://twitter.com/search?q=%2540rikersbot&amp;amp;src=typd"&gt;@RikersBot&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you can spare four minutes to hear why this work is so important, please watch
+the video below from Holocaust survivor and intellectual Victor Frankl.&lt;/p&gt;
+&lt;video width="800px" controls display:block; margin:auto;&gt;
+  &lt;source src="../../images/ViktorFrankl1972.mp4" type="video/mp4" display:block; margin:auto;&gt;
+  Your browser does not support HTML5 video.
+&lt;/video&gt;</content><category term="Criminal Justice"></category><category term="Prison Education"></category><category term="persistence"></category><category term="resilience"></category></entry><entry><title>uncertain-life</title><link href="uncertain-life.html" rel="alternate"></link><published>2015-07-23T00:00:00-04:00</published><updated>2015-07-23T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2015-07-23:uncertain-life.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/life.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
+
+&lt;h1&gt;In memorium to Faigy Mayer&lt;/h1&gt;
+&lt;p&gt;We all struggle with finding our place in the world.  Sometimes when we lose our
+way, it seems impossible to go on.  I am lucky to never have had a voice appear in
+my head when I was on a rooftop.  But the emotional distance …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="../../images/life.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
+
+&lt;h1&gt;In memorium to Faigy Mayer&lt;/h1&gt;
+&lt;p&gt;We all struggle with finding our place in the world.  Sometimes when we lose our
+way, it seems impossible to go on.  I am lucky to never have had a voice appear in
+my head when I was on a rooftop.  But the emotional distance of struggling to find a 
+career in tech is long way from the limitless potential of &lt;a href="http://nypost.com/2015/07/21/woman-who-leaped-to-her-death-from-rooftop-was-ex-hasidic-jew/"&gt;anyone's baby pictures:&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;My family refuses to allow me to have my baby pictures so finding these pics were cool!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The advertised meritocracy of Free and Open Source software, the community of civic
+computing and the riches of the New York Tech scene are never as close as they should be.
+I hope we all have the strength to struggle on.  I hope those of us enjoying success
+reach out and lend a hand up, not a &lt;a href="https://www.recurse.com/manual#sec-environment"&gt;"Well, Actually".&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Faigy, I wish I had known you better.  I wish I had been more helpful at &lt;a href="http://www.meetup.com/learn-python-nyc/"&gt;Learn-Python-NYC&lt;/a&gt;.
+Mostly I hope you are in a happier place.  Your talents will be missed.&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="Free Software"></category></entry><entry><title>LSE recommends ending Drug Wars</title><link href="lse-ernie.html" rel="alternate"></link><published>2014-05-21T23:37:00-04:00</published><updated>2014-05-21T23:37:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-21:lse-ernie.html</id><content type="html">&lt;p&gt;My collaborator and friend Ernie Drucker was recently at the London
+School of Economics where he joined the expert panel on how to end the
+unproductive and wasteful drug wars. You can see his talk below.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/wys4j&lt;sub&gt;74o7a&lt;/sub&gt;&amp;ouput=embed" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The complete report is available here as a (&lt;a href="http://www.lse.ac.uk/IDEAS/publications/reports/pdf/LSE-IDEAS-DRUGS-REPORT-FINAL-WEB.pdf"&gt;pdf&lt;/a&gt;).&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="Documentaries"></category><category term="short"></category></entry><entry><title>CecilyMcMillan</title><link href="CecilyMcMillan.html" rel="alternate"></link><published>2014-05-08T15:02:00-04:00</published><updated>2014-05-08T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-08:CecilyMcMillan.html</id><content type="html">&lt;p&gt;The Judge would be wise to listen to a &lt;a href="http://www.scribd.com/doc/222954383/Jury-Letter"&gt;jury&lt;/a&gt; that understands the
+pointlessness of &lt;a href="http://blogs.wsj.com/metropolis/2014/05/12/city-council-members-call-for-leniency-for-occupy-wall-street-protestor/?mg%3Dblogs-wsj&amp;amp;url%3Dhttp%25253A%25252F%25252Fblogs.wsj.com%25252Fmetropolis%25252F2014%25252F05%25252F12%25252Fcity-council-members-call-for-leniency-for-occupy-wall-street-protestor"&gt;incarceration of the harmless&lt;/a&gt;. #MasssIncarceration
+ #Justice4Cecily #NoMoreDrugWar&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/jury.png" width="600px" alt="img" title="jury.png"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="overcriminalization"></category><category term="occupy"></category></entry><entry><title>Tubman Yortzight</title><link href="tubman-yortzight.html" rel="alternate"></link><published>2014-05-08T15:02:00-04:00</published><updated>2014-05-08T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-08:tubman-yortzight.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;"Most that I have done and suffered in the service of our cause has
+been in public, and I have received much encouragement at every step
+of the way. You, on the other hand, have labored in a private way. I
+have wrought in the day—you in the night …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;"Most that I have done and suffered in the service of our cause has
+been in public, and I have received much encouragement at every step
+of the way. You, on the other hand, have labored in a private way. I
+have wrought in the day—you in the night. … The midnight sky and the
+silent stars have been the witnesses of your devotion to freedom and
+of your heroism.” ~Fredrick Douglas (on Harriet Tubman)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src="../images/tubman.jpg" width="650px" alt="img" title="tubman.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="slavery"></category><category term="heroes"></category></entry><entry><title>Arrest tweets</title><link href="arrest-tweet.html" rel="alternate"></link><published>2014-05-02T15:02:00-04:00</published><updated>2014-05-02T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-02:arrest-tweet.html</id><content type="html">&lt;p&gt;Of course, one reason why it might be unprecedented is that other
+police forces might find it prurient, ludicrous, voyeuristic, perverse
+or merely a monstrous waste of time, money and a cell
+phone. #TweetingArrests 
+&lt;a href="http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/"&gt;http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/george0.png" width="650px" alt="img" title="george0.png"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="policing"></category><category term="public-shame"></category><category term="sex-workers"></category></entry><entry><title>Ban the box</title><link href="ban-the-box.html" rel="alternate"></link><published>2014-05-02T15:02:00-04:00</published><updated>2014-05-02T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-02:ban-the-box.html</id><content type="html">&lt;p&gt;NYC is considering banning private employers from asking about
+criminal convictions on employment applications.  If NYC passes this,
+it is a game changer.  Once again Jumaane Williams is leading the
+charge on behalf of the working poor.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://online.wsj.com/news/articles/SB10001424127887323997004578640623464096406"&gt;wsj-online&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cssny.org/news/entry/watch-fair-chance-act-would-ban-the-box-in-nyc"&gt;cssny&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://fairchancenyc.wordpress.com/"&gt;fairChance.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../images/banBox.jpg" width="600px" alt="img" title="banBox.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="reentry"></category><category term="jobs"></category></entry><entry><title>IG defanged at DoJ</title><link href="IG-defanged-at-doj.html" rel="alternate"></link><published>2014-04-30T15:02:00-04:00</published><updated>2014-04-30T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-04-30:IG-defanged-at-doj.html</id><content type="html">&lt;p&gt;Cases check in but they don't check out. #DAsGoneWild Who gets to
+watch the watchers?&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="DAsGoneWild"></category><category term="judicial hypocracy"></category></entry><entry><title>PRI-resources</title><link href="pri-reentry-resources-nyc.html" rel="alternate"></link><published>2014-01-24T15:02:00-05:00</published><updated>2014-01-24T15:02:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2014-01-24:pri-reentry-resources-nyc.html</id><content type="html">&lt;h1&gt;Resource map&lt;/h1&gt;
+&lt;p&gt;The amazing Sheyla Delgado and I did some mapping for the &lt;a href="http://johnjayresearch.org/pri/"&gt;Prisoner
+Reentry Institute&lt;/a&gt;. This map has
+some resources for returning prisoners.&lt;/p&gt;
+&lt;iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&amp;output=embed" width="660" height="480"&gt;&lt;/iframe&gt;</content><category term="Criminal Justice"></category><category term="Prisoner Reentry"></category><category term="maps"></category></entry><entry><title>Two important news pieces on cybercrime</title><link href="two-important-news-pieces-on-cybercrime.html" rel="alternate"></link><published>2011-01-28T08:19:00-05:00</published><updated>2011-01-28T08:19:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2011-01-28:two-important-news-pieces-on-cybercrime.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;The FBI is executing warrants against the Wiki-leaks
+    supporters.I had long suspected that most of these guys were
+    not as tricky (sophisticated) as they thought they
+    were. &lt;a href="http://www.mcclatchydc.com/2011/01/27/107589/fbi-serves-40-warrants-in-search.html"&gt;details&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Another article on government picking at your electronic
+    data. Who gets picked for this is a crapshoot. The problem is
+    not …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;The FBI is executing warrants against the Wiki-leaks
+    supporters.I had long suspected that most of these guys were
+    not as tricky (sophisticated) as they thought they
+    were. &lt;a href="http://www.mcclatchydc.com/2011/01/27/107589/fbi-serves-40-warrants-in-search.html"&gt;details&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Another article on government picking at your electronic
+    data. Who gets picked for this is a crapshoot. The problem is
+    not that they are friending people on facebook to snoop but
+    that there are too many illegal acts they can investigate. It
+    is time to go after rogue prosecutors, people always go after
+    the cop. We need to change direction at the
+    top. &lt;a href="http://www.huffingtonpost.com/gw-schulz/when-can-cops-gain-access_b_815211.html"&gt;overciminalization&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="Criminal Justice"></category><category term="cracking"></category><category term="security"></category><category term="vulnerablity"></category><category term="hacking"></category></entry><entry><title>Released…the film version of the Castle is out</title><link href="released-the-film-version-of-the-castle-is-out.html" rel="alternate"></link><published>2011-01-26T11:33:00-05:00</published><updated>2011-01-26T11:33:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2011-01-26:released-the-film-version-of-the-castle-is-out.html</id><content type="html">&lt;p&gt;Great week&amp;#x2026;saw a preview of Released, the movie version of 'the
+Castle'. It is a great play about four amazing people who are making
+the very most of their second chance! &lt;a href="http://www.thecastletheplay.org/tc/frames/About.aspx"&gt;The Castle&lt;/a&gt;.&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="reentry"></category><category term="antipoverty"></category></entry></feed>

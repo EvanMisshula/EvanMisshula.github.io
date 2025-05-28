@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Evan Misshula - emisshula</title><link>/</link><description>Probability, Learning and Justice</description><lastBuildDate>Tue, 27 May 2025 00:00:00 -0400</lastBuildDate><item><title>Research Plan</title><link>game-plan.html</link><description>&lt;p&gt;&lt;img src="../../images/monotone.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;h1&gt;Roadmap to Become a Machine Learning Researcher Focused on Embedded Optimal Transport&lt;/h1&gt;
+&lt;h2&gt;🧠 Phase 1: Mathematical and Theoretical Foundations&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Goal:&lt;/strong&gt; Build deep fluency in the theory that underpins optimal transport, geometric learning, and high-dimensional data analysis.&lt;/p&gt;
+&lt;h3&gt;Core Topics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Measure theory &amp;amp; probability&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;“Probability with Martingales” (Williams)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;“High-Dimensional Probability” (Vershynin)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Linear algebra &amp;amp; matrix …&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 27 May 2025 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2025-05-27:game-plan.html</guid><category>Probability</category><category>ambition</category></item><item><title>Python at Rikers</title><link>Rikers%20Python.html</link><description>&lt;p&gt;o&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../images/rikers.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Treat people as if they were what they ought to be, and you help them to become what they are capable of becoming.
+~ Victor Frankl paraphrasing Johann Wolfangang von Goethe&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Teaching Python to Rikers Detainees&lt;/h1&gt;
+&lt;p&gt;On Saturday, December 10th, I had the privilege of joining students from
+the Columbia …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sun, 11 Dec 2016 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2016-12-11:Rikers Python.html</guid><category>Criminal Justice</category><category>Prison Education</category><category>persistence</category><category>resilience</category></item><item><title>Hard Problems</title><link>hard-problems.html</link><description>&lt;p&gt;&lt;img src="../../images/haralick.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Comparison is the theif of Joy.
+~ Sofia Kovalevskaya&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Renowned Researcher and GC CompSci EO Haralick vists undergrads&lt;/h1&gt;
+&lt;p&gt;CUNY Graduate Center Executive Officer and Distinguished Professor
+Robert Haralick came to visit the Computer Science club at John Jay
+last Thursday.  His nominal topic was graduate school applications.
+More than 40 students …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 26 Oct 2015 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2015-10-26:hard-problems.html</guid><category>Tutorials</category><category>Grad School</category><category>persistence</category><category>resilience</category></item><item><title>Achievement Gap</title><link>achievement-gap.html</link><description>&lt;p&gt;&lt;img src="../../images/emerson.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;It is impossible to be a mathematician without being a poet in soul.
+~ Sofia Kovalevskaya&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Respecting our students helps them (and us)&lt;/h1&gt;
+&lt;p&gt;Linked below is an excellent but long presentation on the gaps in minority
+achievement in mathematics and the reasons for their persistence from
+the Mathematical Association of America …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 27 Jul 2015 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2015-07-27:achievement-gap.html</guid><category>Tutorials</category><category>Free Software</category></item><item><title>uncertain-life</title><link>uncertain-life.html</link><description>&lt;p&gt;&lt;img src="../../images/life.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
+
+&lt;h1&gt;In memorium to Faigy Mayer&lt;/h1&gt;
+&lt;p&gt;We all struggle with finding our place in the world.  Sometimes when we lose our
+way, it seems impossible to go on.  I am lucky to never have had a voice appear in
+my head when I was on a rooftop.  But the emotional distance …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 23 Jul 2015 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2015-07-23:uncertain-life.html</guid><category>Criminal Justice</category><category>Free Software</category></item><item><title>docview-setup</title><link>doc-setup.html</link><description>&lt;p&gt;&lt;img src="../../images/carolDweck.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
+
+&lt;h1&gt;The problem&lt;/h1&gt;
+&lt;p&gt;We all have to complete tutorials to learn new languages.  One
+constant pain is that the tutorials are usually trapped in pdf's when
+we need to type code.  Emacs makes this problem go away through its 
+&lt;em&gt;doc-view&lt;/em&gt; mode which allows you to render pdf's in Emacs. The problem …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 01 Apr 2015 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2015-04-01:doc-setup.html</guid><category>Tutorials</category><category>Emacs</category><category>pdf</category><category>meta-cognition</category></item><item><title>bugs-javascript</title><link>skewer-tutorial.html</link><description>&lt;p&gt;&lt;img src="../../images/perlis.jpg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;When someone says: 'I want a programming language in which I need only
+say what I wish done', give him a lollipop. ~Alan J. Perlis&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;The problem&lt;/h1&gt;
+&lt;p&gt;Javascript can be notoriusly difficult to debug if you are coming from a language with tight 
+degugger integration like C/C++ or Java …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sat, 07 Mar 2015 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2015-03-07:skewer-tutorial.html</guid><category>Tutorials</category><category>Emacs</category><category>skewer-mode</category><category>javascript</category><category>d3.js</category><category>debugging</category></item><item><title>Emacs dies on popup</title><link>death-by-pop-up.html</link><description>&lt;h1&gt;Switched to Mac&lt;/h1&gt;
+&lt;p&gt;My switch to the Mac meant that I was making more typing mistakes and on one 
+them I was always getting to Emacs to freeze.  I looked like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/Computer-Freezes.jpg" width="450px" alt="img" title="Computer-Freezes.jpg"&gt;&lt;/p&gt;
+
+&lt;p&gt;I switched to the Mac last summer.  I was given one for work.  I would 
+never buy one …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sat, 27 Dec 2014 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2014-12-27:death-by-pop-up.html</guid><category>Tutorials</category><category>Emacs</category><category>homebrew</category><category>Mac</category><category>OS X</category><category>Mavericks</category><category>Darwin</category></item><item><title>Reproducible-research-org-mode</title><link>emacsnyc-rr.html</link><description>&lt;h1&gt;Update&lt;/h1&gt;
+&lt;p&gt;On November 3, I gave a talk at the Emacsnyc meetup on reproducible
+research.  I will get a link to the presentation up soon.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt&lt;sub&gt;PWoM5Y&lt;/sub&gt;" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;You can view the presentation:&lt;/p&gt;
+&lt;p&gt;And here is the github:&lt;/p&gt;
+&lt;p&gt;&lt;a href="&lt;a href="http://github.com/EvanMisshula/rr"&gt;http://github.com/EvanMisshula/rr&lt;/a&gt;" target="\&lt;sub&gt;blank\&lt;/sub&gt;"&gt;rr repo&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 03 Nov 2014 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2014-11-03:emacsnyc-rr.html</guid><category>Tutorials</category><category>Emacs</category><category>reproducibility</category><category>open-science</category></item><item><title>Mac OS X Installation</title><link>mac-dev-env.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;I have developed a Zen-like approach to the operating systems that
+people use: 'When you're ready, the right operating system will appear
+in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
+online graphic design tool. Formerly, he was an advisor to the
+Motorola business unit of Google …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 30 Jul 2014 15:03:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-07-30:mac-dev-env.html</guid><category>R-course</category><category>Emacs</category><category>Rstats</category><category>ESS</category><category>OS X</category></item><item><title>Descriptives</title><link>r-descriptives-ess.html</link><description>&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. &lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~Bobby Bragan, 1963&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Encountering data&lt;/h1&gt;
+&lt;p&gt;Here we will describe the techniques you should use to give yourself and
+your readers/bosses/teachers …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 24 Jul 2014 15:03:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-07-24:r-descriptives-ess.html</guid><category>R-course</category><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>R foundations with ESS</title><link>r-foundation-ess.html</link><description>&lt;h1&gt;R foundations&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In God we trust. All others must bring data. ~ W. Edwards Demming&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;R console&lt;/h2&gt;
+&lt;p&gt;Start an &lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; buffer through &lt;em&gt;ess&lt;/em&gt; by typing &lt;code&gt;M-x R&lt;/code&gt;.  See the earlier
+tutorial &lt;a href="ess.md"&gt;here&lt;/a&gt; or &lt;a href="Emacs-basics-for-stats.md"&gt;here&lt;/a&gt; if that is mystery. At the console type:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;20&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 04 Jul 2014 15:03:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-07-04:r-foundation-ess.html</guid><category>R-course</category><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Emacs Speaks Statistics (ESS) Tutorial</title><link>r-tutorial-ess.html</link><description>&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All models are wrong, but some are useful.&lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~George E. P. Box&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why is ESS useful?&lt;/h2&gt;
+&lt;p&gt;ESS makes your command history searchable and modifiable. When you
+start doing statistics you think you will always remember what you did
+and instantly recall why you did …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jul 2014 15:03:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-07-02:r-tutorial-ess.html</guid><category>R-course</category><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to basic Emacs for statistics</title><link>r-tutorial-emacs-basics.html</link><description>&lt;h1&gt;Emacs&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Why Emacs?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;This section is borrows heavily from &lt;a href="http://www.damtp.cam.ac.uk/user/sje30/ess11/"&gt;Stephen Elgen&lt;/a&gt; and &lt;a href="http://web.psung.name/emacs/2009/part1.html"&gt;Phil Sung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The long answer (though still far from complete)&lt;/h3&gt;
+&lt;p&gt;Emacs provides the same editing commands available for each language
+you are using.  This is a big advantage …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-07-01:r-tutorial-emacs-basics.html</guid><category>R-course</category><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to Emacs Speaks Statistics</title><link>r-tutorial-intro-ess.html</link><description>&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
+&lt;p&gt;ESS is a library (package) for Emacs which allows it to interact with
+a number of statistical packages including S+, R, SaS, SPSS and Stata.
+For the purpose of these notes.  We will only deal with R.  It allows
+the command history to be searchable and …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 01 Jul 2014 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-07-01:r-tutorial-intro-ess.html</guid><category>R-course</category><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>Intro to R with Emacs-Speaks-Statistics</title><link>r-tutorial.html</link><description>&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;A number of my colleagues need to analyze data and are learning a
+programming language for the first time.  It does not need to be said,
+this is a very heavy lift and occurs in the presence of a wide diversity
+of well intentioned opinion.  It also occurs in …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sun, 29 Jun 2014 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-06-29:r-tutorial.html</guid><category>R-course</category><category>Emacs</category><category>Rstats</category><category>ESS</category></item><item><title>LSE recommends ending Drug Wars</title><link>lse-ernie.html</link><description>&lt;p&gt;My collaborator and friend Ernie Drucker was recently at the London
+School of Economics where he joined the expert panel on how to end the
+unproductive and wasteful drug wars. You can see his talk below.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/wys4j&lt;sub&gt;74o7a&lt;/sub&gt;&amp;ouput=embed" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The complete report is available here as a (&lt;a href="http://www.lse.ac.uk/IDEAS/publications/reports/pdf/LSE-IDEAS-DRUGS-REPORT-FINAL-WEB.pdf"&gt;pdf&lt;/a&gt;).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 21 May 2014 23:37:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-05-21:lse-ernie.html</guid><category>Criminal Justice</category><category>Documentaries</category><category>short</category></item><item><title>intro to r and ess</title><link>r-intro.html</link><description>&lt;h1&gt;credit&lt;/h1&gt;
+&lt;p&gt;I am trying to explain the ethos and social convention of
+FREE software.  People have created software and they let you 
+use it and modify it for free.  Is only polite to extend them&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/the-good-artist-banksy.jpg" width="300px" alt="steal" style="float:left" title="banksy.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;academic courtesy and cite them for their contribution.  Also it 
+makes sense because you point …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 19 May 2014 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-05-19:r-intro.html</guid><category>R-course</category><category>emacs</category><category>rstats</category><category>ess</category></item><item><title>Emacs-IPython-Update</title><link>emacsnyc-IPython.html</link><description>&lt;h1&gt;Update&lt;/h1&gt;
+&lt;p&gt;On May 5, I gave a lightning talk at the Emacsnyc meetup on the state
+of the Emacs IPthon notebook.  A big thank you to &lt;a href="http://www.tabfugni.cc"&gt;Eric&lt;/a&gt; from
+&lt;a href="http://emacsnyc.org"&gt;http://emacsnyc.org&lt;/a&gt; for his extraordinary linux vs audio-visual
+equipment efforts.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/dgcBKz03lK8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 14 May 2014 23:37:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-05-14:emacsnyc-IPython.html</guid><category>Tutorials</category><category>Emacs</category><category>emacs-ipython-notebook</category><category>ipython</category><category>tutorial</category></item><item><title>CecilyMcMillan</title><link>CecilyMcMillan.html</link><description>&lt;p&gt;The Judge would be wise to listen to a &lt;a href="http://www.scribd.com/doc/222954383/Jury-Letter"&gt;jury&lt;/a&gt; that understands the
+pointlessness of &lt;a href="http://blogs.wsj.com/metropolis/2014/05/12/city-council-members-call-for-leniency-for-occupy-wall-street-protestor/?mg%3Dblogs-wsj&amp;amp;url%3Dhttp%25253A%25252F%25252Fblogs.wsj.com%25252Fmetropolis%25252F2014%25252F05%25252F12%25252Fcity-council-members-call-for-leniency-for-occupy-wall-street-protestor"&gt;incarceration of the harmless&lt;/a&gt;. #MasssIncarceration
+ #Justice4Cecily #NoMoreDrugWar&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/jury.png" width="600px" alt="img" title="jury.png"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 08 May 2014 15:02:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-05-08:CecilyMcMillan.html</guid><category>Criminal Justice</category><category>overcriminalization</category><category>occupy</category></item><item><title>Tubman Yortzight</title><link>tubman-yortzight.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;"Most that I have done and suffered in the service of our cause has
+been in public, and I have received much encouragement at every step
+of the way. You, on the other hand, have labored in a private way. I
+have wrought in the day—you in the night …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 08 May 2014 15:02:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-05-08:tubman-yortzight.html</guid><category>Criminal Justice</category><category>slavery</category><category>heroes</category></item><item><title>Arrest tweets</title><link>arrest-tweet.html</link><description>&lt;p&gt;Of course, one reason why it might be unprecedented is that other
+police forces might find it prurient, ludicrous, voyeuristic, perverse
+or merely a monstrous waste of time, money and a cell
+phone. #TweetingArrests 
+&lt;a href="http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/"&gt;http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/george0.png" width="650px" alt="img" title="george0.png"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 02 May 2014 15:02:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-05-02:arrest-tweet.html</guid><category>Criminal Justice</category><category>policing</category><category>public-shame</category><category>sex-workers</category></item><item><title>Ban the box</title><link>ban-the-box.html</link><description>&lt;p&gt;NYC is considering banning private employers from asking about
+criminal convictions on employment applications.  If NYC passes this,
+it is a game changer.  Once again Jumaane Williams is leading the
+charge on behalf of the working poor.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://online.wsj.com/news/articles/SB10001424127887323997004578640623464096406"&gt;wsj-online&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cssny.org/news/entry/watch-fair-chance-act-would-ban-the-box-in-nyc"&gt;cssny&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://fairchancenyc.wordpress.com/"&gt;fairChance.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="../images/banBox.jpg" width="600px" alt="img" title="banBox.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 02 May 2014 15:02:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-05-02:ban-the-box.html</guid><category>Criminal Justice</category><category>reentry</category><category>jobs</category></item><item><title>IG defanged at DoJ</title><link>IG-defanged-at-doj.html</link><description>&lt;p&gt;Cases check in but they don't check out. #DAsGoneWild Who gets to
+watch the watchers?&lt;/p&gt;
+&lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 30 Apr 2014 15:02:00 -0400</pubDate><guid isPermaLink="false">tag:None,2014-04-30:IG-defanged-at-doj.html</guid><category>Criminal Justice</category><category>DAsGoneWild</category><category>judicial hypocracy</category></item><item><title>PRI-resources</title><link>pri-reentry-resources-nyc.html</link><description>&lt;h1&gt;Resource map&lt;/h1&gt;
+&lt;p&gt;The amazing Sheyla Delgado and I did some mapping for the &lt;a href="http://johnjayresearch.org/pri/"&gt;Prisoner
+Reentry Institute&lt;/a&gt;. This map has
+some resources for returning prisoners.&lt;/p&gt;
+&lt;iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&amp;output=embed" width="660" height="480"&gt;&lt;/iframe&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 24 Jan 2014 15:02:00 -0500</pubDate><guid isPermaLink="false">tag:None,2014-01-24:pri-reentry-resources-nyc.html</guid><category>Criminal Justice</category><category>Prisoner Reentry</category><category>maps</category></item><item><title>Emacs IPython Notebook and "ESS in the Cloud"</title><link>emacs-ipython-notebook-and-ess-in-the-cloud.html</link><description>&lt;h1&gt;My usage history&lt;/h1&gt;
+&lt;p&gt;Back in 2009, one of the first advantages that made me play around
+with &lt;a href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; again when I went back to graduate school was
+&lt;a href="http://ess.r-project.org/index.php?Section%3Dhome"&gt;Emacs-Speaks-Statistics&lt;/a&gt;. It allowed me to avoid the pain of using the
+R-console which was frankly a miserable experience. The deficiencies
+of that interface …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 12 Jul 2013 02:41:00 -0400</pubDate><guid isPermaLink="false">tag:None,2013-07-12:emacs-ipython-notebook-and-ess-in-the-cloud.html</guid><category>Tutorials</category><category>emacs</category><category>python</category><category>IPython</category><category>Rstats</category><category>ESS</category></item><item><title>Emacs IPython Notebook and the shaving of a Yak</title><link>emacs-ipython-notebook-and-the-shaving-of-a-yak.html</link><description>&lt;h1&gt;Motivation&lt;/h1&gt;
+&lt;p&gt;It was this week during the project pitch exercise here at the &lt;a href="http://dssg.io/"&gt;Data
+Science For Social Good&lt;/a&gt; that I fell down a rabbit hole. I wanted to
+get summary statistics on foreclosures and land values for each of
+Chicago's 50 wards.  Of course I was not doing that when …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 25 Jun 2013 09:02:00 -0400</pubDate><guid isPermaLink="false">tag:None,2013-06-25:emacs-ipython-notebook-and-the-shaving-of-a-yak.html</guid><category>Tutorials</category><category>big data</category><category>Emacs</category><category>emacs-ipython-notebook</category><category>ipython</category><category>programmer-humor</category><category>configuration</category><category>emacs</category><category>IPython</category><category>linux</category><category>statistics</category></item><item><title>Setting up a virtual environment with Ipython, numpy and pandas</title><link>setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html</link><description>&lt;p&gt;Most of the time you read about setting up virtual environments, it is
+for web development. But the same benefits hold for analysis and
+research software. You want to be able to reproduce results. It also
+increases security not to be adding all the unverified libraries with
+machine level privileges …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 25 Jun 2013 00:56:00 -0400</pubDate><guid isPermaLink="false">tag:None,2013-06-25:setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html</guid><category>Tutorials</category><category>Emacs</category><category>IPython</category><category>virtual env</category><category>linux</category></item><item><title>Emacs-IPython-Notebook Installation Tutorial</title><link>emacs-ipython-notebook-installation-tutorial.html</link><description>&lt;h1&gt;Packages&lt;/h1&gt;
+&lt;p&gt;The Emacs package system is far from perfect. The most proficient
+users of Emacs are unaffected by this flaw. Many users of Emacs are
+experts who live at the bleeding edge of the linux kernel and gcc
+compiler.  This guide is for the mere mortals who have used Emacs …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Mon, 24 Jun 2013 23:37:00 -0400</pubDate><guid isPermaLink="false">tag:None,2013-06-24:emacs-ipython-notebook-installation-tutorial.html</guid><category>Tutorials</category><category>Emacs</category><category>emacs-ipython-notebook</category><category>ipython</category><category>tutorial</category></item><item><title>Resources on Django and D3</title><link>resources-on-django-and-d3.html</link><description>&lt;p&gt;It is no secret that I have been working on delivering d3 over django.
+I am a novice to both of these technologies, I have been scouring the
+internet for FREE resources. Of what I have found. Here are my
+impressions. On Django, there seem to be few full tutorials …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Tue, 02 Apr 2013 11:27:00 -0400</pubDate><guid isPermaLink="false">tag:None,2013-04-02:resources-on-django-and-d3.html</guid><category>Tutorials</category><category>D3</category><category>Django</category><category>linux</category></item><item><title>Learning environments for data analysis software</title><link>learning-environments-for-data-analysis-software.html</link><description>&lt;h1&gt;Welcome to my blog&lt;/h1&gt;
+&lt;p&gt;This is my first blog post using the IPython notebook. I am very excited
+about the things it can do. &lt;/p&gt;
+&lt;h2&gt;Here is what I want to cover&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Who I am&lt;/li&gt;
+&lt;li&gt;What the blog will cover&lt;/li&gt;
+&lt;li&gt;Why I named it Measure of Justice&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Evan Misshula&lt;/h1&gt;
+&lt;p&gt;I am …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sat, 02 Feb 2013 23:32:00 -0500</pubDate><guid isPermaLink="false">tag:None,2013-02-02:learning-environments-for-data-analysis-software.html</guid><category>Tutorials</category><category>configuration</category><category>docview</category><category>emacs</category><category>internet pedagogy</category><category>linux</category><category>statistics</category><category>windows</category></item><item><title>Intro and iPython</title><link>intro-and-ipython.html</link><description>&lt;p&gt;So I was able to get this to post to my &lt;a href="http://EvanMisshula.github.io"&gt;blog&lt;/a&gt;. However I was not
+able to get it to work here. Since then, to my surprise I have found
+myself working less with the visually amazing, but temperamental iPython
+and more with &lt;a href="http://orgmode.org/"&gt;Emacs org-mode&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The ability to toggle …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 02 Jan 2013 21:05:00 -0500</pubDate><guid isPermaLink="false">tag:None,2013-01-02:intro-and-ipython.html</guid><category>Tutorials</category><category>Emacs</category><category>org-mode</category><category>reproducible research</category></item><item><title>Two important news pieces on cybercrime</title><link>two-important-news-pieces-on-cybercrime.html</link><description>&lt;ol&gt;
+&lt;li&gt;The FBI is executing warrants against the Wiki-leaks
+    supporters.I had long suspected that most of these guys were
+    not as tricky (sophisticated) as they thought they
+    were. &lt;a href="http://www.mcclatchydc.com/2011/01/27/107589/fbi-serves-40-warrants-in-search.html"&gt;details&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Another article on government picking at your electronic
+    data. Who gets picked for this is a crapshoot. The problem is
+    not …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Fri, 28 Jan 2011 08:19:00 -0500</pubDate><guid isPermaLink="false">tag:None,2011-01-28:two-important-news-pieces-on-cybercrime.html</guid><category>Criminal Justice</category><category>cracking</category><category>security</category><category>vulnerablity</category><category>hacking</category></item><item><title>Released…the film version of the Castle is out</title><link>released-the-film-version-of-the-castle-is-out.html</link><description>&lt;p&gt;Great week&amp;#x2026;saw a preview of Released, the movie version of 'the
+Castle'. It is a great play about four amazing people who are making
+the very most of their second chance! &lt;a href="http://www.thecastletheplay.org/tc/frames/About.aspx"&gt;The Castle&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Wed, 26 Jan 2011 11:33:00 -0500</pubDate><guid isPermaLink="false">tag:None,2011-01-26:released-the-film-version-of-the-castle-is-out.html</guid><category>Criminal Justice</category><category>reentry</category><category>antipoverty</category></item><item><title>Introduction</title><link>introduction.html</link><description>&lt;p&gt;This is the first issue so it is worth saying what I would like to
+cover. I am interested in increasing labor market participation and
+public safety. I believe that this is done through life long learning and
+remediation. I am particularly interested in using mathematics to
+decide what is …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Thu, 02 Dec 2010 13:13:00 -0500</pubDate><guid isPermaLink="false">tag:None,2010-12-02:introduction.html</guid><category>Tutorials</category><category>software</category><category>justice</category></item></channel></rss>
