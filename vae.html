@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+
+
+  <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Evan Misshula Atom">
+
+
+
+ 
+
+<meta name="author" content="emisshula" />
+<meta name="description" content="I am interested in making a contribution to Emedded Optimal Transport by extending some of the low dimensional encoding techniques to Optimal Transport. This is the first of my projects to learn the computational literature and techniques You can visit my code: (https://github.com/EvanMisshula/variational-encoder) 🧠 What Is a …" />
+<meta name="keywords" content="ambition">
+
+
+  <meta property="og:site_name" content="Evan Misshula"/>
+  <meta property="og:title" content="Variational Encoder"/>
+  <meta property="og:description" content="I am interested in making a contribution to Emedded Optimal Transport by extending some of the low dimensional encoding techniques to Optimal Transport. This is the first of my projects to learn the computational literature and techniques You can visit my code: (https://github.com/EvanMisshula/variational-encoder) 🧠 What Is a …"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="./vae.html"/>
+  <meta property="og:type" content="article"/>
+  <meta property="article:published_time" content="2025-05-31 00:00:00-04:00"/>
+  <meta property="article:modified_time" content=""/>
+  <meta property="article:author" content="./author/emisshula.html">
+  <meta property="article:section" content="Probability"/>
+  <meta property="article:tag" content="ambition"/>
+  <meta property="og:image" content="/images/newProfile200.jpg">
+
+  <title>Evan Misshula &ndash; Variational Encoder</title>
+
+
+</head>
+<body class="light-theme">
+
+<aside>
+  <div>
+    <a href="./">
+      <img src="/images/newProfile200.jpg" alt="Measure of Justice" title="Measure of Justice">
+    </a>
+
+    <h1>
+      <a href="./">Measure of Justice</a>
+    </h1>
+
+    <p>Probability, Learning and Justice</p>
+
+
+    <nav>
+      <ul class="list">
+
+
+            <li>
+              <a target="_self"
+                 href="./pages/academic.html#academic">
+                Academic
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/ambition.html#ambition">
+                Ambition
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/bio.html#bio">
+                Bio
+              </a>
+            </li>
+            <li>
+              <a target="_self"
+                 href="./pages/contact.html#contact">
+                Contact
+              </a>
+            </li>
+
+      </ul>
+    </nav>
+
+    <ul class="social">
+      <li>
+        <a class="sc-GitHub"
+           href="https://github.com/yourname"
+           target="_blank">
+          <i class="fa-brands fa-GitHub"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</aside>
+  <main>
+
+<nav>
+  <a href="./">Home</a>
+
+
+  <a href="/feeds/all.atom.xml">Atom</a>
+
+</nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="vae">Variational Encoder</h1>
+    <p>
+      Posted on Sat 31 May 2025 in <a href="./category/probability.html">Probability</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><img src="../../images/vae.png" width="600px" alt="emerson" title="respect"></p>
+
+<p>I am interested in making a contribution to Emedded Optimal Transport
+by extending some of the low dimensional encoding techniques to
+Optimal Transport.  This is the first of my projects to learn the
+computational literature and techniques</p>
+<p>You can visit my code:
+(<a href="https://github.com/EvanMisshula/variational-encoder">https://github.com/EvanMisshula/variational-encoder</a>)</p>
+<p><a id="org400c213"></a></p>
+<h2>🧠 What Is a Variational Autoencoder?</h2>
+<p>A <strong>Variational Autoencoder (VAE)</strong> is a type of <strong>generative model</strong>. It learns to represent data (like images, text, etc.) using a smaller number of <strong>latent variables</strong>, and it can also generate new data that looks like the training data.</p>
+<p>It's based on two main ideas:</p>
+<ol>
+<li><strong>Autoencoders</strong> – Learn to compress and then reconstruct data.</li>
+<li><strong>Variational inference</strong> – Approximate complex probability
+    distributions using simpler ones.</li>
+</ol>
+<p><a id="org01bf346"></a></p>
+<h2>🔧 Architecture of a VAE</h2>
+<p>A VAE consists of two neural networks:</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Component</td>
+<td class="org-left">Name</td>
+<td class="org-left">Description</td>
+</tr>
+
+
+<tr>
+<td class="org-left">---------</td>
+<td class="org-left">----------------------------</td>
+<td class="org-left">------------------------------------------------------------------------------------</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Encoder</td>
+<td class="org-left">\( q\_{\phi(z   \vert x)} \)</td>
+<td class="org-left">Takes data \(x\) and produces a distribution over latent variables \(z\).</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Decoder</td>
+<td class="org-left">\( p\_{\theta(x \vert z)} \)</td>
+<td class="org-left">Takes a sample \(z\)and tries to reconstruct the original data \(x\).</td>
+</tr>
+</tbody>
+</table>
+
+<p>Instead of mapping $x \rightarrow z \rightarrow x$ directly, the VAE treats $z$ as <strong>random</strong> and uses <strong>probability distributions</strong>.</p>
+<p><a id="org20ceccc"></a></p>
+<h2>🎯 Goal of the VAE</h2>
+<p>Learn two things:</p>
+<ol>
+<li>How to <strong>compress</strong> data into a meaningful latent representation $z$.</li>
+<li>How to <strong>generate</strong> new data from latent variables.</li>
+</ol>
+<p>We want to learn the <strong>joint probability</strong>:</p>
+<p>\begin{equation}
+p_\theta(x, z) = p_\theta(x|z)p(z)
+\end{equation}</p>
+<p>and its <strong>marginal</strong>:</p>
+<p>\begin{equation}
+p_\theta(x) = \int p_\theta(x|z) p(z) \, dz
+\end{equation}</p>
+<p>But this integral is hard, so we use a trick.</p>
+<p><a id="org6f6e373"></a></p>
+<h2>The Variational Inference Trick</h2>
+<p>We approximate the true posterior $p(z|x)$ using a simpler
+distribution $q_\phi(z|x)$. Then we optimize the <strong>Evidence Lower Bound
+(ELBO)</strong>:</p>
+<p>\begin{equation}
+\log p_\theta(x) \geq \mathbb{E}<em>{q</em>\phi(z|x)}[\log p_\theta(x|z)] - \mathrm{KL}(q_\phi(z|x) \Vert p(z))
+\end{equation}</p>
+<p><a id="org5ecd9af"></a></p>
+<h3>Breakdown of ELBO:</h3>
+<ul>
+<li>$\mathbb{E}<em>{q</em>\phi(z|x)}[\log p_\theta(x|z)]$ = reconstruction
+    accuracy.</li>
+<li>$\mathrm{KL}(\cdot)$ = how close our approximation $q$ is to the
+    prior $p(z)$ (usually a standard normal).</li>
+</ul>
+<p><a id="org5b472a9"></a></p>
+<h2>Training Procedure</h2>
+<ol>
+<li>Given input $x$, encode it to parameters $\mu(x), \sigma(x)$
+    for a Gaussian distribution.</li>
+<li>Sample $z \sim \mathcal{N}(\mu(x), \sigma^2(x))$ using the
+    <strong>reparameterization trick</strong>:</li>
+</ol>
+<p>\begin{equation}
+z = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)
+\end{equation}</p>
+<ol>
+<li>Decode $z \rightarrow x'$ and compare to original $x$.</li>
+<li>Optimize the <strong>ELBO</strong> using gradient descent.</li>
+</ol>
+<p><a id="orgec0c3a2"></a></p>
+<h2>Why Use VAEs?</h2>
+<ol>
+<li><strong>Uncertainty-aware</strong>: Learns distributions, not just points.</li>
+<li><strong>Generative</strong>: Can sample new data points by sampling $z \sim
+       \mathcal{N}(0, I)$.</li>
+<li><strong>Smooth latent space</strong>: Small changes in $z$ lead to smooth
+    changes in generated $x$.</li>
+<li><strong>Principled framework</strong>: Based on variational inference and
+    probability.</li>
+</ol>
+<p><a id="org486b459"></a></p>
+<h2>Example: MNIST Digits</h2>
+<p><a id="orgb704aac"></a></p>
+<h1>The encoder maps digit images (28×28 pixels) to a 2D latent space.</h1>
+<p><a id="org1c31836"></a></p>
+<h1>The decoder learns to reconstruct digits from 2D points.</h1>
+<p><a id="org6bdc236"></a></p>
+<h1>You can sample from this 2D space to generate new digit images!</h1>
+<p><a id="org65b147f"></a></p>
+<h2>Summary</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Concept</td>
+<td class="org-left">Object</td>
+<td class="org-left">Description</td>
+</tr>
+
+
+<tr>
+<td class="org-left">---------------------</td>
+<td class="org-left">-----------------------------</td>
+<td class="org-left">---------------------------------------------------------------</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Latent Variable</td>
+<td class="org-left">\(z\)</td>
+<td class="org-left">Hidden representation of the data</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Encoder</td>
+<td class="org-left">\( q\_{\phi(z \vert   x)} \)</td>
+<td class="org-left">Neural network that learns \(z\) from \(x\)</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Decoder</td>
+<td class="org-left">\( p\_{\theta(x \vert z)} \)</td>
+<td class="org-left">Reconstructs or generates \(x\) from \(z\)</td>
+</tr>
+
+
+<tr>
+<td class="org-left">ELBO</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">A loss function that balances reconstruction and regularization</td>
+</tr>
+
+
+<tr>
+<td class="org-left">Reparameterization</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Trick to make sampling differentiable for backpropagation</td>
+</tr>
+</tbody>
+</table>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/ambition.html">ambition</a>
+    </p>
+  </div>
+
+
+
+
+
+
+</article>
+
+<footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p></footer>  </main>
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Evan Misshula ",
+  "url" : ".",
+  "image": "/images/newProfile200.jpg",
+  "description": "Evan's encounters with ignorance and injustice"
+}
+</script>
+</body>
+</html>

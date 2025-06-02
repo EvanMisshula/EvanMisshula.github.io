@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Evan Misshula - emisshula</title><link>/</link><description>Probability, Learning and Justice</description><lastBuildDate>Tue, 27 May 2025 00:00:00 -0400</lastBuildDate><item><title>Research Plan</title><link>game-plan.html</link><description>&lt;p&gt;&lt;img src="../../images/monotone.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Evan Misshula - emisshula</title><link>/</link><description>Probability, Learning and Justice</description><lastBuildDate>Sat, 31 May 2025 00:00:00 -0400</lastBuildDate><item><title>Variational Encoder</title><link>vae.html</link><description>&lt;p&gt;&lt;img src="../../images/vae.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;p&gt;I am interested in making a contribution to Emedded Optimal Transport
+by extending some of the low dimensional encoding techniques to
+Optimal Transport.  This is the first of my projects to learn the
+computational literature and techniques&lt;/p&gt;
+&lt;p&gt;You can visit my code:
+(&lt;a href="https://github.com/EvanMisshula/variational-encoder"&gt;https://github.com/EvanMisshula/variational-encoder&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a id="org400c213"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;🧠 What Is a …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">emisshula</dc:creator><pubDate>Sat, 31 May 2025 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2025-05-31:vae.html</guid><category>Probability</category><category>ambition</category></item><item><title>Research Plan</title><link>game-plan.html</link><description>&lt;p&gt;&lt;img src="../../images/monotone.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;h1&gt;Roadmap to Become a Machine Learning Researcher Focused on Embedded Optimal Transport&lt;/h1&gt;
 &lt;h2&gt;🧠 Phase 1: Mathematical and Theoretical Foundations&lt;/h2&gt;
