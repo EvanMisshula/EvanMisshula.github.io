@@ -1,5 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - emisshula</title><link href="/" rel="alternate"></link><link href="feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2025-05-31T00:00:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Variational Encoder</title><link href="vae.html" rel="alternate"></link><published>2025-05-31T00:00:00-04:00</published><updated>2025-05-31T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-05-31:vae.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/vae.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - emisshula</title><link href="/" rel="alternate"></link><link href="feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2025-06-17T00:00:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Math Bootcamp</title><link href="bootcamp.html" rel="alternate"></link><published>2025-06-17T00:00:00-04:00</published><updated>2025-06-17T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-06-17:bootcamp.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/grandpa.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;p&gt;This is my grandfather. I am named after him. He shined shoes outside
+in Union Square Park in NYC for 60 years. Giving people a chance for a
+better life is what the United States, NYC and Columbia University is
+all about. &lt;a href="https://www.nycgovparks.org/parks/union-square-park/dailyplant/23304"&gt;link to his profile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id="org9a2abb7"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Many justice-involved adults …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="../../images/grandpa.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+
+&lt;p&gt;This is my grandfather. I am named after him. He shined shoes outside
+in Union Square Park in NYC for 60 years. Giving people a chance for a
+better life is what the United States, NYC and Columbia University is
+all about. &lt;a href="https://www.nycgovparks.org/parks/union-square-park/dailyplant/23304"&gt;link to his profile&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id="org9a2abb7"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Many justice-involved adults have had limited access to quality math education. Not because they lack the potential—but because their life paths have not included the preparation or encouragement needed to develop mathematical fluency.&lt;/p&gt;
+&lt;p&gt;We believe that with the right support and structure, these learners
+can progress all the way from algebra to machine learning. This is not
+a utopian idea—it’s a repeat of a very old story.&lt;/p&gt;
+&lt;p&gt;&lt;a id="org8dd2cd5"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;The Literacy Analogy&lt;/h1&gt;
+&lt;p&gt;&lt;a id="orgaf30f5d"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Then: Literacy&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;In 1500 CE, fewer than 20% of Europeans could read or write.&lt;/li&gt;
+&lt;li&gt;Literacy was restricted to clergy, nobility, and bureaucratic elites.&lt;/li&gt;
+&lt;li&gt;The idea of a farmer or blacksmith reading Latin or interpreting law
+    was unthinkable.&lt;/li&gt;
+&lt;li&gt;Then came the printing press, vernacular schooling, and cultural momentum.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a id="org74e3e9f"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Now: Mathematical Literacy&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Today, fewer than 1% of adults are fluent in statistics, linear
+    algebra, or algorithmic thinking.&lt;/li&gt;
+&lt;li&gt;These are now essential tools for navigating careers, civic life,
+    and automated systems.&lt;/li&gt;
+&lt;li&gt;The idea that justice-involved learners could master these tools may
+    seem radical—but only if we ignore history.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“In 1500, literacy looked impossible too.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id="orga733584"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Why This Works Now&lt;/h1&gt;
+&lt;p&gt;&lt;a id="orge088abe"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Tools Exist&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Free and open resources like Khan Academy, SymPy, DeepNote, Google
+    Colab, and Scikit-learn.&lt;/li&gt;
+&lt;li&gt;Structured learning pathways can be designed to go from numeracy $\rightarrow$
+    algebra $\rightarrow$ ML.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a id="orgfd771af"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Our Approach&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Start with everyday numeracy and algebra.&lt;/li&gt;
+&lt;li&gt;Build into trigonometry, probability, and linear algebra.&lt;/li&gt;
+&lt;li&gt;Introduce Python and real-world data modeling.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scaffold each step with mentorship and peer learning.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Why Justice-Involved Learners Are Uniquely Positioned&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Resilience: navigating the justice system takes logic, discipline, and adaptability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Motivation: many are eager for a second chance to learn and contribute.&lt;/li&gt;
+&lt;li&gt;Insight: diverse life experience improves the relevance and fairness of machine learning applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“If we want better algorithms, we need more perspectives building them.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id="orgaa765e3"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Framing for Broad Support&lt;/h1&gt;
+&lt;p&gt;This program is not about ideology. It is about shared values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Belief in human potential&lt;/li&gt;
+&lt;li&gt;Economic inclusion&lt;/li&gt;
+&lt;li&gt;Practical access to the jobs of tomorrow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It’s a chance to open doors—not rewrite history.&lt;/p&gt;
+&lt;p&gt;&lt;a id="org2a3c32a"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;The Opportunity&lt;/h1&gt;
+&lt;p&gt;Let’s build a bootcamp that says:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You don’t need a math degree to understand machine learning.&lt;/li&gt;
+&lt;li&gt;You just need time, support, and a place to start.&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Probability"></category><category term="ambition"></category></entry><entry><title>Variational Encoder</title><link href="vae.html" rel="alternate"></link><published>2025-05-31T00:00:00-04:00</published><updated>2025-05-31T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-05-31:vae.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/vae.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;p&gt;I am interested in making a contribution to Emedded Optimal Transport
 by extending some of the low dimensional encoding techniques to
