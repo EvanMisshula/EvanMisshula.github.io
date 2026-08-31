@@ -1,5 +1,444 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - emisshula</title><link href="/" rel="alternate"></link><link href="feeds/emisshula.atom.xml" rel="self"></link><id>/</id><updated>2025-08-12T00:00:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Wise Fools</title><link href="fools.html" rel="alternate"></link><published>2025-08-12T00:00:00-04:00</published><updated>2025-08-12T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-08-12:fools.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/einsteinAsFool.jpeg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - emisshula</title><link href="https://evanmisshula.github.io/" rel="alternate"/><link href="https://evanmisshula.github.io/feeds/emisshula.atom.xml" rel="self"/><id>https://evanmisshula.github.io/</id><updated>2026-08-30T00:00:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Rough Times</title><link href="https://evanmisshula.github.io/rough.html" rel="alternate"/><published>2026-08-30T00:00:00-04:00</published><updated>2026-08-30T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2026-08-30:/rough.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/safetyObs.jpeg" width="600px" alt="emerson" title="safety"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="orgf35a5db"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;A Rough 18 Months on the Flight Deck: Using the experience of Linux Kernel maintainers to build HRO's in the Age of AI&lt;/h1&gt;
+&lt;p&gt;An aircraft-carrier flight deck is an improbable place to look for
+reassurance.Aircraft land on a moving ship. Jet engines, fuel,
+ordnance, people, vehicles, and heavy machinery …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img src="../../images/safetyObs.jpeg" width="600px" alt="emerson" title="safety"&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id="orgf35a5db"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;A Rough 18 Months on the Flight Deck: Using the experience of Linux Kernel maintainers to build HRO's in the Age of AI&lt;/h1&gt;
+&lt;p&gt;An aircraft-carrier flight deck is an improbable place to look for
+reassurance.Aircraft land on a moving ship. Jet engines, fuel,
+ordnance, people, vehicles, and heavy machinery share a cramped,
+pitching surface. The tempo is relentless, information is incomplete,
+and a minor lapse can cascade into catastrophe within seconds. The
+crews are highly trained, yet they remain human: they fatigue,
+miscommunicate, overlook signals, and err.And yet carrier aviation
+learned to conduct these operations day after day with extraordinary
+reliability.That puzzle helped launch the study of High Reliability
+Organizations (HROs). In a foundational 1987 paper, Gene Rochlin, Todd
+La Porte, and Karlene Roberts examined aircraft-carrier flight
+operations as a setting in which ordinary trial-and-error learning
+could prove catastrophically expensive.
+&lt;a href="https://digital-commons.usnwc.edu/nwc-review/vol40/iss4/7/"&gt;https://digital-commons.usnwc.edu/nwc-review/vol40/iss4/7/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Later, Karl Weick and Roberts described reliable flight-deck
+performance in terms of a  ``collective mind'': reliability emerged not
+because any individual became incapable of error, but because people
+attended carefully to one another and continually fitted their
+actions into a larger, living system.
+&lt;a href="https://www.jstor.org/stable/2393372"&gt;https://www.jstor.org/stable/2393372&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;That picture was on my mind while listening to Linux kernel
+maintainer Greg Kroah-Hartman talk about what large language models
+are doing to software security.&lt;/p&gt;
+&lt;p&gt;Kroah-Hartman is not principally asking what a sufficiently advanced
+AI might do someday. He is describing what AI-assisted vulnerability
+discovery is doing to a real security workflow now. His warning is
+memorable:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"It's going to be a rough 18 months &amp;#x2026;"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I do not mean that Kroah-Hartman is making an HRO argument. The
+comparison is mine. But I think Linux is giving us an unusually
+concrete example of a problem many organizations are facing:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How do we scale verification as we scale intelligence?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id="org27abd6d"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Weak signals become cheap&lt;/h1&gt;
+&lt;p&gt;Kroah-Hartman's description of LLMs is deliberately reductive. He
+calls them pattern matchers. Code is full of patterns, and security
+bugs often have patterns too. Give a model examples of old
+vulnerabilities and an enormous body of source code and it can search
+for related mistakes at a scale that would have been economically
+impossible with human attention alone.&lt;/p&gt;
+&lt;p&gt;The operational capability matters more here than the philosophical
+argument about whether a model "reasons." I disagree but we can fight
+that out in your favorite pub or coffee shop in person some other
+time.&lt;/p&gt;
+&lt;p&gt;A human security researcher has limited time. A tiny defect may not
+justify hours of investigation. Machine search changes that
+calculation. It can inspect far more code and look for ways that
+individually unimpressive defects can be combined:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;defect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;defect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;defect&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;consequential&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;attack&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Kroah-Hartman says the kernel security workload is already
+accelerating. In the talk, he describes a security-patch tempo that
+has gone from roughly one fix every thirty minutes to roughly one
+every twenty minutes. He explicitly calls it "not a huge increase."
+But for a system already processing security fixes publicly, in high
+volume and 24-hours a day, it is not trivial.&lt;/p&gt;
+&lt;p&gt;There is a flip side to the story. The very systems that cheaply
+generate useful weak signals also an overflow of false ones.&lt;/p&gt;
+&lt;p&gt;Kroah-Hartman estimates that even the best models he is seeing are
+wrong something like a quarter to a third of the time in this
+setting. I would take that as his operational estimate, not as a
+benchmark result. But it points to what I think is the central
+organizational problem:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LLMs are both the world's greatest detectors of weak
+signals yet also the world's greatest generators of false weak signals.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;When detection becomes nearly free, verification becomes the scarce
+resource. Organizations are inundated with warnings while their
+capacity to separate genuine danger from plausible noise remains
+tightly constrained.This is exactly the environment high-reliability
+organizing was built for: one in which serious failures often first
+appear as weak signals, yet treating every signal as urgent would
+quickly exhaust the system's capacity to respond.&lt;/p&gt;
+&lt;p&gt;&lt;a id="orga9a474c"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Reliability is a property of the system&lt;/h1&gt;
+&lt;p&gt;High Reliability Organization research began with a puzzle: some
+organizations operate complex technologies where mistakes can kill
+people and catastrophic failure is always possible, yet they sustain
+remarkably reliable performance. The original Berkeley researchers
+studied U.S. Navy aircraft carriers, nuclear power operations, and
+air-traffic control. Aircraft-carrier flight operations became one of
+the foundational cases. &lt;a href="https://digital-commons.usnwc.edu/nwc-review/vol40/iss4/7/"&gt;Rochlin, La Porte &amp;amp; Roberts (1987)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The idea extends well beyond the flight deck. Organizations and
+industries commonly examined through the high-reliability lens
+include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;aircraft-carrier flight operations;&lt;/li&gt;
+&lt;li&gt;air-traffic control;&lt;/li&gt;
+&lt;li&gt;nuclear power generation;&lt;/li&gt;
+&lt;li&gt;commercial aviation; and&lt;/li&gt;
+&lt;li&gt;increasingly, health-care systems attempting to adopt HRO practices.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Commercial aviation provides a striking example of what sustained
+improvement can look like. In the 1970s, there were roughly one fatal
+accident for every 165,000 flights. Recent figures are on the order of
+one fatal accident per several million flights. &lt;a href="https://ourworldindata.org/data-insights/commercial-flights-have-become-significantly-safer-in-recent-decades"&gt;Historical
+aviation-safety data&lt;/a&gt;. The important fact is not that aviation
+eliminated human error. It did not. Reliability improved while humans
+remained fallible.&lt;/p&gt;
+&lt;p&gt;The familiar five-part HRO vocabulary came later. Weick, Kathleen
+Sutcliffe, and their collaborators synthesized the research tradition
+around:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;preoccupation with failure;&lt;/li&gt;
+&lt;li&gt;reluctance to simplify;&lt;/li&gt;
+&lt;li&gt;sensitivity to operations;&lt;/li&gt;
+&lt;li&gt;commitment to resilience; and&lt;/li&gt;
+&lt;li&gt;deference to expertise.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781119175834"&gt;Weick &amp;amp; Sutcliffe, &lt;em&gt;Managing the Unexpected&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Those labels should not be projected backward onto the original
+carrier researchers. They are a later synthesis of what the HRO
+tradition learned about organizations that repeatedly do dangerous
+things without allowing ordinary errors to become catastrophes.&lt;/p&gt;
+&lt;p&gt;My shorthand for the underlying lesson is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The systems layer should do work, the system should be more reliable than the
+least reliable individual in it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My shorthand for the underlying lesson is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The systems layer should do work. A reliable organization should be
+more reliable than any individual it depends on.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That is my formulation, not a quotation from the HRO literature. But
+it captures the organizational problem Weick and Roberts were trying
+to explain with "heedful interrelating." High reliability does not
+come from eliminating human error. It comes from arranging fallible
+people, procedures, checks, and lines of communication so that one
+person's mistake does not automatically become the system's mistake.&lt;/p&gt;
+&lt;p&gt;Who notices? Who communicates? Who has the relevant expertise? Who can
+stop the process? What gets checked independently? What happens when
+something almost goes wrong? And when one layer fails, what prevents
+that failure from propagating?&lt;/p&gt;
+&lt;p&gt;In other words, the organization itself has to contribute to
+reliability.&lt;/p&gt;
+&lt;p&gt;That is what makes the Linux response to LLM-generated vulnerability
+reports so interesting.&lt;/p&gt;
+&lt;p&gt;The objective cannot be to make every model right. It cannot even be
+to make every human reporter right.&lt;/p&gt;
+&lt;p&gt;The objective is to build a process that remains reliable when they
+are wrong.&lt;/p&gt;
+&lt;p&gt;&lt;a id="org99dd19f"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;"Give me a patch"&lt;/h1&gt;
+&lt;p&gt;One of Kroah-Hartman's most practical observations is almost comically simple.&lt;/p&gt;
+&lt;p&gt;When someone submits an AI-generated security report, don't just ask
+for the vulnerability. Ask the reporter to submit a patch.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"Give me a patch."&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Kroah-Hartman says this eliminates roughly a third of the reports. A
+model may confidently describe a vulnerability and produce a
+persuasive explanation, yet fail when asked to specify the change that
+would actually fix it.&lt;/p&gt;
+&lt;p&gt;That simple requirement changes the economics of the process.&lt;/p&gt;
+&lt;p&gt;A bug report is a claim. A patch is a proposed intervention based on
+that claim. Requiring both forces the reporter and the model to carry
+the argument one step further: &lt;strong&gt;if this is really the problem, what
+exactly should change?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This does not make the model trustworthy. It makes a cheap claim more
+expensive to act upon. The surrounding process is doing work.&lt;/p&gt;
+&lt;p&gt;And a patch is still not proof. Linux subjects patches to layered
+testing, subsystem review, expert judgment, and integration. A change
+can compile, pass local tests, and still be wrong in the larger
+system.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"Give me a patch" is a filter, not a proof system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That is the cannonical idea of high-reliability. Do not search for one
+perfect defense. Build layers of partially independent defenses so
+that when one layer fails, the failure still has somewhere else to be
+caught.&lt;/p&gt;
+&lt;p&gt;&lt;a id="org808ce40"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Near misses are information&lt;/h1&gt;
+&lt;p&gt;HROs are often described as having a &lt;strong&gt;preoccupation with
+failure&lt;/strong&gt;. That does not mean buying into the "doom marketing" of the
+frontier AI labs. Be an optimist. Build things. Expect them to
+work. But recognize that &lt;strong&gt;failure is where the information lives&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Small failures, anomalies, close calls, and weak signals tell us where
+our picture of the system is incomplete. A near miss is especially
+valuable because it exposes a path toward failure while there is still
+time to learn from it.&lt;/p&gt;
+&lt;p&gt;Suppose a model reports a vulnerability and proposes a patch. Testing
+or expert review catches the patch because, while fixing the reported
+problem, it would introduce another one.&lt;/p&gt;
+&lt;p&gt;It is tempting to record that as: &lt;strong&gt;the process worked.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It did. But the more useful questions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What did we just learn about how the process could fail?&lt;/li&gt;
+&lt;li&gt;Which layer caught the problem?&lt;/li&gt;
+&lt;li&gt;Which earlier layers missed it, and why?&lt;/li&gt;
+&lt;li&gt;Would another subsystem or reviewer have caught it?&lt;/li&gt;
+&lt;li&gt;Was the problem obvious to an expert but invisible to the automated tests?&lt;/li&gt;
+&lt;li&gt;What happens when the next model produces a more convincing wrong answer?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The point is not to celebrate failure or become paralyzed by its
+possibility. It is to extract information from failure while the
+consequences are still cheap.&lt;/p&gt;
+&lt;p&gt;A near miss is therefore more than a successful interception. It is
+evidence about the structure of the system: where its defenses are
+strong, where they overlap, and where a failure might still pass
+through.&lt;/p&gt;
+&lt;p&gt;Applying that framing to AI-generated patches is my extension of the
+HRO idea. As machine-generated work increases, we should not throw
+away intercepted failures.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Near misses are training data for the organization.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id="org1ad0d9f"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Defer to expertise&lt;/h1&gt;
+&lt;p&gt;There is another striking correspondence between Linux practice and
+HRO thinking.&lt;/p&gt;
+&lt;p&gt;The Linux kernel security team does not pretend to contain the world's
+deepest expert on every subsystem. Kroah-Hartman's description of the
+security process is explicit: when a problem requires expertise the
+security team does not have, they bring in the maintainers who do.&lt;/p&gt;
+&lt;p&gt;That resembles the HRO principle of &lt;strong&gt;deference to expertise&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In a high-reliability organization, authority cannot always follow the
+org chart. When something unusual happens, the critical question is
+not &lt;strong&gt;who outranks whom?&lt;/strong&gt; It is &lt;strong&gt;who understands this problem best?&lt;/strong&gt;
+The organization must be able to find that person, get the relevant
+information to them, and give their expertise influence over the
+decision while it can still matter.&lt;/p&gt;
+&lt;p&gt;That is a more demanding idea than simply hiring brilliant people.&lt;/p&gt;
+&lt;p&gt;It also has implications for how we build institutions around
+AI. Frontier labs and the agencies charged with regulating AI safety
+certainly need extraordinary computer scientists, mathematicians, and
+engineers. But the problems created by increasingly capable AI systems
+will not all be computer-science problems.&lt;/p&gt;
+&lt;p&gt;They will also be problems of organizations, incentives, human
+behavior, security, law, institutions, communication, adversarial
+behavior, and failure under partial information. A lab or regulator
+filled exclusively with CS prodigies can therefore be extraordinarily
+intelligent and still possess dangerous blind spots.&lt;/p&gt;
+&lt;p&gt;That is why these institutions would do well to hire trained social
+scientists and experts of many stripes alongside their technical
+talent: organizational sociologists who study institutional failure;
+psychologists who understand human judgment; criminologists who study
+deterrence, rule-breaking, and oversight; security practitioners who
+think adversarially; lawyers who understand how rules behave in
+institutions; and people from high-reliability domains who have spent
+careers managing systems where mistakes have consequences.&lt;/p&gt;
+&lt;p&gt;The point is not diversity of expertise as an ornament. It is
+diversity of expertise as a safety mechanism.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Deference to expertise only works if the expertise you will eventually need is somewhere in the room.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Linux does not make every security-team member an expert on every
+kernel subsystem. It has built a system capable of reaching the
+relevant expertise when a problem demands it. AI labs and regulators
+should aspire to the same thing.&lt;/p&gt;
+&lt;p&gt;&lt;a id="org5d8ff46"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;A strange signal from the security list&lt;/h1&gt;
+&lt;p&gt;The most provocative part of Kroah-Hartman's talk concerns duplicate
+reports.&lt;/p&gt;
+&lt;p&gt;He says the kernel security team sees duplicate bug reports every day
+and warns that information sent to an external model should be treated
+as public. In the talk, he interprets at least some of that
+duplication as evidence of leakage or models sharing information.&lt;/p&gt;
+&lt;p&gt;The underlying observation is stronger than a single anecdote.&lt;/p&gt;
+&lt;p&gt;Linux's security documentation now instructs researchers that if AI
+assistance was used to identify a bug, they should treat the finding
+as public. The stated reason is operational experience: AI-assisted
+discoveries repeatedly surface across multiple researchers, often on
+the same day.&lt;/p&gt;
+&lt;p&gt;Linus Torvalds has separately complained about the ``enormous
+duplication'' created when different people find the same issues with
+the same tools.&lt;/p&gt;
+&lt;p&gt;So the duplicates are real.&lt;/p&gt;
+&lt;p&gt;The causal mechanism is not established.&lt;/p&gt;
+&lt;p&gt;Duplicate discoveries do not prove that a model provider took one
+researcher's private vulnerability and exposed it to another
+user. Given the volume of overlap, the observation cannot be summarily
+dismissed either.&lt;/p&gt;
+&lt;p&gt;This is a false choice. We need not either dismiss the signal or
+pretend its cause has been proven.&lt;/p&gt;
+&lt;p&gt;Linux has observed a recurring pattern, recognized that the loss of
+vulnerability secrecy can be serious, and adopted a conservative rule:
+if you use external AI assistance, act as though the discovery may no
+longer be secret.&lt;/p&gt;
+&lt;p&gt;That is a concrete example of HRO epistemology:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;High reliability does not require certainty before taking a weak
+signal seriously. It requires taking the signal seriously without
+pretending that uncertainty has disappeared.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id="org8138ff3"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Run it locally — and understand its limits&lt;/h1&gt;
+&lt;p&gt;Kroah-Hartman's practical recommendation for security-sensitive work
+is to run models locally.&lt;/p&gt;
+&lt;p&gt;That advice is sound, but it is worth being precise about &lt;strong&gt;why&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;DATA BOUNDARY
+Does sensitive information leave my controlled environment?
+
+MODEL BOUNDARY
+What am I trusting about the model, its weights, provenance, training,
+and behavior?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Local inference directly addresses the first. When the surrounding
+system is configured correctly, unpublished vulnerabilities and
+proprietary code need not leave the organization's perimeter for an
+external inference service.&lt;/p&gt;
+&lt;p&gt;Open-weight models can also improve control over the second. A team
+can pin a specific revision, archive it, hash the files, test it,
+inspect it, and decide when (or whether) to replace it, rather than
+silently tracking a remote provider's changing default.&lt;/p&gt;
+&lt;p&gt;These are real advantages. They are capabilities, not guarantees.&lt;/p&gt;
+&lt;p&gt;A hash confirms that the file is the one you expected; it does not
+certify that the policy encoded in that file is
+benign. Reproducibility requires capturing the surrounding inference
+stack, not merely the weights. Local execution protects
+confidentiality only if the rest of the application and host are
+actually configured to keep the data local.&lt;/p&gt;
+&lt;p&gt;Most importantly:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Local does not mean trusted.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id="org717e9a9"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;leeper agents and the model boundary&lt;/h1&gt;
+&lt;p&gt;The &lt;strong&gt;Sleeper Agents&lt;/strong&gt; experiments by Evan Hubinger and colleagues make
+the distinction concrete.&lt;/p&gt;
+&lt;p&gt;The researchers deliberately trained language models with conditional
+backdoors. In one code-generation setting, a model was trained to emit
+secure code under one year/context cue and vulnerable code under
+another. That conditional behavior persisted through several of the
+subsequent safety-training procedures they tested.&lt;/p&gt;
+&lt;p&gt;The result should not be overstated.&lt;/p&gt;
+&lt;p&gt;The researchers &lt;strong&gt;constructed&lt;/strong&gt; the sleeper agents. They did not
+discover that any particular production open-weight model already
+contains such a backdoor. The experiment demonstrates technical
+feasibility, not prevalence in the wild.&lt;/p&gt;
+&lt;p&gt;Feasibility is enough for the narrow point at hand: physical
+possession of a model does not certify the policy encoded in its
+weights.&lt;/p&gt;
+&lt;p&gt;Running locally can protect the confidentiality of what is sent to the
+model. Open weights can increase an organization's ability to freeze,
+inspect, test, and audit the artifact. Neither fact removes the need
+to ask what the model will do under conditions that have not yet been
+anticipated.&lt;/p&gt;
+&lt;p&gt;This is not an argument against open weights. It is closer to the
+opposite. Local and open models supply valuable tools for controlling
+the data boundary and investigating the model boundary.&lt;/p&gt;
+&lt;p&gt;The HRO lesson is that those tools still have to sit inside a reliable
+process.&lt;/p&gt;
+&lt;p&gt;&lt;a id="org8cbb72a"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Intelligence is getting cheaper. Verification is not.&lt;/h1&gt;
+&lt;p&gt;For years, much of the AI-safety discussion has focused,
+understandably, on the properties of models. Can we make them more
+truthful? More aligned? More robust?&lt;/p&gt;
+&lt;p&gt;Those questions matter.&lt;/p&gt;
+&lt;p&gt;But a second problem grows more urgent as intelligent systems
+proliferate:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How do we scale verification as we scale intelligence?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Suppose machine intelligence becomes cheap enough that we can place an
+intelligent agent against every codebase, log stream, transaction,
+sensor feed, filing, and organizational decision.&lt;/p&gt;
+&lt;p&gt;We will receive more genuine signals.  We will also receive more false
+ones.&lt;/p&gt;
+&lt;p&gt;The bottleneck moves.&lt;/p&gt;
+&lt;p&gt;The scarce resource becomes the capacity to decide which claims
+deserve attention, which interventions may proceed, which experts must
+be involved, what evidence is sufficient, and what the organization
+should learn when a defense nearly fails.&lt;/p&gt;
+&lt;p&gt;That is why I keep returning to the flight deck.&lt;/p&gt;
+&lt;p&gt;The sailors on a carrier did not solve their problem by eliminating
+human fallibility.&lt;/p&gt;
+&lt;p&gt;Neither Linux nor any other complex organization will solve its
+problem by eliminating fallibility from every maintainer, contributor,
+security researcher, or model.&lt;/p&gt;
+&lt;p&gt;AI safety cannot rest entirely on the hope of building models that
+never err, never deceive, and never encounter conditions their
+designers failed to anticipate.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Trust individuals and tools where justified. Build the organization
+for the moments when that trust fails.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Do the work&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Kroah-Hartman's warning is that we may be in for a rough 18 months.&lt;/p&gt;
+&lt;p&gt;Whether that number proves exact matters less than the operational
+problem he is naming.&lt;/p&gt;
+&lt;p&gt;Machine intelligence is making useful signals cheaper to discover and
+false signals cheaper to generate. It hands us extraordinary new tools
+while forcing us to redesign the institutions through which those
+tools reach consequential systems.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The response should not be panic.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It is better filters, stronger evidence, layered verification,
+attention to near misses, deference to expertise, clear boundaries
+around sensitive information, processes that can recover when one
+defense fails, and organizations capable of learning.&lt;/p&gt;
+&lt;p&gt;Aircraft-carrier crews learned to do this while launching and
+recovering aircraft from moving ships. Linux maintainers are adapting
+the same basic organizational problem to a world in which machines can
+search, report, and write code at enormous scale.&lt;/p&gt;
+&lt;p&gt;The HRO connection is mine, not Kroah-Hartman’s. But I think his
+advice remains the right place to end:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Just do the work.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id="org23565df"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;A brief note on where this goes next&lt;/h1&gt;
+&lt;p&gt;The same institutional question arises wherever consequential
+decisions are made under incomplete information: how much safety
+should rest on the virtue or competence of any single actor, and how
+much should be designed into the organization surrounding that actor?&lt;/p&gt;
+&lt;p&gt;I believe the HRO lens has important implications beyond software
+security which include AI control and criminal justice. Those
+arguments deserve posts of their own. For now, Linux offers a concrete
+place to begin.&lt;/p&gt;
+&lt;p&gt;&lt;a id="org855dbb7"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*Rochlin, G. I., La Porte, T. R., &amp;amp; Roberts, K. H. (1987).&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; "The Self-Designing High-Reliability Organization: Aircraft Carrier Flight Operations at Sea." &lt;/em&gt;&lt;em&gt;Naval War College Review&lt;/em&gt;*, 40(4), Article 7, pp. 76–90. [&lt;a href="https://digital-commons.usnwc.edu/nwc-review/vol40/iss4/7/"&gt;Naval War College Repository&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*Weick, K. E., &amp;amp; Roberts, K. H. (1993).&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; "Collective Mind in Organizations: Heedful Interrelating on Flight Decks." &lt;/em&gt;&lt;em&gt;Administrative Science Quarterly&lt;/em&gt;*, 38(3), pp. 357–381. [&lt;a href="https://doi.org/10.2307/2393372"&gt;DOI: 10.2307/2393372&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*Weick, K. E., &amp;amp; Sutcliffe, K. M. (2015).&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; &lt;/em&gt;&lt;em&gt;Managing the Unexpected: Sustained Performance in a Complex World&lt;/em&gt;* (3rd ed.). Jossey-Bass / Wiley. [&lt;a href="https://onlinelibrary.wiley.com/doi/book/10.1002/9781119175834"&gt;Publisher Link&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;Greg Kroah-Hartman, "Linux kernel security work," January 2, 2026. [[&lt;a href="https://www.kroah.com/log/blog/2026/01/02/linux-kernel-security-work/"&gt;&lt;a href="https://www.kroah.com/log/blog/2026/01/02/linux-kernel-security-work/"&gt;https://www.kroah.com/log/blog/2026/01/02/linux-kernel-security-work/&lt;/a&gt;&lt;/a&gt;][GKH's site]]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*The Linux Kernel Organization.&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; "Security Bugs." &lt;/em&gt;&lt;em&gt;Linux Kernel Documentation&lt;/em&gt;*. [&lt;a href="https://docs.kernel.org/process/security-bugs.html"&gt;docs.kernel.org&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*The Linux Kernel Organization.&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; "AI Coding Assistants." &lt;/em&gt;&lt;em&gt;Linux Kernel Documentation&lt;/em&gt;*. [&lt;a href="https://docs.kernel.org/process/coding-assistants.html"&gt;docs.kernel.org&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*Torvalds, L. (2026, May 17).&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; "Linux 7.1-rc4." &lt;/em&gt;&lt;em&gt;Linux Kernel Mailing List (LKML)&lt;/em&gt;*. [&lt;a href="https://lkml.iu.edu/hypermail/linux/kernel/2605.2/01597.html"&gt;LKML Archive&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*The Linux Kernel Organization.&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; "Linux Kernel Patch Submission Checklist." &lt;/em&gt;&lt;em&gt;Linux Kernel Documentation&lt;/em&gt;*. [&lt;a href="https://docs.kernel.org/process/submit-checklist.html"&gt;docs.kernel.org&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;*Hubinger, E. et al. (2024).&lt;/em&gt;&lt;/strong&gt;&lt;em&gt; "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training." &lt;/em&gt;&lt;em&gt;arXiv preprint arXiv:2401.05566&lt;/em&gt;*. [&lt;a href="https://arxiv.org/abs/2401.05566"&gt;arXiv Link&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;</content><category term="grit"/><category term="ambition"/><category term="persitence"/></entry><entry><title>Wise Fools</title><link href="https://evanmisshula.github.io/fools.html" rel="alternate"/><published>2025-08-12T00:00:00-04:00</published><updated>2025-08-12T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2025-08-12:/fools.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/einsteinAsFool.jpeg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;h1&gt;Holy and Wise: The mythology and contributions of the fool in mathematics and physics&lt;/h1&gt;
 &lt;p&gt;On August 8th, the NY Times published a long &lt;a href="https://www.nytimes.com/2025/08/08/technology/ai-chatbots-delusions-chatgpt.html"&gt;essay&lt;/a&gt; about Allan Brooks
@@ -570,7 +1009,7 @@ Like Einstein stood by de Broglie when few could understand.&lt;br&gt;
 From number games to cosmic rays, from lab bench to the stars,&lt;br&gt;
 Start with grit, a spark of you, and change what's ours.&lt;br&gt;
 No degree can block your path, no gate can stop your view,&lt;br&gt;
-With heart, a guide, and hustle – let the world catch up to you!  &lt;/p&gt;</content><category term="education"></category><category term="ambition"></category><category term="persitence"></category></entry><entry><title>Math Bootcamp</title><link href="bootcamp.html" rel="alternate"></link><published>2025-06-17T00:00:00-04:00</published><updated>2025-06-17T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-06-17:bootcamp.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/grandpa.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+With heart, a guide, and hustle – let the world catch up to you!  &lt;/p&gt;</content><category term="education"/><category term="ambition"/><category term="persitence"/></entry><entry><title>Math Bootcamp</title><link href="https://evanmisshula.github.io/bootcamp.html" rel="alternate"/><published>2025-06-17T00:00:00-04:00</published><updated>2025-06-17T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2025-06-17:/bootcamp.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/grandpa.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;p&gt;This is my grandfather. I am named after him. He shined shoes outside
 in Union Square Park in NYC for 60 years. Giving people a chance for a
@@ -660,7 +1099,7 @@ a utopian idea—it’s a repeat of a very old story.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You don’t need a math degree to understand machine learning.&lt;/li&gt;
 &lt;li&gt;You just need time, support, and a place to start.&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Probability"></category><category term="ambition"></category></entry><entry><title>Variational Encoder</title><link href="vae.html" rel="alternate"></link><published>2025-05-31T00:00:00-04:00</published><updated>2025-05-31T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-05-31:vae.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/vae.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Probability"/><category term="ambition"/></entry><entry><title>Variational Encoder</title><link href="https://evanmisshula.github.io/vae.html" rel="alternate"/><published>2025-05-31T00:00:00-04:00</published><updated>2025-05-31T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2025-05-31:/vae.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/vae.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;p&gt;I am interested in making a contribution to Emedded Optimal Transport
 by extending some of the low dimensional encoding techniques to
@@ -857,7 +1296,7 @@ z = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)
 &lt;td class="org-left"&gt;Trick to make sampling differentiable for backpropagation&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content><category term="Probability"></category><category term="ambition"></category></entry><entry><title>Research Plan</title><link href="game-plan.html" rel="alternate"></link><published>2025-05-27T00:00:00-04:00</published><updated>2025-05-27T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-05-27:game-plan.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/monotone.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+&lt;/table&gt;</content><category term="Probability"/><category term="ambition"/></entry><entry><title>Research Plan</title><link href="https://evanmisshula.github.io/game-plan.html" rel="alternate"/><published>2025-05-27T00:00:00-04:00</published><updated>2025-05-27T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2025-05-27:/game-plan.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/monotone.png" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;h1&gt;Roadmap to Become a Machine Learning Researcher Focused on Embedded Optimal Transport&lt;/h1&gt;
 &lt;h2&gt;🧠 Phase 1: Mathematical and Theoretical Foundations&lt;/h2&gt;
@@ -1025,7 +1464,7 @@ z = \mu + \sigma \odot \epsilon, \quad \epsilon \sim \mathcal{N}(0, I)
 &lt;li&gt;Streamlit for visualizing transport maps&lt;/li&gt;
 &lt;li&gt;Manim or matplotlib 3D for geodesic animations&lt;/li&gt;
 &lt;li&gt;JupyterLab + VSCode + SSH for dev workflow&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Probability"></category><category term="ambition"></category></entry><entry><title>Python at Rikers</title><link href="Rikers%20Python.html" rel="alternate"></link><published>2016-12-11T00:00:00-05:00</published><updated>2016-12-11T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2016-12-11:Rikers Python.html</id><summary type="html">&lt;p&gt;o&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Probability"/><category term="ambition"/></entry><entry><title>Python at Rikers</title><link href="https://evanmisshula.github.io/Rikers%20Python.html" rel="alternate"/><published>2016-12-11T00:00:00-05:00</published><updated>2016-12-11T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2016-12-11:/Rikers Python.html</id><summary type="html">&lt;p&gt;o&lt;/p&gt;
 &lt;p&gt;&lt;img src="../../images/rikers.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -1068,7 +1507,7 @@ the video below from Holocaust survivor and intellectual Victor Frankl.&lt;/p&gt
 &lt;video width="800px" controls display:block; margin:auto;&gt;
   &lt;source src="../../images/ViktorFrankl1972.mp4" type="video/mp4" display:block; margin:auto;&gt;
   Your browser does not support HTML5 video.
-&lt;/video&gt;</content><category term="Criminal Justice"></category><category term="Prison Education"></category><category term="persistence"></category><category term="resilience"></category></entry><entry><title>Hard Problems</title><link href="hard-problems.html" rel="alternate"></link><published>2015-10-26T00:00:00-04:00</published><updated>2015-10-26T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2015-10-26:hard-problems.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/haralick.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+&lt;/video&gt;</content><category term="Criminal Justice"/><category term="Prison Education"/><category term="persistence"/><category term="resilience"/></entry><entry><title>Hard Problems</title><link href="https://evanmisshula.github.io/hard-problems.html" rel="alternate"/><published>2015-10-26T00:00:00-04:00</published><updated>2015-10-26T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2015-10-26:/hard-problems.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/haralick.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Comparison is the theif of Joy.
@@ -1094,7 +1533,7 @@ enough time struggling with their computer science homework.&lt;/p&gt;
 &lt;p&gt;A world renowned research in pattern recognition and image analysis, 
 Haralick implored students, "Every day I struggle with new problems.
 The key is not giving up too soon.  You are smarter than you think.
-Keep pressing on."&lt;/p&gt;</content><category term="Tutorials"></category><category term="Grad School"></category><category term="persistence"></category><category term="resilience"></category></entry><entry><title>Achievement Gap</title><link href="achievement-gap.html" rel="alternate"></link><published>2015-07-27T00:00:00-04:00</published><updated>2015-07-27T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2015-07-27:achievement-gap.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/emerson.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+Keep pressing on."&lt;/p&gt;</content><category term="Tutorials"/><category term="Grad School"/><category term="persistence"/><category term="resilience"/></entry><entry><title>Achievement Gap</title><link href="https://evanmisshula.github.io/achievement-gap.html" rel="alternate"/><published>2015-07-27T00:00:00-04:00</published><updated>2015-07-27T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2015-07-27:/achievement-gap.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/emerson.jpg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;It is impossible to be a mathematician without being a poet in soul.
@@ -1135,7 +1574,7 @@ computer science or about the future of science should watch this
 talk.  If you are teaching for the first time at a minority serving
 institution, you should be required to watch it.&lt;/p&gt;
 &lt;p&gt;I hope that Higher Education administrators will also watch it to
-understand what is causing low completion and retention rates.&lt;/p&gt;</content><category term="Tutorials"></category><category term="Free Software"></category></entry><entry><title>uncertain-life</title><link href="uncertain-life.html" rel="alternate"></link><published>2015-07-23T00:00:00-04:00</published><updated>2015-07-23T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2015-07-23:uncertain-life.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/life.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
+understand what is causing low completion and retention rates.&lt;/p&gt;</content><category term="Tutorials"/><category term="Free Software"/></entry><entry><title>uncertain-life</title><link href="https://evanmisshula.github.io/uncertain-life.html" rel="alternate"/><published>2015-07-23T00:00:00-04:00</published><updated>2015-07-23T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2015-07-23:/uncertain-life.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/life.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
 
 &lt;h1&gt;In memorium to Faigy Mayer&lt;/h1&gt;
 &lt;p&gt;We all struggle with finding our place in the world.  Sometimes when we lose our
@@ -1155,7 +1594,7 @@ computing and the riches of the New York Tech scene are never as close as they s
 I hope we all have the strength to struggle on.  I hope those of us enjoying success
 reach out and lend a hand up, not a &lt;a href="https://www.recurse.com/manual#sec-environment"&gt;"Well, Actually".&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Faigy, I wish I had known you better.  I wish I had been more helpful at &lt;a href="http://www.meetup.com/learn-python-nyc/"&gt;Learn-Python-NYC&lt;/a&gt;.
-Mostly I hope you are in a happier place.  Your talents will be missed.&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="Free Software"></category></entry><entry><title>docview-setup</title><link href="doc-setup.html" rel="alternate"></link><published>2015-04-01T00:00:00-04:00</published><updated>2015-04-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2015-04-01:doc-setup.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/carolDweck.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
+Mostly I hope you are in a happier place.  Your talents will be missed.&lt;/p&gt;</content><category term="Criminal Justice"/><category term="Free Software"/></entry><entry><title>docview-setup</title><link href="https://evanmisshula.github.io/doc-setup.html" rel="alternate"/><published>2015-04-01T00:00:00-04:00</published><updated>2015-04-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2015-04-01:/doc-setup.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/carolDweck.jpg" width="600px" alt="carol&lt;sub&gt;dweck&lt;/sub&gt;" title="box"&gt;&lt;/p&gt;
 
 &lt;h1&gt;The problem&lt;/h1&gt;
 &lt;p&gt;We all have to complete tutorials to learn new languages.  One
@@ -1191,7 +1630,7 @@ brew linkapps emacs
 useful &lt;a href="https://cygwin.com"&gt;cygwin&lt;/a&gt; which provides the libraries for &lt;em&gt;ghostscript&lt;/em&gt; and &lt;em&gt;xpdf&lt;/em&gt;.  Watch this &lt;a href="https://www.youtube.com/watch?v=TjxEH_tr7e0"&gt;video&lt;/a&gt; by Paul
 Royer on installing cygwin and downloading the libraries.  You then need to modify the windows
 path environmental variable using these &lt;a href="https://www.java.com/en/download/help/path.xml"&gt;instructions&lt;/a&gt; to include thos libraries which are found in 
-your new home directory.  I will add to this later as these instructions are vague.&lt;/p&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="pdf"></category><category term="meta-cognition"></category></entry><entry><title>bugs-javascript</title><link href="skewer-tutorial.html" rel="alternate"></link><published>2015-03-07T00:00:00-05:00</published><updated>2015-03-07T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2015-03-07:skewer-tutorial.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/perlis.jpg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+your new home directory.  I will add to this later as these instructions are vague.&lt;/p&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="pdf"/><category term="meta-cognition"/></entry><entry><title>bugs-javascript</title><link href="https://evanmisshula.github.io/skewer-tutorial.html" rel="alternate"/><published>2015-03-07T00:00:00-05:00</published><updated>2015-03-07T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2015-03-07:/skewer-tutorial.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/perlis.jpg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;When someone says: 'I want a programming language in which I need only
@@ -1517,7 +1956,7 @@ We define those random colors in demo4.js:&lt;/p&gt;
 done with &lt;code&gt;C-c C-k&lt;/code&gt; (control-c, control-k).&lt;/p&gt;
 &lt;p&gt;The boids change colors.  Everything else is a variation on this
 theme.  I may add later more later but this should get you debugging
-javascript.&lt;/p&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="skewer-mode"></category><category term="javascript"></category><category term="d3.js"></category><category term="debugging"></category></entry><entry><title>Emacs dies on popup</title><link href="death-by-pop-up.html" rel="alternate"></link><published>2014-12-27T00:00:00-05:00</published><updated>2014-12-27T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2014-12-27:death-by-pop-up.html</id><summary type="html">&lt;h1&gt;Switched to Mac&lt;/h1&gt;
+javascript.&lt;/p&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="skewer-mode"/><category term="javascript"/><category term="d3.js"/><category term="debugging"/></entry><entry><title>Emacs dies on popup</title><link href="https://evanmisshula.github.io/death-by-pop-up.html" rel="alternate"/><published>2014-12-27T00:00:00-05:00</published><updated>2014-12-27T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-12-27:/death-by-pop-up.html</id><summary type="html">&lt;h1&gt;Switched to Mac&lt;/h1&gt;
 &lt;p&gt;My switch to the Mac meant that I was making more typing mistakes and on one 
 them I was always getting to Emacs to freeze.  I looked like this:&lt;/p&gt;
 &lt;p&gt;&lt;img src="../images/Computer-Freezes.jpg" width="450px" alt="img" title="Computer-Freezes.jpg"&gt;&lt;/p&gt;
@@ -1552,14 +1991,14 @@ points on SuperUser to vote it up.  The solution is:&lt;/p&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;ad&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;it&lt;/span&gt;&lt;span class="ss"&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The two functions are almost the same.  One takes care of ``yes or no'' and the other ``y or n''.&lt;/p&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="homebrew"></category><category term="Mac"></category><category term="OS X"></category><category term="Mavericks"></category><category term="Darwin"></category></entry><entry><title>Reproducible-research-org-mode</title><link href="emacsnyc-rr.html" rel="alternate"></link><published>2014-11-03T00:00:00-05:00</published><updated>2014-11-03T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2014-11-03:emacsnyc-rr.html</id><content type="html">&lt;h1&gt;Update&lt;/h1&gt;
+&lt;p&gt;The two functions are almost the same.  One takes care of ``yes or no'' and the other ``y or n''.&lt;/p&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="homebrew"/><category term="Mac"/><category term="OS X"/><category term="Mavericks"/><category term="Darwin"/></entry><entry><title>Reproducible-research-org-mode</title><link href="https://evanmisshula.github.io/emacsnyc-rr.html" rel="alternate"/><published>2014-11-03T00:00:00-05:00</published><updated>2014-11-03T00:00:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-11-03:/emacsnyc-rr.html</id><content type="html">&lt;h1&gt;Update&lt;/h1&gt;
 &lt;p&gt;On November 3, I gave a talk at the Emacsnyc meetup on reproducible
 research.  I will get a link to the presentation up soon.&lt;/p&gt;
 &lt;iframe width="560" height="315" src="//www.youtube.com/embed/CGnt&lt;sub&gt;PWoM5Y&lt;/sub&gt;" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
 &lt;p&gt;You can view the presentation:&lt;/p&gt;
 &lt;p&gt;And here is the github:&lt;/p&gt;
-&lt;p&gt;&lt;a href="&lt;a href="http://github.com/EvanMisshula/rr"&gt;http://github.com/EvanMisshula/rr&lt;/a&gt;" target="\&lt;sub&gt;blank\&lt;/sub&gt;"&gt;rr repo&lt;/a&gt;&lt;/p&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="reproducibility"></category><category term="open-science"></category></entry><entry><title>Mac OS X Installation</title><link href="mac-dev-env.html" rel="alternate"></link><published>2014-07-30T15:03:00-04:00</published><updated>2014-07-30T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-30:mac-dev-env.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="&lt;a href="http://github.com/EvanMisshula/rr"&gt;http://github.com/EvanMisshula/rr&lt;/a&gt;" target="\&lt;sub&gt;blank\&lt;/sub&gt;"&gt;rr repo&lt;/a&gt;&lt;/p&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="reproducibility"/><category term="open-science"/></entry><entry><title>Mac OS X Installation</title><link href="https://evanmisshula.github.io/mac-dev-env.html" rel="alternate"/><published>2014-07-30T15:03:00-04:00</published><updated>2014-07-30T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-30:/mac-dev-env.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;I have developed a Zen-like approach to the operating systems that
 people use: 'When you're ready, the right operating system will appear
 in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
@@ -1772,7 +2211,7 @@ be good enough.&lt;/p&gt;
 who were able to obtain for me not only access to a Mac but insured
 that I would have admin rights to install software and create this 
 tutorial. They bare no responsibility for any mistakes or omissions 
-which are solely the responsiblity of the author.&lt;/p&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category><category term="OS X"></category></entry><entry><title>Descriptives</title><link href="r-descriptives-ess.html" rel="alternate"></link><published>2014-07-24T15:03:00-04:00</published><updated>2014-07-24T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-24:r-descriptives-ess.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+which are solely the responsiblity of the author.&lt;/p&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/><category term="OS X"/></entry><entry><title>Descriptives</title><link href="https://evanmisshula.github.io/r-descriptives-ess.html" rel="alternate"/><published>2014-07-24T15:03:00-04:00</published><updated>2014-07-24T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-24:/r-descriptives-ess.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. &lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~Bobby Bragan, 1963&lt;/p&gt;
@@ -1887,7 +2326,7 @@ a vertical line separating the stem and leaves.&lt;/p&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>R foundations with ESS</title><link href="r-foundation-ess.html" rel="alternate"></link><published>2014-07-04T15:03:00-04:00</published><updated>2014-07-04T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-04:r-foundation-ess.html</id><content type="html">&lt;h1&gt;R foundations&lt;/h1&gt;
+&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>R foundations with ESS</title><link href="https://evanmisshula.github.io/r-foundation-ess.html" rel="alternate"/><published>2014-07-04T15:03:00-04:00</published><updated>2014-07-04T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-04:/r-foundation-ess.html</id><content type="html">&lt;h1&gt;R foundations&lt;/h1&gt;
 &lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -1897,7 +2336,7 @@ a vertical line separating the stem and leaves.&lt;/p&gt;
 &lt;p&gt;Start an &lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; buffer through &lt;em&gt;ess&lt;/em&gt; by typing &lt;code&gt;M-x R&lt;/code&gt;.  See the earlier
 tutorial &lt;a href="ess.md"&gt;here&lt;/a&gt; or &lt;a href="Emacs-basics-for-stats.md"&gt;here&lt;/a&gt; if that is mystery. At the console type:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;20&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Emacs Speaks Statistics (ESS) Tutorial</title><link href="r-tutorial-ess.html" rel="alternate"></link><published>2014-07-02T15:03:00-04:00</published><updated>2014-07-02T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-02:r-tutorial-ess.html</id><summary type="html">&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Emacs Speaks Statistics (ESS) Tutorial</title><link href="https://evanmisshula.github.io/r-tutorial-ess.html" rel="alternate"/><published>2014-07-02T15:03:00-04:00</published><updated>2014-07-02T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-02:/r-tutorial-ess.html</id><summary type="html">&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
 &lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2203,7 +2642,7 @@ this evil behavior by seting the environment variable.&lt;/div&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to basic Emacs for statistics</title><link href="r-tutorial-emacs-basics.html" rel="alternate"></link><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-01:r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
+&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Intro to basic Emacs for statistics</title><link href="https://evanmisshula.github.io/r-tutorial-emacs-basics.html" rel="alternate"/><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-01:/r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2520,7 +2959,7 @@ want to behave in a certain way.&lt;/p&gt;
 (add-hook &amp;#39;R-mode-hook
           &amp;#39;(lambda ()  (local-set-key (kbd &amp;quot;M-RET&amp;quot;)
                                       &amp;#39;ess-R-use-this-dir)))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to Emacs Speaks Statistics</title><link href="r-tutorial-intro-ess.html" rel="alternate"></link><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-01:r-tutorial-intro-ess.html</id><summary type="html">&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Intro to Emacs Speaks Statistics</title><link href="https://evanmisshula.github.io/r-tutorial-intro-ess.html" rel="alternate"/><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-01:/r-tutorial-intro-ess.html</id><summary type="html">&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
 &lt;p&gt;ESS is a library (package) for Emacs which allows it to interact with
 a number of statistical packages including S+, R, SaS, SPSS and Stata.
 For the purpose of these notes.  We will only deal with R.  It allows
@@ -2546,7 +2985,7 @@ us to load files into R for evaluation.&lt;/p&gt;
 &lt;li&gt;Stata-mode: 1997, Thomas Lumley. Added 1997 (Rossini).&lt;/li&gt;
 &lt;li&gt;1997: last major restructuring (``grand unification'')&lt;/li&gt;
 &lt;li&gt;2004: switch leaders: Maechler takes over&lt;/li&gt;
-&lt;/ul&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to R with Emacs-Speaks-Statistics</title><link href="r-tutorial.html" rel="alternate"></link><published>2014-06-29T00:00:00-04:00</published><updated>2014-06-29T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-06-29:r-tutorial.html</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Intro to R with Emacs-Speaks-Statistics</title><link href="https://evanmisshula.github.io/r-tutorial.html" rel="alternate"/><published>2014-06-29T00:00:00-04:00</published><updated>2014-06-29T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-06-29:/r-tutorial.html</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
 &lt;p&gt;A number of my colleagues need to analyze data and are learning a
 programming language for the first time.  It does not need to be said,
 this is a very heavy lift and occurs in the presence of a wide diversity
@@ -2636,12 +3075,12 @@ bootcamp&lt;/a&gt;.&lt;/p&gt;
 &lt;li&gt;spatial&lt;/li&gt;
 &lt;li&gt;meta-analysis&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More to come&amp;#x2026;&lt;/p&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>LSE recommends ending Drug Wars</title><link href="lse-ernie.html" rel="alternate"></link><published>2014-05-21T23:37:00-04:00</published><updated>2014-05-21T23:37:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-21:lse-ernie.html</id><content type="html">&lt;p&gt;My collaborator and friend Ernie Drucker was recently at the London
+&lt;p&gt;More to come&amp;#x2026;&lt;/p&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>LSE recommends ending Drug Wars</title><link href="https://evanmisshula.github.io/lse-ernie.html" rel="alternate"/><published>2014-05-21T23:37:00-04:00</published><updated>2014-05-21T23:37:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-21:/lse-ernie.html</id><content type="html">&lt;p&gt;My collaborator and friend Ernie Drucker was recently at the London
 School of Economics where he joined the expert panel on how to end the
 unproductive and wasteful drug wars. You can see his talk below.&lt;/p&gt;
 &lt;iframe width="560" height="315" src="//www.youtube.com/embed/wys4j&lt;sub&gt;74o7a&lt;/sub&gt;&amp;ouput=embed" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;The complete report is available here as a (&lt;a href="http://www.lse.ac.uk/IDEAS/publications/reports/pdf/LSE-IDEAS-DRUGS-REPORT-FINAL-WEB.pdf"&gt;pdf&lt;/a&gt;).&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="Documentaries"></category><category term="short"></category></entry><entry><title>intro to r and ess</title><link href="r-intro.html" rel="alternate"></link><published>2014-05-19T00:00:00-04:00</published><updated>2014-05-19T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-19:r-intro.html</id><summary type="html">&lt;h1&gt;credit&lt;/h1&gt;
+&lt;p&gt;The complete report is available here as a (&lt;a href="http://www.lse.ac.uk/IDEAS/publications/reports/pdf/LSE-IDEAS-DRUGS-REPORT-FINAL-WEB.pdf"&gt;pdf&lt;/a&gt;).&lt;/p&gt;</content><category term="Criminal Justice"/><category term="Documentaries"/><category term="short"/></entry><entry><title>intro to r and ess</title><link href="https://evanmisshula.github.io/r-intro.html" rel="alternate"/><published>2014-05-19T00:00:00-04:00</published><updated>2014-05-19T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-19:/r-intro.html</id><summary type="html">&lt;h1&gt;credit&lt;/h1&gt;
 &lt;p&gt;I am trying to explain the ethos and social convention of
 FREE software.  People have created software and they let you 
 use it and modify it for free.  Is only polite to extend them&lt;/p&gt;
@@ -2667,16 +3106,16 @@ data.&lt;/p&gt;
 &lt;li&gt;a domain specific programming language&lt;/li&gt;
 &lt;li&gt;a means of simulating phenomena of interest&lt;/li&gt;
 &lt;li&gt;a means of creating reproducible results&lt;/li&gt;
-&lt;/ul&gt;</content><category term="R-course"></category><category term="emacs"></category><category term="rstats"></category><category term="ess"></category></entry><entry><title>Emacs-IPython-Update</title><link href="emacsnyc-IPython.html" rel="alternate"></link><published>2014-05-14T23:37:00-04:00</published><updated>2014-05-14T23:37:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-14:emacsnyc-IPython.html</id><content type="html">&lt;h1&gt;Update&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="R-course"/><category term="emacs"/><category term="rstats"/><category term="ess"/></entry><entry><title>Emacs-IPython-Update</title><link href="https://evanmisshula.github.io/emacsnyc-IPython.html" rel="alternate"/><published>2014-05-14T23:37:00-04:00</published><updated>2014-05-14T23:37:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-14:/emacsnyc-IPython.html</id><content type="html">&lt;h1&gt;Update&lt;/h1&gt;
 &lt;p&gt;On May 5, I gave a lightning talk at the Emacsnyc meetup on the state
 of the Emacs IPthon notebook.  A big thank you to &lt;a href="http://www.tabfugni.cc"&gt;Eric&lt;/a&gt; from
 &lt;a href="http://emacsnyc.org"&gt;http://emacsnyc.org&lt;/a&gt; for his extraordinary linux vs audio-visual
 equipment efforts.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="//www.youtube.com/embed/dgcBKz03lK8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="emacs-ipython-notebook"></category><category term="ipython"></category><category term="tutorial"></category></entry><entry><title>CecilyMcMillan</title><link href="CecilyMcMillan.html" rel="alternate"></link><published>2014-05-08T15:02:00-04:00</published><updated>2014-05-08T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-08:CecilyMcMillan.html</id><content type="html">&lt;p&gt;The Judge would be wise to listen to a &lt;a href="http://www.scribd.com/doc/222954383/Jury-Letter"&gt;jury&lt;/a&gt; that understands the
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/dgcBKz03lK8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="emacs-ipython-notebook"/><category term="ipython"/><category term="tutorial"/></entry><entry><title>CecilyMcMillan</title><link href="https://evanmisshula.github.io/CecilyMcMillan.html" rel="alternate"/><published>2014-05-08T15:02:00-04:00</published><updated>2014-05-08T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-08:/CecilyMcMillan.html</id><content type="html">&lt;p&gt;The Judge would be wise to listen to a &lt;a href="http://www.scribd.com/doc/222954383/Jury-Letter"&gt;jury&lt;/a&gt; that understands the
 pointlessness of &lt;a href="http://blogs.wsj.com/metropolis/2014/05/12/city-council-members-call-for-leniency-for-occupy-wall-street-protestor/?mg%3Dblogs-wsj&amp;amp;url%3Dhttp%25253A%25252F%25252Fblogs.wsj.com%25252Fmetropolis%25252F2014%25252F05%25252F12%25252Fcity-council-members-call-for-leniency-for-occupy-wall-street-protestor"&gt;incarceration of the harmless&lt;/a&gt;. #MasssIncarceration
  #Justice4Cecily #NoMoreDrugWar&lt;/p&gt;
 &lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="../images/jury.png" width="600px" alt="img" title="jury.png"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="overcriminalization"></category><category term="occupy"></category></entry><entry><title>Tubman Yortzight</title><link href="tubman-yortzight.html" rel="alternate"></link><published>2014-05-08T15:02:00-04:00</published><updated>2014-05-08T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-08:tubman-yortzight.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;img src="../images/jury.png" width="600px" alt="img" title="jury.png"&gt;&lt;/p&gt;</content><category term="Criminal Justice"/><category term="overcriminalization"/><category term="occupy"/></entry><entry><title>Tubman Yortzight</title><link href="https://evanmisshula.github.io/tubman-yortzight.html" rel="alternate"/><published>2014-05-08T15:02:00-04:00</published><updated>2014-05-08T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-08:/tubman-yortzight.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;"Most that I have done and suffered in the service of our cause has
 been in public, and I have received much encouragement at every step
 of the way. You, on the other hand, have labored in a private way. I
@@ -2688,12 +3127,12 @@ have wrought in the day—you in the night. … The midnight sky and the
 silent stars have been the witnesses of your devotion to freedom and
 of your heroism.” ~Fredrick Douglas (on Harriet Tubman)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src="../images/tubman.jpg" width="650px" alt="img" title="tubman.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="slavery"></category><category term="heroes"></category></entry><entry><title>Arrest tweets</title><link href="arrest-tweet.html" rel="alternate"></link><published>2014-05-02T15:02:00-04:00</published><updated>2014-05-02T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-02:arrest-tweet.html</id><content type="html">&lt;p&gt;Of course, one reason why it might be unprecedented is that other
+&lt;p&gt;&lt;img src="../images/tubman.jpg" width="650px" alt="img" title="tubman.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"/><category term="slavery"/><category term="heroes"/></entry><entry><title>Arrest tweets</title><link href="https://evanmisshula.github.io/arrest-tweet.html" rel="alternate"/><published>2014-05-02T15:02:00-04:00</published><updated>2014-05-02T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-02:/arrest-tweet.html</id><content type="html">&lt;p&gt;Of course, one reason why it might be unprecedented is that other
 police forces might find it prurient, ludicrous, voyeuristic, perverse
 or merely a monstrous waste of time, money and a cell
 phone. #TweetingArrests 
 &lt;a href="http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/"&gt;http://www.cnet.com/news/police-to-live-tweet-prostitution-sting/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="../images/george0.png" width="650px" alt="img" title="george0.png"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="policing"></category><category term="public-shame"></category><category term="sex-workers"></category></entry><entry><title>Ban the box</title><link href="ban-the-box.html" rel="alternate"></link><published>2014-05-02T15:02:00-04:00</published><updated>2014-05-02T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-02:ban-the-box.html</id><content type="html">&lt;p&gt;NYC is considering banning private employers from asking about
+&lt;p&gt;&lt;img src="../images/george0.png" width="650px" alt="img" title="george0.png"&gt;&lt;/p&gt;</content><category term="Criminal Justice"/><category term="policing"/><category term="public-shame"/><category term="sex-workers"/></entry><entry><title>Ban the box</title><link href="https://evanmisshula.github.io/ban-the-box.html" rel="alternate"/><published>2014-05-02T15:02:00-04:00</published><updated>2014-05-02T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-02:/ban-the-box.html</id><content type="html">&lt;p&gt;NYC is considering banning private employers from asking about
 criminal convictions on employment applications.  If NYC passes this,
 it is a game changer.  Once again Jumaane Williams is leading the
 charge on behalf of the working poor.&lt;/p&gt;
@@ -2702,13 +3141,13 @@ charge on behalf of the working poor.&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://www.cssny.org/news/entry/watch-fair-chance-act-would-ban-the-box-in-nyc"&gt;cssny&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://fairchancenyc.wordpress.com/"&gt;fairChance.org&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="../images/banBox.jpg" width="600px" alt="img" title="banBox.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="reentry"></category><category term="jobs"></category></entry><entry><title>IG defanged at DoJ</title><link href="IG-defanged-at-doj.html" rel="alternate"></link><published>2014-04-30T15:02:00-04:00</published><updated>2014-04-30T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-04-30:IG-defanged-at-doj.html</id><content type="html">&lt;p&gt;Cases check in but they don't check out. #DAsGoneWild Who gets to
+&lt;p&gt;&lt;img src="../images/banBox.jpg" width="600px" alt="img" title="banBox.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"/><category term="reentry"/><category term="jobs"/></entry><entry><title>IG defanged at DoJ</title><link href="https://evanmisshula.github.io/IG-defanged-at-doj.html" rel="alternate"/><published>2014-04-30T15:02:00-04:00</published><updated>2014-04-30T15:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-04-30:/IG-defanged-at-doj.html</id><content type="html">&lt;p&gt;Cases check in but they don't check out. #DAsGoneWild Who gets to
 watch the watchers?&lt;/p&gt;
-&lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="DAsGoneWild"></category><category term="judicial hypocracy"></category></entry><entry><title>PRI-resources</title><link href="pri-reentry-resources-nyc.html" rel="alternate"></link><published>2014-01-24T15:02:00-05:00</published><updated>2014-01-24T15:02:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2014-01-24:pri-reentry-resources-nyc.html</id><content type="html">&lt;h1&gt;Resource map&lt;/h1&gt;
+&lt;p&gt;&lt;img src="../images/Cecily.jpg" width="300px" alt="img" title="Cecily.jpg"&gt;&lt;/p&gt;</content><category term="Criminal Justice"/><category term="DAsGoneWild"/><category term="judicial hypocracy"/></entry><entry><title>PRI-resources</title><link href="https://evanmisshula.github.io/pri-reentry-resources-nyc.html" rel="alternate"/><published>2014-01-24T15:02:00-05:00</published><updated>2014-01-24T15:02:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-01-24:/pri-reentry-resources-nyc.html</id><content type="html">&lt;h1&gt;Resource map&lt;/h1&gt;
 &lt;p&gt;The amazing Sheyla Delgado and I did some mapping for the &lt;a href="http://johnjayresearch.org/pri/"&gt;Prisoner
 Reentry Institute&lt;/a&gt;. This map has
 some resources for returning prisoners.&lt;/p&gt;
-&lt;iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&amp;output=embed" width="660" height="480"&gt;&lt;/iframe&gt;</content><category term="Criminal Justice"></category><category term="Prisoner Reentry"></category><category term="maps"></category></entry><entry><title>Emacs IPython Notebook and "ESS in the Cloud"</title><link href="emacs-ipython-notebook-and-ess-in-the-cloud.html" rel="alternate"></link><published>2013-07-12T02:41:00-04:00</published><updated>2013-07-12T02:41:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2013-07-12:emacs-ipython-notebook-and-ess-in-the-cloud.html</id><summary type="html">&lt;h1&gt;My usage history&lt;/h1&gt;
+&lt;iframe src="https://mapsengine.google.com/map/embed?mid=zturmsFXEOVk.k86YVp1bBWBs&amp;output=embed" width="660" height="480"&gt;&lt;/iframe&gt;</content><category term="Criminal Justice"/><category term="Prisoner Reentry"/><category term="maps"/></entry><entry><title>Emacs IPython Notebook and "ESS in the Cloud"</title><link href="https://evanmisshula.github.io/emacs-ipython-notebook-and-ess-in-the-cloud.html" rel="alternate"/><published>2013-07-12T02:41:00-04:00</published><updated>2013-07-12T02:41:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2013-07-12:/emacs-ipython-notebook-and-ess-in-the-cloud.html</id><summary type="html">&lt;h1&gt;My usage history&lt;/h1&gt;
 &lt;p&gt;Back in 2009, one of the first advantages that made me play around
 with &lt;a href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; again when I went back to graduate school was
 &lt;a href="http://ess.r-project.org/index.php?Section%3Dhome"&gt;Emacs-Speaks-Statistics&lt;/a&gt;. It allowed me to avoid the pain of using the
@@ -2858,7 +3297,7 @@ not suck at all.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;You can download the R-language by following this &lt;a href="http://cran.us.r-project.org/"&gt;R-link&lt;/a&gt; and Vincent
 Goulet generously makes &lt;a href="http://vgoulet.act.ulaval.ca/en/emacs/"&gt;Emacs with ESS&lt;/a&gt; available through his website
-for both Mac OS X and Windows.&lt;/p&gt;</content><category term="Tutorials"></category><category term="emacs"></category><category term="python"></category><category term="IPython"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Emacs IPython Notebook and the shaving of a Yak</title><link href="emacs-ipython-notebook-and-the-shaving-of-a-yak.html" rel="alternate"></link><published>2013-06-25T09:02:00-04:00</published><updated>2013-06-25T09:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2013-06-25:emacs-ipython-notebook-and-the-shaving-of-a-yak.html</id><summary type="html">&lt;h1&gt;Motivation&lt;/h1&gt;
+for both Mac OS X and Windows.&lt;/p&gt;</content><category term="Tutorials"/><category term="emacs"/><category term="python"/><category term="IPython"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Emacs IPython Notebook and the shaving of a Yak</title><link href="https://evanmisshula.github.io/emacs-ipython-notebook-and-the-shaving-of-a-yak.html" rel="alternate"/><published>2013-06-25T09:02:00-04:00</published><updated>2013-06-25T09:02:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2013-06-25:/emacs-ipython-notebook-and-the-shaving-of-a-yak.html</id><summary type="html">&lt;h1&gt;Motivation&lt;/h1&gt;
 &lt;p&gt;It was this week during the project pitch exercise here at the &lt;a href="http://dssg.io/"&gt;Data
 Science For Social Good&lt;/a&gt; that I fell down a rabbit hole. I wanted to
 get summary statistics on foreclosures and land values for each of
@@ -2921,7 +3360,7 @@ from the indefatigable &lt;a href="http://xahlee.blogspot.com/"&gt;Xah Lee&lt;/a
 worked for me.  Details will follow but here is a screen shot so you
 know that it is possible you to shave this Yak! &amp;#x2026;And in a lot less
 time than it took me.&lt;/p&gt;
-&lt;p&gt;&lt;img src="../images/IpythonNotebookInEmacs-300x298.png" width="300px" alt="img" title="IpythonNotebookInEmacs "&gt;&lt;/p&gt;</content><category term="Tutorials"></category><category term="big data"></category><category term="Emacs"></category><category term="emacs-ipython-notebook"></category><category term="ipython"></category><category term="programmer-humor"></category><category term="configuration"></category><category term="emacs"></category><category term="IPython"></category><category term="linux"></category><category term="statistics"></category></entry><entry><title>Setting up a virtual environment with Ipython, numpy and pandas</title><link href="setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html" rel="alternate"></link><published>2013-06-25T00:56:00-04:00</published><updated>2013-06-25T00:56:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2013-06-25:setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html</id><summary type="html">&lt;p&gt;Most of the time you read about setting up virtual environments, it is
+&lt;p&gt;&lt;img src="../images/IpythonNotebookInEmacs-300x298.png" width="300px" alt="img" title="IpythonNotebookInEmacs "&gt;&lt;/p&gt;</content><category term="Tutorials"/><category term="big data"/><category term="Emacs"/><category term="emacs-ipython-notebook"/><category term="ipython"/><category term="programmer-humor"/><category term="configuration"/><category term="emacs"/><category term="IPython"/><category term="linux"/><category term="statistics"/></entry><entry><title>Setting up a virtual environment with Ipython, numpy and pandas</title><link href="https://evanmisshula.github.io/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html" rel="alternate"/><published>2013-06-25T00:56:00-04:00</published><updated>2013-06-25T00:56:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2013-06-25:/setting-up-a-virtual-environment-with-ipython-numpy-and-pandas.html</id><summary type="html">&lt;p&gt;Most of the time you read about setting up virtual environments, it is
 for web development. But the same benefits hold for analysis and
 research software. You want to be able to reproduce results. It also
 increases security not to be adding all the unverified libraries with
@@ -3030,7 +3469,7 @@ pip install pandas
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;workon no-more-drug-war
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Good luck!&lt;/p&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="IPython"></category><category term="virtual env"></category><category term="linux"></category></entry><entry><title>Emacs-IPython-Notebook Installation Tutorial</title><link href="emacs-ipython-notebook-installation-tutorial.html" rel="alternate"></link><published>2013-06-24T23:37:00-04:00</published><updated>2013-06-24T23:37:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2013-06-24:emacs-ipython-notebook-installation-tutorial.html</id><summary type="html">&lt;h1&gt;Packages&lt;/h1&gt;
+&lt;p&gt;Good luck!&lt;/p&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="IPython"/><category term="virtual env"/><category term="linux"/></entry><entry><title>Emacs-IPython-Notebook Installation Tutorial</title><link href="https://evanmisshula.github.io/emacs-ipython-notebook-installation-tutorial.html" rel="alternate"/><published>2013-06-24T23:37:00-04:00</published><updated>2013-06-24T23:37:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2013-06-24:/emacs-ipython-notebook-installation-tutorial.html</id><summary type="html">&lt;h1&gt;Packages&lt;/h1&gt;
 &lt;p&gt;The Emacs package system is far from perfect. The most proficient
 users of Emacs are unaffected by this flaw. Many users of Emacs are
 experts who live at the bleeding edge of the linux kernel and gcc
@@ -3135,7 +3574,7 @@ you want to keep them and open a new shell. Type:&lt;/p&gt;
 where it always belonged.&lt;/p&gt;
 &lt;p&gt;&lt;img src="../images/emacsEditingRemoteNotebook-300x168.png" width="300px" alt="img" title="ein"&gt;&lt;/p&gt;
 
-&lt;p&gt;I will cover el-get in the next blog&amp;#x2026;.I promise!&lt;/p&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="emacs-ipython-notebook"></category><category term="ipython"></category><category term="tutorial"></category></entry><entry><title>Resources on Django and D3</title><link href="resources-on-django-and-d3.html" rel="alternate"></link><published>2013-04-02T11:27:00-04:00</published><updated>2013-04-02T11:27:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2013-04-02:resources-on-django-and-d3.html</id><summary type="html">&lt;p&gt;It is no secret that I have been working on delivering d3 over django.
+&lt;p&gt;I will cover el-get in the next blog&amp;#x2026;.I promise!&lt;/p&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="emacs-ipython-notebook"/><category term="ipython"/><category term="tutorial"/></entry><entry><title>Resources on Django and D3</title><link href="https://evanmisshula.github.io/resources-on-django-and-d3.html" rel="alternate"/><published>2013-04-02T11:27:00-04:00</published><updated>2013-04-02T11:27:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2013-04-02:/resources-on-django-and-d3.html</id><summary type="html">&lt;p&gt;It is no secret that I have been working on delivering d3 over django.
 I am a novice to both of these technologies, I have been scouring the
 internet for FREE resources. Of what I have found. Here are my
 impressions. On Django, there seem to be few full tutorials …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It is no secret that I have been working on delivering d3 over django.
@@ -3176,7 +3615,7 @@ text. With Mike's book some of what is in the repository is different
 than what is printed in the text. This is particularly frustrating on
 the Subway wait user interface. This is not to trash Michael's book. I
 at least understood something after reading it. Looking at the
-documentation from M Bostock made me feel like a complete idiot.&lt;/p&gt;</content><category term="Tutorials"></category><category term="D3"></category><category term="Django"></category><category term="linux"></category></entry><entry><title>Learning environments for data analysis software</title><link href="learning-environments-for-data-analysis-software.html" rel="alternate"></link><published>2013-02-02T23:32:00-05:00</published><updated>2013-02-02T23:32:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2013-02-02:learning-environments-for-data-analysis-software.html</id><summary type="html">&lt;h1&gt;Welcome to my blog&lt;/h1&gt;
+documentation from M Bostock made me feel like a complete idiot.&lt;/p&gt;</content><category term="Tutorials"/><category term="D3"/><category term="Django"/><category term="linux"/></entry><entry><title>Learning environments for data analysis software</title><link href="https://evanmisshula.github.io/learning-environments-for-data-analysis-software.html" rel="alternate"/><published>2013-02-02T23:32:00-05:00</published><updated>2013-02-02T23:32:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2013-02-02:/learning-environments-for-data-analysis-software.html</id><summary type="html">&lt;h1&gt;Welcome to my blog&lt;/h1&gt;
 &lt;p&gt;This is my first blog post using the IPython notebook. I am very excited
 about the things it can do. &lt;/p&gt;
 &lt;h2&gt;Here is what I want to cover&lt;/h2&gt;
@@ -3284,16 +3723,16 @@ x
 &lt;h1&gt;Symbolic Manipulation&lt;/h1&gt;
 &lt;p&gt;The IPython notebook can also make symbolic calculations and solve
 complex algebraic equations:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;load_ext&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sympyprinting&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sympy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sym&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sympy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
-&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sym&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbols&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;x y z&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;load_ext&lt;/span&gt; &lt;span class="n"&gt;sympyprinting&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sympy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sym&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;sympy&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sym&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbols&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;x y z&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="n"&gt;The&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sympyprinting&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;already&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;loaded&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;use&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;reload_ext&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sympyprinting&lt;/span&gt;
+&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;sympyprinting&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;already&lt;/span&gt; &lt;span class="n"&gt;loaded&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;To&lt;/span&gt; &lt;span class="n"&gt;reload&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;use&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;reload_ext&lt;/span&gt; &lt;span class="n"&gt;sympyprinting&lt;/span&gt;
 
-&lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;eq&lt;/span&gt;
+&lt;span class="n"&gt;eq&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="n"&gt;eq&lt;/span&gt;
 
-&lt;span class="w"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="w"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; \\&lt;/span&gt;&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="w"&gt;\\&lt;/span&gt;&lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+\\&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;\\&lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; \\&lt;span class="n"&gt;left&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;\\&lt;span class="n"&gt;right&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;eq&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -3303,13 +3742,13 @@ complex algebraic equations:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;It can also display pictures and videos&amp;#x2026;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;IPython.display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Image&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;IPython.display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Image&lt;/span&gt;
 &lt;span class="n"&gt;Image&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/home/evan/Pictures/Evan.jpg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src="../images/Evan.jpg" width="300px" alt="img" title="Evan"&gt;&lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;IPython.display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;YouTubeVideo&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;IPython.display&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;YouTubeVideo&lt;/span&gt;
 &lt;span class="n"&gt;YouTubeVideo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ystkKXzt9Wk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -3332,26 +3771,26 @@ browser so it knows how to send data to another interpreter.&lt;/p&gt;
 
 &lt;p&gt;We can interact with an R environment:    &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;rpy2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;rpy2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;robjects&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;robjects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;rpy2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;robjects&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;robjects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;version&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="n"&gt;platform&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x86_64&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;unknown&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gnu&lt;/span&gt;
-&lt;span class="n"&gt;arch&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x86_64&lt;/span&gt;
-&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gnu&lt;/span&gt;
-&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;x86_64&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gnu&lt;/span&gt;
+&lt;span class="n"&gt;platform&lt;/span&gt; &lt;span class="n"&gt;x86_64&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;unknown&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gnu&lt;/span&gt;
+&lt;span class="n"&gt;arch&lt;/span&gt; &lt;span class="n"&gt;x86_64&lt;/span&gt;
+&lt;span class="n"&gt;os&lt;/span&gt; &lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gnu&lt;/span&gt;
+&lt;span class="n"&gt;system&lt;/span&gt; &lt;span class="n"&gt;x86_64&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gnu&lt;/span&gt;
 &lt;span class="n"&gt;status&lt;/span&gt;
-&lt;span class="n"&gt;major&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
-&lt;span class="n"&gt;minor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;15.2&lt;/span&gt;
-&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2012&lt;/span&gt;
-&lt;span class="n"&gt;month&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="n"&gt;day&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;
-&lt;span class="n"&gt;svn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rev&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;61015&lt;/span&gt;
-&lt;span class="n"&gt;language&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;
-&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;2.15.2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2012&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;nickname&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Trick&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;or&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Treat&lt;/span&gt;
+&lt;span class="n"&gt;major&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;minor&lt;/span&gt; &lt;span class="mf"&gt;15.2&lt;/span&gt;
+&lt;span class="n"&gt;year&lt;/span&gt; &lt;span class="mi"&gt;2012&lt;/span&gt;
+&lt;span class="n"&gt;month&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="n"&gt;day&lt;/span&gt; &lt;span class="mi"&gt;26&lt;/span&gt;
+&lt;span class="n"&gt;svn&lt;/span&gt; &lt;span class="n"&gt;rev&lt;/span&gt; &lt;span class="mi"&gt;61015&lt;/span&gt;
+&lt;span class="n"&gt;language&lt;/span&gt; &lt;span class="n"&gt;R&lt;/span&gt;
+&lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt; &lt;span class="n"&gt;R&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="mf"&gt;2.15.2&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2012&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;nickname&lt;/span&gt; &lt;span class="n"&gt;Trick&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="n"&gt;Treat&lt;/span&gt;
 
-&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;load_ext&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rmagic&lt;/span&gt;
+&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;load_ext&lt;/span&gt; &lt;span class="n"&gt;rmagic&lt;/span&gt;
 
-&lt;span class="n"&gt;The&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rmagic&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;extension&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;is&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;already&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;loaded&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;To&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;reload&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;use&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;reload_ext&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rmagic&lt;/span&gt;
+&lt;span class="n"&gt;The&lt;/span&gt; &lt;span class="n"&gt;rmagic&lt;/span&gt; &lt;span class="n"&gt;extension&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="n"&gt;already&lt;/span&gt; &lt;span class="n"&gt;loaded&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;To&lt;/span&gt; &lt;span class="n"&gt;reload&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;use&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;reload_ext&lt;/span&gt; &lt;span class="n"&gt;rmagic&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We can return R objects to python&lt;/p&gt;
@@ -3384,7 +3823,7 @@ browser so it knows how to send data to another interpreter.&lt;/p&gt;
 
 &lt;p&gt;There is more to come. Ipython does d3 interactive graphs but I have
 not been able to get them to work. It also handles cython (python
-wrapped c-code) and mpi parallel code. More later. It is time for bed.&lt;/p&gt;</content><category term="Tutorials"></category><category term="configuration"></category><category term="docview"></category><category term="emacs"></category><category term="internet pedagogy"></category><category term="linux"></category><category term="statistics"></category><category term="windows"></category></entry><entry><title>Intro and iPython</title><link href="intro-and-ipython.html" rel="alternate"></link><published>2013-01-02T21:05:00-05:00</published><updated>2013-01-02T21:05:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2013-01-02:intro-and-ipython.html</id><summary type="html">&lt;p&gt;So I was able to get this to post to my &lt;a href="http://EvanMisshula.github.io"&gt;blog&lt;/a&gt;. However I was not
+wrapped c-code) and mpi parallel code. More later. It is time for bed.&lt;/p&gt;</content><category term="Tutorials"/><category term="configuration"/><category term="docview"/><category term="emacs"/><category term="internet pedagogy"/><category term="linux"/><category term="statistics"/><category term="windows"/></entry><entry><title>Intro and iPython</title><link href="https://evanmisshula.github.io/intro-and-ipython.html" rel="alternate"/><published>2013-01-02T21:05:00-05:00</published><updated>2013-01-02T21:05:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2013-01-02:/intro-and-ipython.html</id><summary type="html">&lt;p&gt;So I was able to get this to post to my &lt;a href="http://EvanMisshula.github.io"&gt;blog&lt;/a&gt;. However I was not
 able to get it to work here. Since then, to my surprise I have found
 myself working less with the visually amazing, but temperamental iPython
 and more with &lt;a href="http://orgmode.org/"&gt;Emacs org-mode&lt;/a&gt;.&lt;/p&gt;
@@ -3410,7 +3849,7 @@ library. None of this is behind a pay-wall.&lt;/p&gt;
     with formating requirement. You will generally just output to
     LaTeX.&lt;/li&gt;
 &lt;li&gt;Any questions, just reach out to me on Twitter @emisshula&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Tutorials"></category><category term="Emacs"></category><category term="org-mode"></category><category term="reproducible research"></category></entry><entry><title>Two important news pieces on cybercrime</title><link href="two-important-news-pieces-on-cybercrime.html" rel="alternate"></link><published>2011-01-28T08:19:00-05:00</published><updated>2011-01-28T08:19:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2011-01-28:two-important-news-pieces-on-cybercrime.html</id><summary type="html">&lt;ol&gt;
+&lt;/ol&gt;</content><category term="Tutorials"/><category term="Emacs"/><category term="org-mode"/><category term="reproducible research"/></entry><entry><title>Two important news pieces on cybercrime</title><link href="https://evanmisshula.github.io/two-important-news-pieces-on-cybercrime.html" rel="alternate"/><published>2011-01-28T08:19:00-05:00</published><updated>2011-01-28T08:19:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2011-01-28:/two-important-news-pieces-on-cybercrime.html</id><summary type="html">&lt;ol&gt;
 &lt;li&gt;The FBI is executing warrants against the Wiki-leaks
     supporters.I had long suspected that most of these guys were
     not as tricky (sophisticated) as they thought they
@@ -3429,9 +3868,9 @@ library. None of this is behind a pay-wall.&lt;/p&gt;
     is time to go after rogue prosecutors, people always go after
     the cop. We need to change direction at the
     top. &lt;a href="http://www.huffingtonpost.com/gw-schulz/when-can-cops-gain-access_b_815211.html"&gt;overciminalization&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="Criminal Justice"></category><category term="cracking"></category><category term="security"></category><category term="vulnerablity"></category><category term="hacking"></category></entry><entry><title>Released…the film version of the Castle is out</title><link href="released-the-film-version-of-the-castle-is-out.html" rel="alternate"></link><published>2011-01-26T11:33:00-05:00</published><updated>2011-01-26T11:33:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2011-01-26:released-the-film-version-of-the-castle-is-out.html</id><content type="html">&lt;p&gt;Great week&amp;#x2026;saw a preview of Released, the movie version of 'the
+&lt;/ol&gt;</content><category term="Criminal Justice"/><category term="cracking"/><category term="security"/><category term="vulnerablity"/><category term="hacking"/></entry><entry><title>Released…the film version of the Castle is out</title><link href="https://evanmisshula.github.io/released-the-film-version-of-the-castle-is-out.html" rel="alternate"/><published>2011-01-26T11:33:00-05:00</published><updated>2011-01-26T11:33:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2011-01-26:/released-the-film-version-of-the-castle-is-out.html</id><content type="html">&lt;p&gt;Great week&amp;#x2026;saw a preview of Released, the movie version of 'the
 Castle'. It is a great play about four amazing people who are making
-the very most of their second chance! &lt;a href="http://www.thecastletheplay.org/tc/frames/About.aspx"&gt;The Castle&lt;/a&gt;.&lt;/p&gt;</content><category term="Criminal Justice"></category><category term="reentry"></category><category term="antipoverty"></category></entry><entry><title>Introduction</title><link href="introduction.html" rel="alternate"></link><published>2010-12-02T13:13:00-05:00</published><updated>2010-12-02T13:13:00-05:00</updated><author><name>emisshula</name></author><id>tag:None,2010-12-02:introduction.html</id><summary type="html">&lt;p&gt;This is the first issue so it is worth saying what I would like to
+the very most of their second chance! &lt;a href="http://www.thecastletheplay.org/tc/frames/About.aspx"&gt;The Castle&lt;/a&gt;.&lt;/p&gt;</content><category term="Criminal Justice"/><category term="reentry"/><category term="antipoverty"/></entry><entry><title>Introduction</title><link href="https://evanmisshula.github.io/introduction.html" rel="alternate"/><published>2010-12-02T13:13:00-05:00</published><updated>2010-12-02T13:13:00-05:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2010-12-02:/introduction.html</id><summary type="html">&lt;p&gt;This is the first issue so it is worth saying what I would like to
 cover. I am interested in increasing labor market participation and
 public safety. I believe that this is done through life long learning and
 remediation. I am particularly interested in using mathematics to
@@ -3439,4 +3878,4 @@ decide what is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the 
 cover. I am interested in increasing labor market participation and
 public safety. I believe that this is done through life long learning and
 remediation. I am particularly interested in using mathematics to
-decide what is a threat and what is not.&lt;/p&gt;</content><category term="Tutorials"></category><category term="software"></category><category term="justice"></category></entry></feed>
+decide what is a threat and what is not.&lt;/p&gt;</content><category term="Tutorials"/><category term="software"/><category term="justice"/></entry></feed>

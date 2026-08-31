@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - education</title><link href="/" rel="alternate"></link><link href="feeds/education.atom.xml" rel="self"></link><id>/</id><updated>2025-08-12T00:00:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Wise Fools</title><link href="fools.html" rel="alternate"></link><published>2025-08-12T00:00:00-04:00</published><updated>2025-08-12T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2025-08-12:fools.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/einsteinAsFool.jpeg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - education</title><link href="https://evanmisshula.github.io/" rel="alternate"/><link href="https://evanmisshula.github.io/feeds/education.atom.xml" rel="self"/><id>https://evanmisshula.github.io/</id><updated>2025-08-12T00:00:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Wise Fools</title><link href="https://evanmisshula.github.io/fools.html" rel="alternate"/><published>2025-08-12T00:00:00-04:00</published><updated>2025-08-12T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2025-08-12:/fools.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/einsteinAsFool.jpeg" width="600px" alt="emerson" title="respect"&gt;&lt;/p&gt;
 
 &lt;h1&gt;Holy and Wise: The mythology and contributions of the fool in mathematics and physics&lt;/h1&gt;
 &lt;p&gt;On August 8th, the NY Times published a long &lt;a href="https://www.nytimes.com/2025/08/08/technology/ai-chatbots-delusions-chatgpt.html"&gt;essay&lt;/a&gt; about Allan Brooks
@@ -570,4 +570,4 @@ Like Einstein stood by de Broglie when few could understand.&lt;br&gt;
 From number games to cosmic rays, from lab bench to the stars,&lt;br&gt;
 Start with grit, a spark of you, and change what's ours.&lt;br&gt;
 No degree can block your path, no gate can stop your view,&lt;br&gt;
-With heart, a guide, and hustle – let the world catch up to you!  &lt;/p&gt;</content><category term="education"></category><category term="ambition"></category><category term="persitence"></category></entry></feed>
+With heart, a guide, and hustle – let the world catch up to you!  &lt;/p&gt;</content><category term="education"/><category term="ambition"/><category term="persitence"/></entry></feed>

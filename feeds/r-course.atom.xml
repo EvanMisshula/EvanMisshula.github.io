@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - R-course</title><link href="/" rel="alternate"></link><link href="feeds/r-course.atom.xml" rel="self"></link><id>/</id><updated>2014-07-30T15:03:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Mac OS X Installation</title><link href="mac-dev-env.html" rel="alternate"></link><published>2014-07-30T15:03:00-04:00</published><updated>2014-07-30T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-30:mac-dev-env.html</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Evan Misshula - R-course</title><link href="https://evanmisshula.github.io/" rel="alternate"/><link href="https://evanmisshula.github.io/feeds/r-course.atom.xml" rel="self"/><id>https://evanmisshula.github.io/</id><updated>2014-07-30T15:03:00-04:00</updated><subtitle>Probability, Learning and Justice</subtitle><entry><title>Mac OS X Installation</title><link href="https://evanmisshula.github.io/mac-dev-env.html" rel="alternate"/><published>2014-07-30T15:03:00-04:00</published><updated>2014-07-30T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-30:/mac-dev-env.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;I have developed a Zen-like approach to the operating systems that
 people use: 'When you're ready, the right operating system will appear
 in your life.' ~Guy Kawasaki is the chief evangelist of Canva, an
@@ -212,7 +212,7 @@ be good enough.&lt;/p&gt;
 who were able to obtain for me not only access to a Mac but insured
 that I would have admin rights to install software and create this 
 tutorial. They bare no responsibility for any mistakes or omissions 
-which are solely the responsiblity of the author.&lt;/p&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category><category term="OS X"></category></entry><entry><title>Descriptives</title><link href="r-descriptives-ess.html" rel="alternate"></link><published>2014-07-24T15:03:00-04:00</published><updated>2014-07-24T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-24:r-descriptives-ess.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
+which are solely the responsiblity of the author.&lt;/p&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/><category term="OS X"/></entry><entry><title>Descriptives</title><link href="https://evanmisshula.github.io/r-descriptives-ess.html" rel="alternate"/><published>2014-07-24T15:03:00-04:00</published><updated>2014-07-24T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-24:/r-descriptives-ess.html</id><summary type="html">&lt;p&gt;&lt;img src="../../images/bragan.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Say you were standing with one foot in the oven and one foot in an ice bucket. According to the percentage people, you should be perfectly comfortable. &lt;sup&gt;&lt;a id="fnr.1" class="footref" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt; ~Bobby Bragan, 1963&lt;/p&gt;
@@ -327,7 +327,7 @@ a vertical line separating the stem and leaves.&lt;/p&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>R foundations with ESS</title><link href="r-foundation-ess.html" rel="alternate"></link><published>2014-07-04T15:03:00-04:00</published><updated>2014-07-04T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-04:r-foundation-ess.html</id><content type="html">&lt;h1&gt;R foundations&lt;/h1&gt;
+&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>R foundations with ESS</title><link href="https://evanmisshula.github.io/r-foundation-ess.html" rel="alternate"/><published>2014-07-04T15:03:00-04:00</published><updated>2014-07-04T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-04:/r-foundation-ess.html</id><content type="html">&lt;h1&gt;R foundations&lt;/h1&gt;
 &lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -337,7 +337,7 @@ a vertical line separating the stem and leaves.&lt;/p&gt;
 &lt;p&gt;Start an &lt;strong&gt;&lt;em&gt;R&lt;/em&gt;&lt;/strong&gt; buffer through &lt;em&gt;ess&lt;/em&gt; by typing &lt;code&gt;M-x R&lt;/code&gt;.  See the earlier
 tutorial &lt;a href="ess.md"&gt;here&lt;/a&gt; or &lt;a href="Emacs-basics-for-stats.md"&gt;here&lt;/a&gt; if that is mystery. At the console type:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;10&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mf"&gt;20&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Emacs Speaks Statistics (ESS) Tutorial</title><link href="r-tutorial-ess.html" rel="alternate"></link><published>2014-07-02T15:03:00-04:00</published><updated>2014-07-02T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-02:r-tutorial-ess.html</id><summary type="html">&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Emacs Speaks Statistics (ESS) Tutorial</title><link href="https://evanmisshula.github.io/r-tutorial-ess.html" rel="alternate"/><published>2014-07-02T15:03:00-04:00</published><updated>2014-07-02T15:03:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-02:/r-tutorial-ess.html</id><summary type="html">&lt;h1&gt;Making your editor do statistics&lt;/h1&gt;
 &lt;p&gt;&lt;img src="../../images/gbox.jpeg" width="300px" alt="box" title="box"&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -643,7 +643,7 @@ this evil behavior by seting the environment variable.&lt;/div&gt;&lt;/div&gt;
 
 
 &lt;/div&gt;
-&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to basic Emacs for statistics</title><link href="r-tutorial-emacs-basics.html" rel="alternate"></link><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-01:r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
+&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Intro to basic Emacs for statistics</title><link href="https://evanmisshula.github.io/r-tutorial-emacs-basics.html" rel="alternate"/><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-01:/r-tutorial-emacs-basics.html</id><summary type="html">&lt;h1&gt;Emacs&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What I cannot build, I do not understand. — Richard Feynman&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -960,7 +960,7 @@ want to behave in a certain way.&lt;/p&gt;
 (add-hook &amp;#39;R-mode-hook
           &amp;#39;(lambda ()  (local-set-key (kbd &amp;quot;M-RET&amp;quot;)
                                       &amp;#39;ess-R-use-this-dir)))
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to Emacs Speaks Statistics</title><link href="r-tutorial-intro-ess.html" rel="alternate"></link><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-07-01:r-tutorial-intro-ess.html</id><summary type="html">&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Intro to Emacs Speaks Statistics</title><link href="https://evanmisshula.github.io/r-tutorial-intro-ess.html" rel="alternate"/><published>2014-07-01T00:00:00-04:00</published><updated>2014-07-01T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-07-01:/r-tutorial-intro-ess.html</id><summary type="html">&lt;h1&gt;Emacs Speaks Statistics (ESS)&lt;/h1&gt;
 &lt;p&gt;ESS is a library (package) for Emacs which allows it to interact with
 a number of statistical packages including S+, R, SaS, SPSS and Stata.
 For the purpose of these notes.  We will only deal with R.  It allows
@@ -986,7 +986,7 @@ us to load files into R for evaluation.&lt;/p&gt;
 &lt;li&gt;Stata-mode: 1997, Thomas Lumley. Added 1997 (Rossini).&lt;/li&gt;
 &lt;li&gt;1997: last major restructuring (``grand unification'')&lt;/li&gt;
 &lt;li&gt;2004: switch leaders: Maechler takes over&lt;/li&gt;
-&lt;/ul&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>Intro to R with Emacs-Speaks-Statistics</title><link href="r-tutorial.html" rel="alternate"></link><published>2014-06-29T00:00:00-04:00</published><updated>2014-06-29T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-06-29:r-tutorial.html</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;/ul&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>Intro to R with Emacs-Speaks-Statistics</title><link href="https://evanmisshula.github.io/r-tutorial.html" rel="alternate"/><published>2014-06-29T00:00:00-04:00</published><updated>2014-06-29T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-06-29:/r-tutorial.html</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
 &lt;p&gt;A number of my colleagues need to analyze data and are learning a
 programming language for the first time.  It does not need to be said,
 this is a very heavy lift and occurs in the presence of a wide diversity
@@ -1076,7 +1076,7 @@ bootcamp&lt;/a&gt;.&lt;/p&gt;
 &lt;li&gt;spatial&lt;/li&gt;
 &lt;li&gt;meta-analysis&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;More to come&amp;#x2026;&lt;/p&gt;</content><category term="R-course"></category><category term="Emacs"></category><category term="Rstats"></category><category term="ESS"></category></entry><entry><title>intro to r and ess</title><link href="r-intro.html" rel="alternate"></link><published>2014-05-19T00:00:00-04:00</published><updated>2014-05-19T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:None,2014-05-19:r-intro.html</id><summary type="html">&lt;h1&gt;credit&lt;/h1&gt;
+&lt;p&gt;More to come&amp;#x2026;&lt;/p&gt;</content><category term="R-course"/><category term="Emacs"/><category term="Rstats"/><category term="ESS"/></entry><entry><title>intro to r and ess</title><link href="https://evanmisshula.github.io/r-intro.html" rel="alternate"/><published>2014-05-19T00:00:00-04:00</published><updated>2014-05-19T00:00:00-04:00</updated><author><name>emisshula</name></author><id>tag:evanmisshula.github.io,2014-05-19:/r-intro.html</id><summary type="html">&lt;h1&gt;credit&lt;/h1&gt;
 &lt;p&gt;I am trying to explain the ethos and social convention of
 FREE software.  People have created software and they let you 
 use it and modify it for free.  Is only polite to extend them&lt;/p&gt;
@@ -1102,4 +1102,4 @@ data.&lt;/p&gt;
 &lt;li&gt;a domain specific programming language&lt;/li&gt;
 &lt;li&gt;a means of simulating phenomena of interest&lt;/li&gt;
 &lt;li&gt;a means of creating reproducible results&lt;/li&gt;
-&lt;/ul&gt;</content><category term="R-course"></category><category term="emacs"></category><category term="rstats"></category><category term="ess"></category></entry></feed>
+&lt;/ul&gt;</content><category term="R-course"/><category term="emacs"/><category term="rstats"/><category term="ess"/></entry></feed>
